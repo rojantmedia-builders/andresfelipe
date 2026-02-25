@@ -15,11 +15,11 @@
         "image_M8FNee": {
           "type": "image",
           "settings": {
-            "title": "Endless\npossibilities.",
+            "title": "<span class=\"inline-badge\" style=\"--badge-bg: #eb4f45; --badge-text: #ffffff; opacity: 1;\">END OF SEASON SALE</span>\nEndless\npossibilities.",
             "title_size": 80,
             "subheading": "Bring your brand to life",
             "link": "shopify://collections/all",
-            "link_text": "Optional button",
+            "link_text": "Ver tienda",
             "text_align": "vertical-center horizontal-center",
             "image": "shopify://shop_images/1_Desktop_End_of_Season_Sale.webp",
             "overlay_opacity": 0,
