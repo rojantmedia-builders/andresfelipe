@@ -72,6 +72,7 @@
       "header": {
         "type": "header",
         "settings": {
+          "logo": "shopify://shop_images/Black_and_White_Minimalist_Elegant_Modern_Typography_Creative_Studio_Brand_Logo.png",
           "desktop_logo_width": 200,
           "mobile_logo_width": 140,
           "main_menu_link_list": "main-menu",
