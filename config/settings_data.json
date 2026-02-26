@@ -529,5 +529,12 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".hero__subtitle {font-size: 0.7em !important;}",
+      ".hero__text-wrap .page-width {max-width: 600px !important;}",
+      "h2.h1.hero__title {font-size: 3em;}"
+    ]
   }
 }
