@@ -40,195 +40,50 @@
         "autoplay_speed": 5
       }
     },
-    "featured-collection-switcher": {
-      "type": "featured-collection-switcher",
-      "settings": {
-        "title": "Most popular",
-        "collection1": "",
-        "collection2": "",
-        "per_row": 4,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "rich-text": {
-      "type": "rich-text",
+    "promotion_blocks_mKHhkB": {
+      "type": "promotion-blocks",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "item_jqHbJ6": {
+          "type": "item",
           "settings": {
-            "title": "Rich text"
+            "title": "Eficiencia energética",
+            "image": "shopify://shop_images/renewable-energy.avif"
           }
         },
-        "text": {
-          "type": "text",
+        "item_y4xmTf": {
+          "type": "item",
           "settings": {
-            "enlarge_text": true,
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+            "title": "Diseño sin filtro",
+            "image": "shopify://shop_images/filter.avif"
+          }
+        },
+        "item_NDijb7": {
+          "type": "item",
+          "settings": {
+            "title": "Operación silenciosa",
+            "image": "shopify://shop_images/mute.avif"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "item_jqHbJ6",
+        "item_y4xmTf",
+        "item_NDijb7"
       ],
+      "name": "Promotion blocks",
       "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "divider": false
-      }
-    },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "1499789718857-0": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "wide"
-          }
-        },
-        "1499789718857-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "square-small"
-          }
-        },
-        "1499789718857-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "square-small"
-          }
-        },
-        "1499789718857-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "square-small"
-          }
-        },
-        "1499789718857-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "square-small"
-          }
-        },
-        "1499789718857-5": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "focal_point": "center center",
-            "size": "wide"
-          }
-        }
-      },
-      "block_order": [
-        "1499789718857-0",
-        "1499789718857-1",
-        "1499789718857-2",
-        "1499789718857-3",
-        "1499789718857-4",
-        "1499789718857-5"
-      ],
-      "settings": {
-        "title": "",
-        "divider": false,
-        "enable_gutter": false
-      }
-    },
-    "fading-images": {
-      "type": "fading-images",
-      "blocks": {
-        "1498501481980-0": {
-          "type": "image",
-          "settings": {
-            "focal_point": "center center",
-            "slide_title1": "Beautifully animated",
-            "slide_title2": "titles and images"
-          }
-        },
-        "1498501481980-1": {
-          "type": "image",
-          "settings": {
-            "focal_point": "center center",
-            "slide_title1": "Use this section",
-            "slide_title2": "to impress"
-          }
-        },
-        "1498501481980-2": {
-          "type": "image",
-          "settings": {
-            "focal_point": "center center",
-            "slide_title1": "And highlight",
-            "slide_title2": "important details"
-          }
-        }
-      },
-      "block_order": [
-        "1498501481980-0",
-        "1498501481980-1",
-        "1498501481980-2"
-      ],
-      "settings": {
-        "title_lines": "2",
-        "title_font": "body",
-        "title_size": 45,
-        "title_color": "#ffffff",
-        "title_bg_color": "rgba(0,0,0,0)",
-        "text_align": "vertical-center horizontal-center",
-        "link": "",
-        "slide_speed": 5,
-        "color_overlay": "#000000",
-        "color_overlay_opacity": 30,
-        "desktop_height": "650px",
-        "mobile_height": "auto"
-      }
-    },
-    "collection-callout": {
-      "type": "collection-callout",
-      "settings": {
-        "collection": "",
-        "subtitle": "Brand new",
-        "title": "Collection callout",
-        "text": "Use this section to easily call attention to one of your collections. We'll show photos of the first 5 products.",
-        "cta_text1": "Shop Jackets",
-        "cta_link1": "",
-        "cta_text2": "Shop All",
-        "cta_link2": "",
-        "layout": "right",
-        "divider": false
-      }
-    },
-    "background-image-text": {
-      "type": "background-image-text",
-      "settings": {
-        "subtitle": "Impressive",
-        "title": "Large image and text",
-        "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.</p>",
-        "button_label": "",
-        "button_link": "",
-        "focal_point": "center",
-        "layout": "left",
-        "height": 650,
-        "parallax": true
+        "columns_desktop": 3,
+        "swipe_on_mobile": true,
+        "color_bg": "#ffffff",
+        "color_text": "#303c43",
+        "color_accent": "#3f72e5",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
       }
     }
   },
   "order": [
     "slideshow_KT4kEg",
-    "featured-collection-switcher",
-    "rich-text",
-    "featured-collections",
-    "fading-images",
-    "collection-callout",
-    "background-image-text"
+    "promotion_blocks_mKHhkB"
   ]
 }
