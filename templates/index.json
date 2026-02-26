@@ -90,7 +90,7 @@
           "settings": {
             "image": "shopify://shop_images/menshealth-w.webp",
             "image_size": "small",
-            "text": "Text",
+            "text": "",
             "outline_text": false,
             "link": ""
           }
@@ -100,7 +100,7 @@
           "settings": {
             "image": "shopify://shop_images/usweekly-w.webp",
             "image_size": "small",
-            "text": "Text",
+            "text": "",
             "outline_text": false,
             "link": ""
           }
@@ -110,7 +110,7 @@
           "settings": {
             "image": "shopify://shop_images/essence-w.webp",
             "image_size": "small",
-            "text": "Text",
+            "text": "",
             "outline_text": false,
             "link": ""
           }
@@ -120,7 +120,7 @@
           "settings": {
             "image": "shopify://shop_images/womenshealth-w.webp",
             "image_size": "small",
-            "text": "Text",
+            "text": "",
             "outline_text": false,
             "link": ""
           }
@@ -130,7 +130,7 @@
           "settings": {
             "image": "shopify://shop_images/byrdie-w_1.png",
             "image_size": "small",
-            "text": "Text",
+            "text": "",
             "outline_text": false,
             "link": ""
           }
