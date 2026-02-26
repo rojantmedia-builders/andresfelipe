@@ -1,0 +1,107 @@
+{{ 'promotion-blocks.css' | asset_url | stylesheet_tag }}
+
+<div class="promotion-blocks{% if section.settings.swipe_on_mobile %} swipe-on-mobile{% endif %} section-spacing{% if section.settings.disable_top_spacing %} section-spacing--disable-top{% endif %}{% if section.settings.disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-bg: {{ section.settings.color_bg }}; --color-text: {{ section.settings.color_text }}; --color-accent: {{ section.settings.color_accent }}; --column-size: {{ section.settings.columns_desktop }};">
+  <div class="promotion-blocks--inner column-spacing--large">
+    {%- for block in section.blocks -%}
+      <div class="promotion-blocks--item" {{ block.shopify_attributes }}>
+        <div class="promotion-blocks--text">
+          {%- if block.settings.title != blank -%}
+            <h6>{{ block.settings.title }}</h6>
+          {%- endif -%}
+        </div>
+
+        {%- if block.settings.image != blank -%}
+          <figure class="promotion-blocks--image">
+            <div class="aspect-ratio aspect-ratio--adapt" style="--ratio-percent:{{ 100 | divided_by: block.settings.image.aspect_ratio }}%;">
+              {{ block.settings.image | image_url: width: 240 | image_tag: widths: '120, 240', sizes: '120px', loading: 'lazy', fetchpriority: 'auto', style: 'object-position: 50% 50%;' }}
+            </div>
+          </figure>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Promotion blocks",
+  "tag": "section",
+  "class": "section-promotion-blocks",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "label": "Swipe on mobile",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text color",
+      "default": "#303c43"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "Accent color",
+      "default": "#3f72e5"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "label": "Disable top spacing",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "label": "Disable bottom spacing",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Energy Efficient"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promotion blocks",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
