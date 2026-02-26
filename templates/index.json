@@ -218,12 +218,12 @@
       "name": "Featured product",
       "settings": {
         "featured_product": "purificador-de-aire-ionico-forest-green",
-        "divider": false,
-        "sku_enable": false,
+        "divider": true,
+        "sku_enable": true,
         "image_size": "medium",
         "product_zoom_enable": true,
         "thumbnail_position": "beside",
-        "thumbnail_arrows": false,
+        "thumbnail_arrows": true,
         "enable_video_looping": true,
         "product_video_style": "muted"
       }
