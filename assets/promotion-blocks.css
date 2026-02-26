@@ -55,8 +55,10 @@
 }
 
 .promotion-blocks--text h6 {
-  margin-bottom: 10px;
-  color: inherit;
+    margin-bottom: 10px;
+    color: inherit;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .promotion-blocks--text .text-button {
