@@ -227,6 +227,22 @@
         "enable_video_looping": true,
         "product_video_style": "muted"
       }
+    },
+    "collection_callout_WiDLTy": {
+      "type": "collection-callout",
+      "name": "Collection callout",
+      "settings": {
+        "collection": "purificador",
+        "subtitle": "Purificación",
+        "title": "Por qué te encantará el purificador iónico",
+        "text": "Diseño sin filtro\nDile adiós a los costosos reemplazos de filtros: aire limpio sin complicaciones.\nEficiencia energética\nMantiene el aire limpio y ahorra en la factura de la luz.\nNeutraliza olores al instante\nElimina olores a mascotas, olores de cocina y aire a humedad, dejando tu espacio fresco y limpio.\nCubre 23 metros cuadrados\nPerfecto para dormitorios, oficinas y salas de estar pequeñas.",
+        "cta_text1": "",
+        "cta_link1": "",
+        "cta_text2": "",
+        "cta_link2": "",
+        "layout": "right",
+        "divider": false
+      }
     }
   },
   "order": [
@@ -234,6 +250,7 @@
     "promotion_blocks_mKHhkB",
     "scrolling_text_BcEqKQ",
     "productos_destacados_P3LgNG",
-    "featured_product_83x3c3"
+    "featured_product_83x3c3",
+    "collection_callout_WiDLTy"
   ]
 }
