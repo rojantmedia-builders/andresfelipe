@@ -1,0 +1,195 @@
+{{ 'featured-collection.css' | asset_url | stylesheet_tag }}
+{{ 'product-grid.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign coleccion = collections[section.settings.coleccion]
+  assign limite = section.settings.limite
+  assign columnas = section.settings.columnas_desktop
+
+  if limite < 1
+    assign limite = 3
+  endif
+-%}
+
+<div class="featured-collection section-spacing">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="section-header">
+        <div class="section-header--content">
+          {%- if section.settings.titulo != blank -%}
+            <h3 class="section-header--title">{{ section.settings.titulo }}</h3>
+          {%- endif -%}
+
+          {%- if section.settings.descripcion != blank -%}
+            <div class="section-header--description rte">{{ section.settings.descripcion }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.mostrar_boton and section.settings.texto_boton != blank and coleccion != blank -%}
+          <div class="section-header--button">
+            <a href="{{ coleccion.url }}" title="{{ section.settings.texto_boton | escape }}" role="link" class="text-button{% if section.settings.boton_con_icono %} text-button--has-icon{% endif %}">
+              {{ section.settings.texto_boton }}
+              {%- if section.settings.boton_con_icono -%}
+                <span><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L1 9" stroke="var(--color-accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              {%- endif -%}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="featured-collection__inner display-type--grid">
+        <div id="product-grid-{{ section.id }}" class="products row grid">
+          {%- if coleccion == blank or coleccion.products_count == 0 -%}
+            {%- for i in (1..limite) -%}
+              <div class="small-6 medium-4 columns">
+                <div class="product-card text-left product-card--content-spacing-false product-card--border-false has-shadow--false">
+                  <figure class="product-featured-image">
+                    <div class="product-featured-image-link aspect-ratio aspect-ratio--adapt" style="--padding-bottom: 100%; background: rgba(0,0,0,0.05);"></div>
+                  </figure>
+                  <div class="product-card-info">
+                    <span class="price"><ins><span class="amount"><span class="from">Desde</span> <span class="money">$0</span></span></ins></span>
+                    <span class="product-card-title">Producto</span>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for product in coleccion.products limit: limite -%}
+              {%- liquid
+                assign img_principal = product.featured_media.preview_image
+                assign img_secundaria = blank
+                if product.images.size > 1
+                  assign img_secundaria = product.images[1]
+                endif
+                assign padding = 100
+                if img_principal and img_principal.aspect_ratio
+                  assign padding = 100 | divided_by: img_principal.aspect_ratio
+                endif
+              -%}
+
+              <div class="small-6 medium-4 columns">
+                <product-card class="product-card text-left product-card--content-spacing-false product-card--border-false has-shadow--false">
+                  <figure class="product-featured-image thb-hover">
+                    <span class="product-card--badges top left"></span>
+
+                    <a href="{{ product.url }}" title="{{ product.title | escape }}" class="product-featured-image-link aspect-ratio aspect-ratio--adapt" style="--padding-bottom: {{ padding }}%;">
+                      {%- if img_secundaria != blank -%}
+                        <img
+                          class="product-secondary-image"
+                          src="{{ img_secundaria | image_url: width: 596 }}"
+                          srcset="{{ img_secundaria | image_url: width: 298 }} 298w, {{ img_secundaria | image_url: width: 596 }} 596w"
+                          sizes="375px"
+                          width="{{ img_secundaria.width }}"
+                          height="{{ img_secundaria.height }}"
+                          loading="lazy"
+                          alt="{{ product.title | escape }}">
+                      {%- endif -%}
+
+                      {%- if img_principal != blank -%}
+                        <img
+                          class="product-primary-image"
+                          src="{{ img_principal | image_url: width: 596 }}"
+                          srcset="{{ img_principal | image_url: width: 298 }} 298w, {{ img_principal | image_url: width: 596 }} 596w"
+                          sizes="375px"
+                          width="{{ img_principal.width }}"
+                          height="{{ img_principal.height }}"
+                          loading="lazy"
+                          alt="{{ product.title | escape }}"
+                          style="object-position: 50% 50%;">
+                      {%- endif -%}
+                    </a>
+                  </figure>
+
+                  <div class="product-card-info">
+                    <span class="price">
+                      <ins>
+                        <span class="amount">
+                          {%- if product.price_varies -%}
+                            <span class="from">Desde</span>
+                          {%- endif -%}
+                          <span class="money">{{ product.price_min | money }}</span>
+                        </span>
+                      </ins>
+                    </span>
+
+                    <a href="{{ product.url }}" title="{{ product.title | escape }}" class="product-card-title">{{ product.title }}</a>
+
+                    <div id="inventory-{{ product.selected_or_first_available_variant.id }}" class="product-inventory-notice--wrapper"></div>
+                  </div>
+                </product-card>
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Productos destacados",
+  "tag": "section",
+  "class": "section-featured-collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo",
+      "label": "Título",
+      "default": "Productos destacados"
+    },
+    {
+      "type": "richtext",
+      "id": "descripcion",
+      "label": "Descripción",
+      "default": "<p>Agrega una colección y muestra tus productos destacados.</p>"
+    },
+    {
+      "type": "collection",
+      "id": "coleccion",
+      "label": "Colección"
+    },
+    {
+      "type": "checkbox",
+      "id": "mostrar_boton",
+      "label": "Mostrar botón",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "texto_boton",
+      "label": "Texto del botón",
+      "default": "Ver colección"
+    },
+    {
+      "type": "checkbox",
+      "id": "boton_con_icono",
+      "label": "Botón con ícono",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "limite",
+      "label": "Cantidad de productos",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columnas_desktop",
+      "label": "Columnas (desktop)",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Productos destacados"
+    }
+  ]
+}
+{% endschema %}
