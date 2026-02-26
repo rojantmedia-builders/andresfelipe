@@ -533,6 +533,7 @@
   "platform_customizations": {
     "custom_css": [
       ".hero__subtitle {font-size: 0.7em !important;}",
+      ".featured-collection.section-spacing {padding: 50px 100px !important;}",
       ".promotion-blocks--item {box-shadow: 1px 1px 20px 4px #dbdbdb; margin: 10px;}",
       ".hero__text-wrap .page-width {max-width: 600px !important;}",
       "h2.h1.hero__title {font-size: 3em;}"
