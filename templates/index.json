@@ -81,10 +81,90 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
       }
+    },
+    "scrolling_text_BcEqKQ": {
+      "type": "scrolling-text",
+      "blocks": {
+        "item_rNFJWi": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/menshealth-w.webp",
+            "image_size": "small",
+            "text": "",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_qWgrwF": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/usweekly-w.webp",
+            "image_size": "small",
+            "text": "",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_7XAW67": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/essence-w.webp",
+            "image_size": "small",
+            "text": "",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_jmYgKy": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/womenshealth-w.webp",
+            "image_size": "small",
+            "text": "",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_pzCVKD": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/byrdie-w_1.png",
+            "image_size": "small",
+            "text": "",
+            "outline_text": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_rNFJWi",
+        "item_qWgrwF",
+        "item_7XAW67",
+        "item_jmYgKy",
+        "item_pzCVKD"
+      ],
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "uppercase": false,
+        "direction": "left",
+        "speed": 10,
+        "repeats": 3,
+        "font_size": 24,
+        "use_heading_font": true,
+        "color_bg": "#2c2d2e",
+        "color_text": "#1a1c1d",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "rotation": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
     }
   },
   "order": [
     "slideshow_KT4kEg",
-    "promotion_blocks_mKHhkB"
+    "promotion_blocks_mKHhkB",
+    "scrolling_text_BcEqKQ"
   ]
 }
