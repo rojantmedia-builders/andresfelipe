@@ -1,0 +1,83 @@
+.section-scrolling-images .scrolling-images--image {
+  isolation: isolate;
+  border-radius: var(--block-border-radius, 16px); }
+
+.section-scrolling-images .scrolling-images {
+  position: relative;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  overflow: hidden; }
+
+.section-scrolling-images .scrolling-images--inner {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  z-index: 10; }
+
+.section-scrolling-images .scrolling-images--inner.direction-left > div {
+  animation: marquee-left var(--marquee-speed) linear infinite; }
+
+.section-scrolling-images .scrolling-images--inner.direction-right > div {
+  animation: marquee-right var(--marquee-speed) linear infinite; }
+
+.section-scrolling-images .scrolling-images--inner > div {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0; }
+
+.section-scrolling-images .scrolling-images--spacing-small .scrolling-images--item {
+  margin: 0 5px; }
+
+.section-scrolling-images .scrolling-images--spacing-medium .scrolling-images--item {
+  margin: 0 5px; }
+  @media only screen and (min-width: 768px) {
+    .section-scrolling-images .scrolling-images--spacing-medium .scrolling-images--item {
+      margin: 0 10px; } }
+
+.section-scrolling-images .scrolling-images--spacing-large .scrolling-images--item {
+  margin: 0 5px; }
+  @media only screen and (min-width: 768px) {
+    .section-scrolling-images .scrolling-images--spacing-large .scrolling-images--item {
+      margin: 0 15px; } }
+
+.section-scrolling-images .scrolling-images--top > div {
+  align-items: flex-start; }
+
+.section-scrolling-images .scrolling-images--bottom > div {
+  align-items: flex-end; }
+
+.section-scrolling-images .scrolling-images--item {
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column; }
+
+.section-scrolling-images .scrolling-images--image {
+  position: relative;
+  max-width: 70vw; }
+  @media only screen and (min-width: 768px) {
+    .section-scrolling-images .scrolling-images--image {
+      max-width: 100%; } }
+
+.section-scrolling-images .scrolling-images--content {
+  margin-top: 30px; }
+
+.section-scrolling-images .scrolling-images--content h6 {
+  margin-bottom: 10px; }
+
+.section-scrolling-images .scrolling-images--link {
+  display: inline-flex; }
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%); }
+  100% {
+    transform: translateX(-100%); } }
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(0%); } }
