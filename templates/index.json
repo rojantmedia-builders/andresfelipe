@@ -359,6 +359,60 @@
         "color_heading": "#252f35",
         "color_accent": "#3f72e5"
       }
+    },
+    "media_with_tabs_Pcc6Ta": {
+      "type": "media-with-tabs",
+      "blocks": {
+        "tab_YLT8jM": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/Coverage-Area.webp",
+            "focal_point": "50% 50%",
+            "tab_title": "Título del tab",
+            "tab_text": "Texto descriptivo del tab."
+          }
+        },
+        "tab_4pgKhB": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/2__Problem_Mechanism_Explainer.webp",
+            "focal_point": "50% 50%",
+            "tab_title": "Título del tab",
+            "tab_text": "Texto descriptivo del tab."
+          }
+        },
+        "tab_7AfJRE": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/2__Problem_Mechanism_Explainer_3a3fccb3-0b86-4ec3-b24e-f07876a30d94.webp",
+            "focal_point": "50% 50%",
+            "tab_title": "Título del tab",
+            "tab_text": "Texto descriptivo del tab."
+          }
+        }
+      },
+      "block_order": [
+        "tab_YLT8jM",
+        "tab_4pgKhB",
+        "tab_7AfJRE"
+      ],
+      "custom_css": [],
+      "name": "Galería con tabs",
+      "settings": {
+        "layout": "text_first",
+        "transparent": false,
+        "desktop_height": "auto",
+        "mobile_height": 500,
+        "color_bg": "#2c2d2e",
+        "color_text": "#ffffff",
+        "color_border": "#ffffff",
+        "color_accent": "#ffffff",
+        "badge_text": "Innovador",
+        "badge_bg": "#eb4f45",
+        "badge_text_color": "#ffffff",
+        "heading": "Características del producto",
+        "text": "<p>Escribe aquí la descripción del producto.</p>"
+      }
     }
   },
   "order": [
@@ -369,6 +423,7 @@
     "featured_product_83x3c3",
     "collection_callout_WiDLTy",
     "galeria_3_imagenes_kFPkEL",
-    "testimonios_clientes_toggle_3B3PCd"
+    "testimonios_clientes_toggle_3B3PCd",
+    "media_with_tabs_Pcc6Ta"
   ]
 }

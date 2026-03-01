@@ -534,7 +534,9 @@
     "custom_css": [
       ".hero__subtitle {font-size: 0.7em !important;}",
       ".featured-collection.section-spacing {padding: 50px 100px !important;}",
+      ".media-with-tabs{max-width: 70%; margin: 0 auto;}",
       ".toggle-boxes {padding: 60px 0; max-width: 70%; margin: 0 auto;}",
+      "h3.section-header--title {font-size: 30px; font-weight: bold; text-align: left;}",
       ".toggle-boxes--inner {padding: 0 !important;}",
       ".promotion-blocks--item {box-shadow: 1px 1px 20px 4px #dbdbdb; margin: 10px;}",
       ".hero__text-wrap .page-width {max-width: 600px !important;}",
