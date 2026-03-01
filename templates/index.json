@@ -272,7 +272,8 @@
         "item_zLExzE"
       ],
       "custom_css": [
-        ".section-gallery {max-width: 70%; margin: 0 auto;}"
+        ".section-gallery {max-width: 70%; margin: 0 auto;}",
+        ".rich-text h3 {font-size: 30px; font-weight: bold;}"
       ],
       "name": "Galería (3 imágenes)",
       "settings": {
@@ -288,7 +289,7 @@
         "disable_bottom_spacing_header": true,
         "columnas": 3,
         "ratio_percent": 40,
-        "column_spacing": "medium",
+        "column_spacing": "none",
         "swipe_on_mobile": true,
         "overlay_color": "#ffffff",
         "overlay_opacity": 0,
