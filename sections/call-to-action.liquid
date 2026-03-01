@@ -1,0 +1,131 @@
+{{ 'rich-text.css' | asset_url | stylesheet_tag }}
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="rich-text rich-text--transparent-{{ section.settings.transparent }} text-center text-position-center text-width-xlarge section-spacing-padding{% if section.settings.disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+      style="--color-bg: {{ section.settings.color_bg }}; --color-heading: {{ section.settings.color_heading }}; --color-text: {{ section.settings.color_text }}; --solid-button-background: {{ section.settings.button_bg }}; --bg-body: {{ section.settings.color_bg }}; --color-accent: {{ section.settings.color_accent }}; --color-accent-rgb: {{ section.settings.color_accent.red }},{{ section.settings.color_accent.green }},{{ section.settings.color_accent.blue }};">
+      <div class="rich-text__inner">
+
+        {%- if section.settings.heading_marked != blank or section.settings.heading_before != blank or section.settings.heading_after != blank -%}
+          <h3 class="h2">
+            {{ section.settings.heading_before | strip }}
+            {%- if section.settings.heading_marked != blank -%}
+              <span class="animated-marker" style="--marker-color: {{ section.settings.marker_color }}">
+                {{ section.settings.heading_marked | strip }}
+                <svg class="svg-marker svg-marker--style2" width="192" height="28" viewBox="0 0 192 28" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M3 11.9994C56 8.99939 167.626 -0.217816 187 4.99939C201 8.76949 83.5 14.9993 56 24.9997" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round"></path>
+                </svg>
+              </span>
+            {%- endif -%}
+            {{ section.settings.heading_after | strip }}
+          </h3>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="rte text-size-large">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+          <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+        {%- endif -%}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Call to action",
+  "class": "section-rich-text",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "transparent",
+      "label": "Fondo transparente",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "label": "Desactivar espacio inferior",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Color de fondo",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color del título",
+      "default": "#252f35"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Color del texto",
+      "default": "#303c43"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Color del botón",
+      "default": "#303c43"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "Color de acento",
+      "default": "#eb4f45"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Color del marcador",
+      "default": "#eb4f45"
+    },
+    {
+      "type": "text",
+      "id": "heading_before",
+      "label": "Título (antes del marcador)",
+      "default": "Ready to Breathe"
+    },
+    {
+      "type": "text",
+      "id": "heading_marked",
+      "label": "Título (texto subrayado)",
+      "default": "Cleaner Air?"
+    },
+    {
+      "type": "text",
+      "id": "heading_after",
+      "label": "Título (después del marcador)"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Descripción",
+      "default": "<p>No esperes para mejorar tu calidad de aire. Consigue tu purificador y empieza a disfrutar de un aire más fresco y saludable en tu hogar.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto del botón",
+      "default": "Comprar ahora"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Enlace del botón"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to action"
+    }
+  ]
+}
+{% endschema %}
