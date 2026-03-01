@@ -7,14 +7,19 @@
 
       <div class="section-header">
         <div class="section-header--content">
-          {%- if section.settings.title != blank -%}
+          {%- if section.settings.marker_before != blank or section.settings.marker_after != blank -%}
             <h3 class="section-header--title">
-              <span class="animated-marker" style="--marker-color: {{ section.settings.marker_color }}">
-                {{ section.settings.marker_before | strip }}
-                <svg class="svg-marker svg-marker--style1" width="201" height="14" viewBox="0 0 201 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                  <path d="M3 10.5732C55.565 6.61382 168.107 -0.117058 197.753 4.63415" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round"></path>
-                </svg>
-              </span> {{ section.settings.marker_after | strip }}
+              {%- if section.settings.marker_before != blank -%}
+                <span class="animated-marker" style="--marker-color: {{ section.settings.marker_color }}">
+                  {{ section.settings.marker_before | strip }}
+                  <svg class="svg-marker svg-marker--style1" width="201" height="14" viewBox="0 0 201 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path d="M3 10.5732C55.565 6.61382 168.107 -0.117058 197.753 4.63415" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round"></path>
+                  </svg>
+                </span>
+              {%- endif -%}
+              {%- if section.settings.marker_after != blank -%}
+                {%- if section.settings.marker_before != blank -%} {% endif -%}{{ section.settings.marker_after | strip }}
+              {%- endif -%}
             </h3>
           {%- endif -%}
 
