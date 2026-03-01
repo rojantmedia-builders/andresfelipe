@@ -281,6 +281,67 @@
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
+    },
+    "testimonios_clientes_toggle_3B3PCd": {
+      "type": "testimonios-clientes-toggle",
+      "blocks": {
+        "toggle_testimonio_NLekUU": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_JdHApU": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_qyx883": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_LNiNVx": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        }
+      },
+      "block_order": [
+        "toggle_testimonio_NLekUU",
+        "toggle_testimonio_JdHApU",
+        "toggle_testimonio_qyx883",
+        "toggle_testimonio_LNiNVx"
+      ],
+      "name": "Testimonios (toggle)",
+      "settings": {
+        "titulo_antes": "Lo que dicen nuestros",
+        "titulo_marcado": "Clientes",
+        "titulo_despues": "dicen",
+        "color_marcador": "#fd6262",
+        "columnas": 4,
+        "espaciado_columnas": "medium",
+        "swipe_on_mobile": true,
+        "color_bg": "#ffffff",
+        "color_body": "#303c43",
+        "color_heading": "#252f35",
+        "color_accent": "#3f72e5"
+      }
     }
   },
   "order": [
@@ -290,6 +351,7 @@
     "productos_destacados_P3LgNG",
     "featured_product_83x3c3",
     "collection_callout_WiDLTy",
-    "galeria_3_imagenes_kFPkEL"
+    "galeria_3_imagenes_kFPkEL",
+    "testimonios_clientes_toggle_3B3PCd"
   ]
 }
