@@ -274,7 +274,7 @@
       "name": "Galería (3 imágenes)",
       "settings": {
         "columnas": 3,
-        "column_spacing": "small",
+        "column_spacing": "none",
         "swipe_on_mobile": true,
         "overlay_color": "#ffffff",
         "overlay_opacity": 0,
