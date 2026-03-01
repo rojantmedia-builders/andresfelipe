@@ -1,0 +1,174 @@
+{{ 'toggle-boxes.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'toggle-boxes.js' | asset_url }}" defer="defer"></script>
+
+<div class="toggle-boxes section-spacing">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="section-header">
+        <div class="section-header--content">
+          <h3 class="section-header--title">
+            {{ section.settings.titulo_antes }}
+            <span class="animated-marker" style="--marker-color: {{ section.settings.color_marcador }}">
+              {{ section.settings.titulo_marcado }}
+              <svg class="svg-marker svg-marker--style1" width="201" height="14" viewBox="0 0 201 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M3 10.5732C55.565 6.61382 168.107 -0.117058 197.753 4.63415" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+              </svg>
+            </span>
+            {{ section.settings.titulo_despues }}
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toggle-boxes--inner column-spacing--{{ section.settings.espaciado_columnas }}{% if section.settings.swipe_on_mobile %} swipe-on-mobile{% endif %}" style="--toggle-columns: {{ section.settings.columnas }}; --color-bg: {{ section.settings.color_bg }}; --color-body: {{ section.settings.color_body }}; --color-heading: {{ section.settings.color_heading }}; --color-accent: {{ section.settings.color_accent }};">
+    {%- for block in section.blocks -%}
+      <toggle-box class="toggle-box"{% if block.settings.abierto %} open=""{% endif %} {{ block.shopify_attributes }}>
+        {%- if block.settings.imagen != blank -%}
+          <figure class="toggle-box--image aspect-ratio aspect-ratio--adapt" style="--ratio-percent: {{ 100 | divided_by: block.settings.imagen.aspect_ratio }}%;">
+            {{ block.settings.imagen | image_url: width: 690 | image_tag: widths: '345, 690', sizes: '305px', loading: 'lazy', fetchpriority: 'auto', style: 'object-position: 50% 50%;' }}
+          </figure>
+        {%- endif -%}
+
+        <div class="toggle-box--content rte text-left">
+          <scroll-shadow class="toggle-box--content-inner" style="--bg-body-rgb: {{ section.settings.color_bg.red }},{{ section.settings.color_bg.green }},{{ section.settings.color_bg.blue }}">
+            <div>
+              {%- if block.settings.texto != blank -%}
+                {{ block.settings.texto }}
+              {%- endif -%}
+            </div>
+          </scroll-shadow>
+        </div>
+
+        <button class="toggle-box--button">{{ block.settings.etiqueta_boton }} <span></span></button>
+      </toggle-box>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonios (toggle)",
+  "tag": "section",
+  "class": "section-toggle-boxes",
+  "settings": [
+    {
+      "type": "text",
+      "id": "titulo_antes",
+      "label": "Título (antes del marcado)",
+      "default": "Lo que dicen nuestros"
+    },
+    {
+      "type": "text",
+      "id": "titulo_marcado",
+      "label": "Título (marcado)",
+      "default": "Clientes"
+    },
+    {
+      "type": "text",
+      "id": "titulo_despues",
+      "label": "Título (después del marcado)",
+      "default": "dicen"
+    },
+    {
+      "type": "color",
+      "id": "color_marcador",
+      "label": "Color del marcador",
+      "default": "#fd6262"
+    },
+    {
+      "type": "range",
+      "id": "columnas",
+      "label": "Columnas (desktop)",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "espaciado_columnas",
+      "label": "Espaciado entre columnas",
+      "default": "medium",
+      "options": [
+        { "value": "none", "label": "Sin espacio" },
+        { "value": "small", "label": "Pequeño" },
+        { "value": "medium", "label": "Mediano" },
+        { "value": "large", "label": "Grande" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "label": "Swipe en móvil",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Color de fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_body",
+      "label": "Color del texto",
+      "default": "#303c43"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color del título",
+      "default": "#252f35"
+    },
+    {
+      "type": "color",
+      "id": "color_accent",
+      "label": "Color de acento",
+      "default": "#3f72e5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "toggle_testimonio",
+      "name": "Testimonio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagen",
+          "label": "Imagen"
+        },
+        {
+          "type": "richtext",
+          "id": "texto",
+          "label": "Texto",
+          "default": "<p>Escribe aquí el testimonio del cliente.</p>"
+        },
+        {
+          "type": "text",
+          "id": "etiqueta_boton",
+          "label": "Etiqueta del botón",
+          "default": "Testimonio"
+        },
+        {
+          "type": "checkbox",
+          "id": "abierto",
+          "label": "Abierto por defecto",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonios (toggle)",
+      "blocks": [
+        { "type": "toggle_testimonio" },
+        { "type": "toggle_testimonio" },
+        { "type": "toggle_testimonio" },
+        { "type": "toggle_testimonio" }
+      ]
+    }
+  ]
+}
+{% endschema %}
