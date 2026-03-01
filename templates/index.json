@@ -271,6 +271,9 @@
         "item_xP8UUP",
         "item_zLExzE"
       ],
+      "custom_css": [
+        ".section-gallery {max-width: 70%; margin: 0 auto;}"
+      ],
       "name": "Galería (3 imágenes)",
       "settings": {
         "mostrar_encabezado": true,
