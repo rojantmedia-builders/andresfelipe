@@ -31,12 +31,17 @@
 
 .featured-collection .section-header {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 25px;
+    gap: 20px;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
-
+.featured-collection .section-header--button {
+    flex-shrink: 0;
+    padding-top: 6px;
+    width: 40%;
+    font-size: 15px;
+}
 .featured-collection .section-header--content {
   max-width: 900px;
 }
@@ -51,10 +56,7 @@
   margin: 0;
 }
 
-.featured-collection .section-header--button {
-  flex-shrink: 0;
-  padding-top: 6px;
-}
+
 
 .featured-collection .text-button {
   color: var(--color-accent, #3f72e5);

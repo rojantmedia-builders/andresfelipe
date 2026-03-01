@@ -1,0 +1,116 @@
+{{ 'gallery.css' | asset_url | stylesheet_tag }}
+
+<div class="row ">
+  <div class="small-12 columns">
+    <theme-gallery class="gallery text-left{% if section.settings.swipe_on_mobile %} swipe-on-mobile{% endif %} section-spacing{% if section.settings.disable_top_spacing %} section-spacing--disable-top{% endif %}{% if section.settings.disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--gallery-columns: {{ section.settings.columnas }};--overlay-color-rgb: {{ section.settings.overlay_color.red }},{{ section.settings.overlay_color.green }},{{ section.settings.overlay_color.blue }}; --overlay-opacity: {{ section.settings.overlay_opacity }}">
+      <div class="gallery--inner column-spacing--{{ section.settings.column_spacing }}">
+        {%- for block in section.blocks -%}
+          <div class="gallery--item" {{ block.shopify_attributes }}>
+            {%- if block.settings.imagen != blank -%}
+              <figure class="aspect-ratio aspect-ratio--adapt" style="--ratio-percent:{{ 100 | divided_by: block.settings.imagen.aspect_ratio }}%;">
+                {{ block.settings.imagen | image_url: width: 750 | image_tag: widths: '375, 750', sizes: '420px', loading: 'lazy', fetchpriority: 'auto', style: 'object-position: 50% 50%;' }}
+                <div class="gallery--item-content content-bottom-left ">
+                  <div></div>
+                </div>
+              </figure>
+            {%- else -%}
+              <div class="thb-placeholder">
+                {{ 'image' | placeholder_svg_tag }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </theme-gallery>
+  </div>
+</div>
+
+<script src="{{ 'gallery.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Galería (3 imágenes)",
+  "tag": "section",
+  "class": "section-gallery",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columnas",
+      "label": "Columnas (desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "column_spacing",
+      "label": "Espaciado entre columnas",
+      "default": "small",
+      "options": [
+        { "value": "none", "label": "Sin espacio" },
+        { "value": "small", "label": "Pequeño" },
+        { "value": "medium", "label": "Mediano" },
+        { "value": "large", "label": "Grande" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "label": "Swipe en móvil",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Color del overlay",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Opacidad del overlay",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "label": "Desactivar espacio superior",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "label": "Desactivar espacio inferior",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Imagen",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "imagen",
+          "label": "Imagen"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Galería (3 imágenes)",
+      "blocks": [
+        { "type": "item" },
+        { "type": "item" },
+        { "type": "item" }
+      ]
+    }
+  ]
+}
+{% endschema %}
