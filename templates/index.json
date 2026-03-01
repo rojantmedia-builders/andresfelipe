@@ -174,12 +174,83 @@
         "limite": 3,
         "columnas_desktop": 3
       }
+    },
+    "featured_product_83x3c3": {
+      "type": "featured-product",
+      "blocks": {
+        "price_fJ7RyF": {
+          "type": "price",
+          "settings": {}
+        },
+        "separator_BmJwD3": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker_JR99UF": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "color_swatches": false
+          }
+        },
+        "buy_buttons_eL3XDQ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": true
+          }
+        },
+        "description_YxLqFf": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "price_fJ7RyF",
+        "separator_BmJwD3",
+        "variant_picker_JR99UF",
+        "buy_buttons_eL3XDQ",
+        "description_YxLqFf"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "featured_product": "purificador-de-aire-ionico-forest-green",
+        "divider": true,
+        "sku_enable": true,
+        "image_size": "large",
+        "product_zoom_enable": true,
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted"
+      }
+    },
+    "collection_callout_WiDLTy": {
+      "type": "collection-callout",
+      "name": "Collection callout",
+      "settings": {
+        "collection": "purificador",
+        "subtitle": "Purificación",
+        "title": "Por qué te encantará el purificador iónico",
+        "text": "Diseño sin filtro\nDile adiós a los costosos reemplazos de filtros: aire limpio sin complicaciones.\nEficiencia energética\nMantiene el aire limpio y ahorra en la factura de la luz.\nNeutraliza olores al instante\nElimina olores a mascotas, olores de cocina y aire a humedad, dejando tu espacio fresco y limpio.\nCubre 23 metros cuadrados\nPerfecto para dormitorios, oficinas y salas de estar pequeñas.",
+        "cta_text1": "",
+        "cta_link1": "",
+        "cta_text2": "",
+        "cta_link2": "",
+        "layout": "right",
+        "divider": false
+      }
     }
   },
   "order": [
     "slideshow_KT4kEg",
     "promotion_blocks_mKHhkB",
     "scrolling_text_BcEqKQ",
-    "productos_destacados_P3LgNG"
+    "productos_destacados_P3LgNG",
+    "featured_product_83x3c3",
+    "collection_callout_WiDLTy"
   ]
 }
