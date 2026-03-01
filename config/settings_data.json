@@ -146,6 +146,7 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
+              "image": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp",
               "image_width": 650,
               "title": "Site-wide promotion",
               "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
@@ -157,6 +158,7 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
+              "image": "shopify://shop_images/2__Problem_Mechanism_Explainer.webp",
               "image_width": 650,
               "title": "Site-wide promotion",
               "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
@@ -168,6 +170,7 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
+              "image": "shopify://shop_images/Blue_bd998340-69c3-403c-9eb4-da6d09ac20b2.webp",
               "image_width": 650,
               "title": "Site-wide promotion",
               "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
@@ -182,7 +185,7 @@
           "footer-promotions-2"
         ],
         "settings": {
-          "hide_homepage": true,
+          "hide_homepage": false,
           "image_size": "wide",
           "align_text": "left"
         }
