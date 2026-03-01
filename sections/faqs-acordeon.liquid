@@ -1,0 +1,154 @@
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+
+<div class="row">
+  <div class="small-12 columns">
+    <div class="collapsible-content{% if section.settings.has_bg %} collapsible-content--has-bg{% endif %} section-spacing"
+      style="--color-bg: {{ section.settings.color_bg }}; --color-heading: {{ section.settings.color_heading }}; --color-text: {{ section.settings.color_text }}; --color-links: {{ section.settings.color_links }}; --color-border: {{ section.settings.color_border }};">
+
+      <div class="section-header">
+        <div class="section-header--content">
+          {%- if section.settings.title != blank -%}
+            <h3 class="section-header--title">
+              <span class="animated-marker" style="--marker-color: {{ section.settings.marker_color }}">
+                {{ section.settings.marker_before }}
+                <svg class="svg-marker svg-marker--style1" width="201" height="14" viewBox="0 0 201 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                  <path d="M3 10.5732C55.565 6.61382 168.107 -0.117058 197.753 4.63415" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round"></path>
+                </svg>
+              </span>{{ section.settings.marker_after }}
+            </h3>
+          {%- endif -%}
+
+          {%- if section.settings.description != blank -%}
+            <div class="section-header--description rte">{{ section.settings.description }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="collapsible-content__inner">
+        {%- for block in section.blocks -%}
+          <collapsible-row class="accordion" {{ block.shopify_attributes }}>
+            <details{% if forloop.first and section.settings.open_first %} open{% endif %}>
+              <summary>
+                {{ block.settings.question }}
+                <span>
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 6.81818L7 0.818176L1 6.81818" stroke="var(--color-heading)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="collapsible__content accordion__content rte">
+                {{ block.settings.answer }}
+              </div>
+            </details>
+          </collapsible-row>
+        {%- endfor -%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQs (acordeón)",
+  "class": "section-collapsible-content",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "has_bg",
+      "label": "Mostrar fondo y sombra",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Color de fondo",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color de títulos",
+      "default": "#1a1c1d"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Color de texto",
+      "default": "#2c2d2e"
+    },
+    {
+      "type": "color",
+      "id": "color_links",
+      "label": "Color de enlaces",
+      "default": "#2c2d2e"
+    },
+    {
+      "type": "color",
+      "id": "color_border",
+      "label": "Color de bordes",
+      "default": "#dadce0"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Color del marcador",
+      "default": "#fd6262"
+    },
+    {
+      "type": "text",
+      "id": "marker_before",
+      "label": "Texto antes del marcador",
+      "default": "Tus preguntas"
+    },
+    {
+      "type": "text",
+      "id": "marker_after",
+      "label": "Texto después del marcador",
+      "default": ", respondidas"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Descripción",
+      "default": "<p>Hemos respondido las preguntas más comunes para ayudarte a entender el producto.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Abrir la primera pregunta por defecto",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta",
+          "default": "Escribe tu pregunta"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Respuesta",
+          "default": "<p>Escribe la respuesta aquí.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQs (acordeón)",
+      "blocks": [
+        { "type": "faq" },
+        { "type": "faq" },
+        { "type": "faq" }
+      ]
+    }
+  ]
+}
+{% endschema %}
