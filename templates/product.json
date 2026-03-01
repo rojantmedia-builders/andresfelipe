@@ -107,15 +107,15 @@
     "background-image-text": {
       "type": "background-image-text",
       "settings": {
-        "subtitle": "",
-        "title": "",
-        "text": "",
+        "subtitle": "Respiras 2800 galones de aire al día",
+        "title": ". ¡Eso es muchísimo aire!",
+        "text": "<p>La Agencia de Protección Ambiental (EPA) ha clasificado la calidad del aire interior como uno de los peligros más preocupantes que enfrentamos a diario. <br/>Nuestros hogares, oficinas y automóviles contienen sustancias químicas, gases y partículas en el aire que pueden ser devastadoras para nuestra salud.<br/></p>",
         "button_label": "",
         "button_link": "",
-        "image": "shopify://shop_images/Captura_de_pantalla_2026-03-01_160255.png",
+        "image": "shopify://shop_images/desktop_1.webp",
         "focal_point": "center",
         "layout": "left",
-        "height": 450,
+        "height": 650,
         "parallax": false
       }
     },
