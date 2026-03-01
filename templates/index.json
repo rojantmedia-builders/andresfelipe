@@ -243,6 +243,105 @@
         "layout": "right",
         "divider": false
       }
+    },
+    "galeria_3_imagenes_kFPkEL": {
+      "type": "galeria-3-imagenes",
+      "blocks": {
+        "item_xBDqYc": {
+          "type": "item",
+          "settings": {
+            "imagen": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp"
+          }
+        },
+        "item_xP8UUP": {
+          "type": "item",
+          "settings": {
+            "imagen": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp"
+          }
+        },
+        "item_zLExzE": {
+          "type": "item",
+          "settings": {
+            "imagen": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp"
+          }
+        }
+      },
+      "block_order": [
+        "item_xBDqYc",
+        "item_xP8UUP",
+        "item_zLExzE"
+      ],
+      "name": "Galería (3 imágenes)",
+      "settings": {
+        "columnas": 3,
+        "column_spacing": "none",
+        "swipe_on_mobile": true,
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "testimonios_clientes_toggle_3B3PCd": {
+      "type": "testimonios-clientes-toggle",
+      "blocks": {
+        "toggle_testimonio_NLekUU": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_JdHApU": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_qyx883": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        },
+        "toggle_testimonio_LNiNVx": {
+          "type": "toggle_testimonio",
+          "settings": {
+            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
+            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "etiqueta_boton": "Testimonio",
+            "abierto": false
+          }
+        }
+      },
+      "block_order": [
+        "toggle_testimonio_NLekUU",
+        "toggle_testimonio_JdHApU",
+        "toggle_testimonio_qyx883",
+        "toggle_testimonio_LNiNVx"
+      ],
+      "name": "Testimonios (toggle)",
+      "settings": {
+        "titulo_antes": "Lo que dicen nuestros",
+        "titulo_marcado": "Clientes",
+        "titulo_despues": "dicen",
+        "color_marcador": "#fd6262",
+        "columnas": 4,
+        "espaciado_columnas": "medium",
+        "swipe_on_mobile": true,
+        "color_bg": "#ffffff",
+        "color_body": "#303c43",
+        "color_heading": "#252f35",
+        "color_accent": "#3f72e5"
+      }
     }
   },
   "order": [
@@ -251,6 +350,8 @@
     "scrolling_text_BcEqKQ",
     "productos_destacados_P3LgNG",
     "featured_product_83x3c3",
-    "collection_callout_WiDLTy"
+    "collection_callout_WiDLTy",
+    "galeria_3_imagenes_kFPkEL",
+    "testimonios_clientes_toggle_3B3PCd"
   ]
 }
