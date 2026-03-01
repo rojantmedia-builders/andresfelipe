@@ -446,7 +446,7 @@
       ],
       "name": "FAQs (acordeón)",
       "settings": {
-        "has_bg": false,
+        "has_bg": true,
         "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#1a1c1d",
         "color_text": "#2c2d2e",
