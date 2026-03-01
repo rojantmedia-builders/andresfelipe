@@ -343,10 +343,7 @@
         "toggle_testimonio_qyx883",
         "toggle_testimonio_LNiNVx"
       ],
-      "custom_css": [
-        ".toggle-boxes{padding: 60px 0; max-width: 70%; margin: 0 auto;}",
-        ".toggle-boxes--inner {padding: 0 !important;}"
-      ],
+      "custom_css": [],
       "name": "Testimonios (toggle)",
       "settings": {
         "titulo_antes": "Lo que dicen nuestros",
