@@ -343,6 +343,10 @@
         "toggle_testimonio_qyx883",
         "toggle_testimonio_LNiNVx"
       ],
+      "custom_css": [
+        ".toggle-boxes.section-spacing {padding: 60px 0; max-width: 70%; margin: 0 auto;}",
+        ".toggle-boxes--inner {padding: 0 !important;}"
+      ],
       "name": "Testimonios (toggle)",
       "settings": {
         "titulo_antes": "Lo que dicen nuestros",
@@ -351,7 +355,7 @@
         "color_marcador": "#fd6262",
         "columnas": 4,
         "ratio_imagen_percent": 65,
-        "espaciado_columnas": "medium",
+        "espaciado_columnas": "none",
         "swipe_on_mobile": true,
         "color_bg": "#ffffff",
         "color_body": "#303c43",
