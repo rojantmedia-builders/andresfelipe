@@ -211,6 +211,27 @@
         "color_background": "#f9f9f9",
         "color_text": "#1c1d1d"
       }
+    },
+    "rich_text_ijhMnJ": {
+      "type": "rich-text",
+      "blocks": {
+        "text_XgHbNt": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Todos los purificadores de aire iónicos vienen con una garantía completa del fabricante de 2 años y el mantenimiento es tan sencillo como limpiar el purificador de aire con un paño seco.<br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_XgHbNt"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
     }
   },
   "order": [
@@ -220,6 +241,7 @@
     "text-and-image",
     "product-recommendations",
     "collection-return",
+    "rich_text_ijhMnJ",
     "testimonials_XjKDNg"
   ]
 }
