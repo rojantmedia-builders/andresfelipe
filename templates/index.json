@@ -285,7 +285,7 @@
         "disable_bottom_spacing_header": true,
         "columnas": 3,
         "ratio_percent": 40,
-        "column_spacing": "none",
+        "column_spacing": "medium",
         "swipe_on_mobile": true,
         "overlay_color": "#ffffff",
         "overlay_opacity": 0,
