@@ -344,7 +344,7 @@
         "toggle_testimonio_LNiNVx"
       ],
       "custom_css": [
-        ".toggle-boxes.section-spacing {padding: 60px 0; max-width: 70%; margin: 0 auto;}",
+        ".toggle-boxes{padding: 60px 0; max-width: 70%; margin: 0 auto;}",
         ".toggle-boxes--inner {padding: 0 !important;}"
       ],
       "name": "Testimonios (toggle)",
