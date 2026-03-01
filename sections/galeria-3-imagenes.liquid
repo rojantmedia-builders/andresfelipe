@@ -1,13 +1,37 @@
+{{ 'rich-text.css' | asset_url | stylesheet_tag }}
 {{ 'gallery.css' | asset_url | stylesheet_tag }}
 
 <div class="row ">
   <div class="small-12 columns">
+    {%- if section.settings.mostrar_encabezado -%}
+      <div class="rich-text rich-text--transparent-true text-center text-position-center text-width-medium section-spacing-padding{% if section.settings.disable_bottom_spacing_header %} section-spacing--disable-bottom{% endif %}" style="--color-bg: rgba(0,0,0,0); --color-heading: {{ section.settings.color_heading }}; --color-text: {{ section.settings.color_text }}; --solid-button-background: {{ section.settings.color_text }}; --bg-body: rgba(0,0,0,0); --color-accent: {{ section.settings.color_text }}; --color-accent-rgb: {{ section.settings.color_text.red }},{{ section.settings.color_text.green }},{{ section.settings.color_text.blue }};">
+        <div class="rich-text__inner">
+          {%- if section.settings.subheading != blank -%}
+            <p class="subheading">{{ section.settings.subheading }}</p>
+          {%- endif -%}
+          <h3 class="h3 ">
+            {{ section.settings.titulo_antes }}
+            <span class="animated-marker" style="--marker-color: {{ section.settings.color_marcador }}">
+              {{ section.settings.titulo_marcado }}
+              <svg class="svg-marker svg-marker--style1" width="201" height="14" viewBox="0 0 201 14" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M3 10.5732C55.565 6.61382 168.107 -0.117058 197.753 4.63415" stroke="var(--marker-color)" stroke-width="6" stroke-linecap="round" style="stroke-dashoffset: 0; stroke-dasharray: none;"></path>
+              </svg>
+            </span>
+            {{ section.settings.titulo_despues }}
+          </h3>
+          {%- if section.settings.descripcion != blank -%}
+            <div class="rte text-size-regular">{{ section.settings.descripcion }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endif -%}
+
     <theme-gallery class="gallery text-left{% if section.settings.swipe_on_mobile %} swipe-on-mobile{% endif %} section-spacing{% if section.settings.disable_top_spacing %} section-spacing--disable-top{% endif %}{% if section.settings.disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--gallery-columns: {{ section.settings.columnas }};--overlay-color-rgb: {{ section.settings.overlay_color.red }},{{ section.settings.overlay_color.green }},{{ section.settings.overlay_color.blue }}; --overlay-opacity: {{ section.settings.overlay_opacity }}">
       <div class="gallery--inner column-spacing--{{ section.settings.column_spacing }}">
         {%- for block in section.blocks -%}
           <div class="gallery--item" {{ block.shopify_attributes }}>
             {%- if block.settings.imagen != blank -%}
-              <figure class="aspect-ratio aspect-ratio--adapt" style="--ratio-percent:{{ 100 | divided_by: block.settings.imagen.aspect_ratio }}%;">
+              <figure class="aspect-ratio aspect-ratio--adapt" style="--ratio-percent:{{ section.settings.ratio_percent }}%;">
                 {{ block.settings.imagen | image_url: width: 750 | image_tag: widths: '375, 750', sizes: '420px', loading: 'lazy', fetchpriority: 'auto', style: 'object-position: 50% 50%;' }}
                 <div class="gallery--item-content content-bottom-left ">
                   <div></div>
@@ -34,6 +58,66 @@
   "class": "section-gallery",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "mostrar_encabezado",
+      "label": "Mostrar encabezado",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Texto superior",
+      "default": "En 3 pasos"
+    },
+    {
+      "type": "text",
+      "id": "titulo_antes",
+      "label": "Título (antes del marcado)",
+      "default": "Cómo el"
+    },
+    {
+      "type": "text",
+      "id": "titulo_marcado",
+      "label": "Título (marcado)",
+      "default": "Purificador iónico"
+    },
+    {
+      "type": "text",
+      "id": "titulo_despues",
+      "label": "Título (después del marcado)",
+      "default": "limpia tu aire"
+    },
+    {
+      "type": "color",
+      "id": "color_marcador",
+      "label": "Color del marcador",
+      "default": "#fd6262"
+    },
+    {
+      "type": "richtext",
+      "id": "descripcion",
+      "label": "Descripción",
+      "default": "<p>Escribe aquí la descripción del bloque.</p>"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Color del título",
+      "default": "#1a1c1d"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Color del texto",
+      "default": "#2c2d2e"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing_header",
+      "label": "Desactivar espacio inferior (encabezado)",
+      "default": true
+    },
+    {
       "type": "range",
       "id": "columnas",
       "label": "Columnas (desktop)",
@@ -41,6 +125,15 @@
       "max": 4,
       "step": 1,
       "default": 3
+    },
+    {
+      "type": "range",
+      "id": "ratio_percent",
+      "label": "Alto de imagen (porcentaje)",
+      "min": 40,
+      "max": 120,
+      "step": 5,
+      "default": 70
     },
     {
       "type": "select",

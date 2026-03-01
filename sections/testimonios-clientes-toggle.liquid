@@ -25,7 +25,7 @@
     {%- for block in section.blocks -%}
       <toggle-box class="toggle-box"{% if block.settings.abierto %} open=""{% endif %} {{ block.shopify_attributes }}>
         {%- if block.settings.imagen != blank -%}
-          <figure class="toggle-box--image aspect-ratio aspect-ratio--adapt" style="--ratio-percent: {{ 100 | divided_by: block.settings.imagen.aspect_ratio }}%;">
+          <figure class="toggle-box--image aspect-ratio aspect-ratio--adapt" style="--ratio-percent: {{ section.settings.ratio_imagen_percent }}%;">
             {{ block.settings.imagen | image_url: width: 690 | image_tag: widths: '345, 690', sizes: '305px', loading: 'lazy', fetchpriority: 'auto', style: 'object-position: 50% 50%;' }}
           </figure>
         {%- endif -%}
@@ -84,6 +84,15 @@
       "max": 6,
       "step": 1,
       "default": 4
+    },
+    {
+      "type": "range",
+      "id": "ratio_imagen_percent",
+      "label": "Alto de imagen (porcentaje)",
+      "min": 40,
+      "max": 120,
+      "step": 5,
+      "default": 65
     },
     {
       "type": "select",
