@@ -147,6 +147,70 @@
     "collection-return": {
       "type": "collection-return",
       "settings": {}
+    },
+    "testimonials_XjKDNg": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_6eMU6F": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_T83E3r": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_cHdTKb": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_yc9DkW": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonial_B6yDny": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_6eMU6F",
+        "testimonial_T83E3r",
+        "testimonial_cHdTKb",
+        "testimonial_yc9DkW",
+        "testimonial_B6yDny"
+      ],
+      "name": "Customer testimonials",
+      "settings": {
+        "title": "Con la confianza de la gente, amado por los clientes",
+        "round_images": true,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
     }
   },
   "order": [
@@ -155,6 +219,7 @@
     "background-image-text",
     "text-and-image",
     "product-recommendations",
-    "collection-return"
+    "collection-return",
+    "testimonials_XjKDNg"
   ]
 }
