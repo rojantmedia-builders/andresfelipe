@@ -459,6 +459,26 @@
         "open_first": false
       }
     },
+    "call_to_action_yz63hM": {
+      "type": "call-to-action",
+      "name": "Call to action",
+      "settings": {
+        "transparent": false,
+        "disable_bottom_spacing": false,
+        "color_bg": "rgba(0,0,0,0)",
+        "color_heading": "#252f35",
+        "color_text": "#303c43",
+        "button_bg": "#303c43",
+        "color_accent": "#eb4f45",
+        "marker_color": "#eb4f45",
+        "heading_before": "Ready to Breathe",
+        "heading_marked": "Cleaner Air?",
+        "heading_after": "de preuba",
+        "text": "<p>No esperes para mejorar tu calidad de aire. Consigue tu purificador y empieza a disfrutar de un aire más fresco y saludable en tu hogar.</p>",
+        "button_label": "Comprar ahora",
+        "button_link": "shopify://products/purificador-de-aire-ionico-azul-marino"
+      }
+    },
     "scrolling_text_BbLWyt": {
       "type": "scrolling-text",
       "blocks": {
@@ -511,26 +531,6 @@
         "rotation": 0,
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
-      }
-    },
-    "call_to_action_yz63hM": {
-      "type": "call-to-action",
-      "name": "Call to action",
-      "settings": {
-        "transparent": true,
-        "disable_bottom_spacing": true,
-        "color_bg": "rgba(0,0,0,0)",
-        "color_heading": "#252f35",
-        "color_text": "#303c43",
-        "button_bg": "#303c43",
-        "color_accent": "#eb4f45",
-        "marker_color": "#eb4f45",
-        "heading_before": "Ready to Breathe",
-        "heading_marked": "Cleaner Air?",
-        "heading_after": "",
-        "text": "<p>No esperes para mejorar tu calidad de aire. Consigue tu purificador y empieza a disfrutar de un aire más fresco y saludable en tu hogar.</p>",
-        "button_label": "Comprar ahora",
-        "button_link": ""
       }
     }
   },
