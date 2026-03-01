@@ -413,6 +413,105 @@
         "heading": "Características del producto",
         "text": "<p>Escribe aquí la descripción del producto.</p>"
       }
+    },
+    "faqs_acordeon_anmJBF": {
+      "type": "faqs-acordeon",
+      "blocks": {
+        "faq_NAhEH6": {
+          "type": "faq",
+          "settings": {
+            "question": "Escribe tu pregunta",
+            "answer": "<p>Escribe la respuesta aquí.</p>"
+          }
+        },
+        "faq_fUk46X": {
+          "type": "faq",
+          "settings": {
+            "question": "Escribe tu pregunta",
+            "answer": "<p>Escribe la respuesta aquí.</p>"
+          }
+        },
+        "faq_4nVMGr": {
+          "type": "faq",
+          "settings": {
+            "question": "Escribe tu pregunta",
+            "answer": "<p>Escribe la respuesta aquí.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_NAhEH6",
+        "faq_fUk46X",
+        "faq_4nVMGr"
+      ],
+      "name": "FAQs (acordeón)",
+      "settings": {
+        "has_bg": false,
+        "color_bg": "rgba(0,0,0,0)",
+        "color_heading": "#1a1c1d",
+        "color_text": "#2c2d2e",
+        "color_links": "#2c2d2e",
+        "color_border": "#dadce0",
+        "marker_color": "#fd6262",
+        "marker_before": "Tus preguntas",
+        "marker_after": ", respondidas",
+        "description": "<p>Hemos respondido las preguntas más comunes para ayudarte a entender el producto.</p>",
+        "open_first": false
+      }
+    },
+    "scrolling_text_BbLWyt": {
+      "type": "scrolling-text",
+      "blocks": {
+        "item_4rhHi9": {
+          "type": "item",
+          "settings": {
+            "image_size": "small",
+            "text": "Miles de personas en todo el país confían en nosotros",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_m9ppnM": {
+          "type": "item",
+          "settings": {
+            "image_size": "small",
+            "text": "2 años de garantia",
+            "outline_text": false,
+            "link": ""
+          }
+        },
+        "item_B3TLWA": {
+          "type": "item",
+          "settings": {
+            "image_size": "small",
+            "text": "El mejor aire purificado",
+            "outline_text": false,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_4rhHi9",
+        "item_m9ppnM",
+        "item_B3TLWA"
+      ],
+      "name": "Scrolling text",
+      "settings": {
+        "full_width": true,
+        "uppercase": false,
+        "direction": "left",
+        "speed": 10,
+        "repeats": 3,
+        "font_size": 24,
+        "use_heading_font": true,
+        "color_bg": "#ffffff",
+        "color_text": "#fd6262",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "rotation": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
     }
   },
   "order": [
@@ -424,6 +523,8 @@
     "collection_callout_WiDLTy",
     "galeria_3_imagenes_kFPkEL",
     "testimonios_clientes_toggle_3B3PCd",
-    "media_with_tabs_Pcc6Ta"
+    "media_with_tabs_Pcc6Ta",
+    "faqs_acordeon_anmJBF",
+    "scrolling_text_BbLWyt"
   ]
 }
