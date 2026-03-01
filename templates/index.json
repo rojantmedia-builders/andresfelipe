@@ -175,6 +175,95 @@
         "columnas_desktop": 3
       }
     },
+    "scrolling_images_L9UJGT": {
+      "type": "scrolling-images",
+      "blocks": {
+        "item_4VcWcq": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 600,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        },
+        "item_njUeBf": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 430,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        },
+        "item_GFFptp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 600,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        },
+        "item_7QpGAi": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 430,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        },
+        "item_6aGhGq": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 600,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        },
+        "item_HMVbxp": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
+            "link": "",
+            "caption": "Coming Soon",
+            "width": 430,
+            "ratio_percent": 100,
+            "focal_point": "50% 50%"
+          }
+        }
+      },
+      "block_order": [
+        "item_4VcWcq",
+        "item_njUeBf",
+        "item_GFFptp",
+        "item_7QpGAi",
+        "item_6aGhGq",
+        "item_HMVbxp"
+      ],
+      "name": "Carrusel de imágenes",
+      "settings": {
+        "disable_top": true,
+        "disable_bottom": true,
+        "align": "center",
+        "direction": "left",
+        "speed": 20,
+        "spacing": "small",
+        "repeats": 2
+      }
+    },
     "featured_product_83x3c3": {
       "type": "featured-product",
       "blocks": {
@@ -539,6 +628,7 @@
     "promotion_blocks_mKHhkB",
     "scrolling_text_BcEqKQ",
     "productos_destacados_P3LgNG",
+    "scrolling_images_L9UJGT",
     "featured_product_83x3c3",
     "collection_callout_WiDLTy",
     "galeria_3_imagenes_kFPkEL",
