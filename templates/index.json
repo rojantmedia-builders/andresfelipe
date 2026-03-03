@@ -509,15 +509,15 @@
         "faq_NAhEH6": {
           "type": "faq",
           "settings": {
-            "question": "Escribe tu pregunta",
-            "answer": "<p>Escribe la respuesta aquí.</p>"
+            "question": "¿Cómo funciona el purificador de aire iónico sin filtros?",
+            "answer": "<p>Nuestro purificador iónico utiliza tecnología avanzada PureIon™ para neutralizar contaminantes sin necesidad de reemplazar filtros.</p>"
           }
         },
         "faq_fUk46X": {
           "type": "faq",
           "settings": {
-            "question": "Escribe tu pregunta",
-            "answer": "<p>Escribe la respuesta aquí.</p>"
+            "question": "¿Qué tamaño de habitación cubre un purificador?",
+            "answer": "<p>Cada purificador está diseñado para cubrir espacios de hasta 250 pies cuadrados, perfecto para dormitorios, oficinas o salas de estar pequeñas.</p>"
           }
         },
         "faq_4nVMGr": {
@@ -544,7 +544,7 @@
         "marker_color": "#fd6262",
         "marker_before": "Tus preguntas",
         "marker_after": ", respondidas",
-        "description": "<p>Hemos respondido las preguntas más comunes para ayudarte a entender el producto.</p>",
+        "description": "<p>Hemos respondido las preguntas más frecuentes para ayudarle a comprender cómo el purificador iónico puede mejorar la calidad del aire y adaptarse perfectamente a su hogar.</p>",
         "open_first": false
       }
     },
