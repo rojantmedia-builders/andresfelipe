@@ -410,18 +410,18 @@
         "toggle_testimonio_qyx883": {
           "type": "toggle_testimonio",
           "settings": {
-            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
-            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
-            "etiqueta_boton": "Testimonio",
+            "imagen": "shopify://shop_images/12_3e0f7fd1-a04c-448d-9786-feca5a161313.webp",
+            "texto": "<p>Compramos dos para nuestra casa y la calidad del aire nunca ha sido mejor. ¡Ideal para quienes tienen mascotas!</p>",
+            "etiqueta_boton": "Potencia compacta",
             "abierto": false
           }
         },
         "toggle_testimonio_LNiNVx": {
           "type": "toggle_testimonio",
           "settings": {
-            "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
-            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
-            "etiqueta_boton": "Testimonio",
+            "imagen": "shopify://shop_images/66.webp",
+            "texto": "<p>Sufro de asma y este purificador me ha ayudado a respirar mucho mejor. ¡Vale cada centavo!</p>",
+            "etiqueta_boton": "Alivio del asma",
             "abierto": false
           }
         }
