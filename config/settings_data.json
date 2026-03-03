@@ -95,7 +95,7 @@
             "settings": {
               "show_footer_title": true,
               "menu": "footer",
-              "container_width": 20
+              "container_width": 30
             }
           },
           "1494292485313": {
@@ -103,16 +103,16 @@
             "settings": {
               "show_footer_title": true,
               "menu": "main-menu",
-              "container_width": 20
+              "container_width": 30
             }
           },
           "1494292487693": {
             "type": "newsletter",
             "settings": {
               "show_footer_title": true,
-              "title": "Sign up and save",
-              "richtext": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
-              "container_width": 33
+              "title": "Regístrate y ahorra",
+              "richtext": "<p>Suscríbete para recibir ofertas especiales, obsequios gratuitos y ofertas únicas en la vida.</p>",
+              "container_width": 40
             }
           },
           "1494292481350": {
