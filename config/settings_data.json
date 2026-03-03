@@ -118,6 +118,7 @@
           "1494292481350": {
             "type": "logo_social",
             "settings": {
+              "logo": "shopify://shop_images/byrdie-w_1.png",
               "desktop_logo_height": 50,
               "container_width": 20
             }
