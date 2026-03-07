@@ -393,7 +393,7 @@
           "type": "toggle_testimonio",
           "settings": {
             "imagen": "shopify://shop_images/44_c7ced2ea-ec4f-488a-baa2-02a0c55b6f1a.webp",
-            "texto": "<p>Escribe aquí el testimonio del cliente.</p>",
+            "texto": "<p>Noté un aire más limpio en cuestión de horas. ¡El Ionic es silencioso, eficiente y súper fácil de mantener!</p>",
             "etiqueta_boton": "Testimonio",
             "abierto": false
           }
