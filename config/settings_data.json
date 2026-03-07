@@ -73,7 +73,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify://shop_images/Black_and_White_Minimalist_Elegant_Modern_Typography_Creative_Studio_Brand_Logo.png",
+          "logo": "shopify://shop_images/Gemini_Generated_Image_pec0sdpec0sdpec0.png",
           "desktop_logo_width": 200,
           "mobile_logo_width": 140,
           "main_menu_link_list": "main-menu",
@@ -149,9 +149,9 @@
               "enable_image": true,
               "image": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp",
               "image_width": 650,
-              "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
-              "button_label": "Optional button",
+              "title": "Purifica el aire",
+              "text": "<p>El mejor sistema de purificación de aire para tu hogar y oficina. Tecnología avanzada que elimina alérgenos, bacterias y contaminantes. </p>",
+              "button_label": "",
               "button_link": ""
             }
           },
@@ -161,9 +161,9 @@
               "enable_image": true,
               "image": "shopify://shop_images/2__Problem_Mechanism_Explainer.webp",
               "image_width": 650,
-              "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
-              "button_label": "Optional button",
+              "title": "Sin ruidos",
+              "text": "<p>No es dañino para el ambiente no genera ruido contaminante del sonido </p>",
+              "button_label": "",
               "button_link": ""
             }
           },
@@ -173,9 +173,9 @@
               "enable_image": true,
               "image": "shopify://shop_images/Blue_bd998340-69c3-403c-9eb4-da6d09ac20b2.webp",
               "image_width": 650,
-              "title": "Site-wide promotion",
-              "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.</p>",
-              "button_label": "Optional button",
+              "title": "la mejor tecnologia",
+              "text": "<p>Equipado con la última tecnología en purificación de aire, Respira aire limpio y saludable todos los días.</p>",
+              "button_label": "",
               "button_link": ""
             }
           }
