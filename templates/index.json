@@ -30,7 +30,7 @@
       "block_order": [
         "image_M8FNee"
       ],
-      "name": "Hero (optional slideshow)",
+      "name": "Hero (presentación de diapositivas)",
       "settings": {
         "section_height": "650px",
         "mobile_height": "auto",
@@ -71,7 +71,7 @@
         "item_NDijb7"
       ],
       "custom_css": [],
-      "name": "Promotion blocks",
+      "name": "Bloques de promoción",
       "settings": {
         "columns_desktop": 3,
         "swipe_on_mobile": true,
@@ -143,7 +143,7 @@
         "item_jmYgKy",
         "item_pzCVKD"
       ],
-      "name": "Scrolling text",
+      "name": "Texto desplazable",
       "settings": {
         "full_width": true,
         "uppercase": false,
@@ -183,7 +183,7 @@
           "settings": {
             "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 600,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -194,7 +194,7 @@
           "settings": {
             "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 430,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -205,7 +205,7 @@
           "settings": {
             "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 600,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -216,7 +216,7 @@
           "settings": {
             "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 430,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -227,7 +227,7 @@
           "settings": {
             "image": "shopify://shop_images/LC_d9464c50-7a24-415c-a481-fe1a584b0106.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 600,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -238,7 +238,7 @@
           "settings": {
             "image": "shopify://shop_images/1_0937fe63-a54e-46e4-b765-8776b713fdc3.webp",
             "link": "",
-            "caption": "Coming Soon",
+            "caption": "Próximamente",
             "width": 430,
             "ratio_percent": 100,
             "focal_point": "50% 50%"
@@ -304,7 +304,7 @@
         "buy_buttons_eL3XDQ",
         "description_YxLqFf"
       ],
-      "name": "Featured product",
+      "name": "Producto destacado",
       "settings": {
         "featured_product": "purificador-de-aire-ionico-forest-green",
         "divider": true,
@@ -319,7 +319,7 @@
     },
     "collection_callout_WiDLTy": {
       "type": "collection-callout",
-      "name": "Collection callout",
+      "name": "Destacado de colección",
       "settings": {
         "collection": "purificador",
         "subtitle": "Purificación",
@@ -566,7 +566,7 @@
     },
     "call_to_action_yz63hM": {
       "type": "call-to-action",
-      "name": "Call to action",
+      "name": "Llamada a la acción",
       "settings": {
         "transparent": false,
         "disable_bottom_spacing": false,
@@ -576,8 +576,8 @@
         "button_bg": "#303c43",
         "color_accent": "#eb4f45",
         "marker_color": "#eb4f45",
-        "heading_before": "Ready to Breathe",
-        "heading_marked": "Cleaner Air?",
+        "heading_before": "¿Listo para respirar",
+        "heading_marked": "aire más limpio?",
         "heading_after": "de preuba",
         "text": "<p>No esperes para mejorar tu calidad de aire. Consigue tu purificador y empieza a disfrutar de un aire más fresco y saludable en tu hogar.</p>",
         "button_label": "Comprar ahora",
@@ -620,7 +620,7 @@
         "item_m9ppnM",
         "item_B3TLWA"
       ],
-      "name": "Scrolling text",
+      "name": "Texto desplazable",
       "settings": {
         "full_width": true,
         "uppercase": false,
