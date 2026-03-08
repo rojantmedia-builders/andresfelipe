@@ -399,7 +399,8 @@
       ],
       "custom_css": [
         ".section-gallery {max-width: 95%; margin: 0 auto;}",
-        ".rich-text h3 {font-size: 30px; font-weight: bold;}"
+        ".rich-text h3 {font-size: 30px; font-weight: bold;}",
+        ".section-gallery .gallery--item figure {position: inherit; width: auto; overflow: revert;}"
       ],
       "name": "Galería (3 imágenes)",
       "settings": {
