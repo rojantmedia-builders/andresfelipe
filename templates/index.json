@@ -398,7 +398,7 @@
         "item_zLExzE"
       ],
       "custom_css": [
-        ".section-gallery {max-width: 70%; margin: 0 auto;}",
+        ".section-gallery {max-width: 95%; margin: 0 auto;}",
         ".rich-text h3 {font-size: 30px; font-weight: bold;}"
       ],
       "name": "Galería (3 imágenes)",
