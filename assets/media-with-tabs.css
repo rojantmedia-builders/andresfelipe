@@ -126,7 +126,7 @@
       height: auto; }
     .media-with-tabs.desktop-height-auto .media-with-tabs--media--container video,
     .media-with-tabs.desktop-height-auto .media-with-tabs--media--container img {
-      height: 800px;
+      height: 648px;
         width: auto;
         object-fit: cover;
        } }
