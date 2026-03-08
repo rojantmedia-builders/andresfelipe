@@ -163,6 +163,18 @@
     },
     "productos_destacados_P3LgNG": {
       "type": "productos-destacados",
+      "blocks": {
+        "card_hr6Jpc": {
+          "type": "card",
+          "settings": {
+            "producto": "purificador-de-aire-ionico-forest-green",
+            "imagen": "shopify://shop_images/Green_b8f2adff-7cce-4542-9d10-f40ea049d88f.webp"
+          }
+        }
+      },
+      "block_order": [
+        "card_hr6Jpc"
+      ],
       "custom_css": [
         "@media only screen and (max-width: 767px) {.featured-collection.section-spacing {padding: 20px 0px !important; }}",
         ".featured-collection section-spacing h3.section-header--title {text-align: left;}",
@@ -173,10 +185,10 @@
         "titulo": "💥NUEVA GOTA💥 Cantidad limitada - ¡Colores completamente nuevos!",
         "descripcion": "<p>Nuestro purificador de aire iónico número 1 ahora está disponible en los elegantes FrostWhite y ForestGreen. Disfrute de una potente purificación de aire sin filtro, en la que confían más de 200,000 hogares, que reduce el polvo, los alérgenos y los olores, a la vez que realza su espacio. Incluye cable USB y adaptador de pared.</p>",
         "coleccion": "purificador",
+        "limite": 3,
         "mostrar_boton": true,
         "texto_boton": "Compra 💥NUEVA GOTA💥 Cantidad limitada - ¡Colores completamente nuevos! 🔥",
         "boton_con_icono": true,
-        "limite": 3,
         "columnas_desktop": 3
       }
     },
