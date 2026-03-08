@@ -512,14 +512,24 @@
             "image": "shopify://shop_images/2__Problem_Mechanism_Explainer_3a3fccb3-0b86-4ec3-b24e-f07876a30d94.webp",
             "focal_point": "50% 50%",
             "tab_title": "Marco de aluminio duradero",
-            "tab_text": "Texto descriptivo del tab."
+            "tab_text": "Fabricado con materiales de alta calidad para un uso duradero."
+          }
+        },
+        "tab_CRXJ34": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/2__Problem_Mechanism_Explainer_3a3fccb3-0b86-4ec3-b24e-f07876a30d94.webp",
+            "focal_point": "50% 50%",
+            "tab_title": "Eficiencia energética:",
+            "tab_text": "Limpia el aire manteniendo bajo el consumo de energía."
           }
         }
       },
       "block_order": [
         "tab_YLT8jM",
         "tab_4pgKhB",
-        "tab_7AfJRE"
+        "tab_7AfJRE",
+        "tab_CRXJ34"
       ],
       "custom_css": [],
       "name": "Galería con tabs",
