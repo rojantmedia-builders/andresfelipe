@@ -1,0 +1,293 @@
+{{ 'before-after-image.css' | asset_url | stylesheet_tag }}
+
+<div class="index-section section-before-after">
+  <div class="page-width">
+    <div
+      class="before-after-image {% if section.settings.layout == 'image_first' %}image-position--image_first{% else %}image-position--text_first{% endif %}"
+      style="--block-border-radius: {{ section.settings.border_radius }}px;"
+      data-before-after-section
+    >
+
+      {%- comment -%} ── IMAGE COMPARISON ── {%- endcomment -%}
+      <div
+        class="before-after-image--container"
+        id="before-after-{{ section.id }}"
+        style="
+          --percent: {{ section.settings.initial_position }}%;
+          --color-line: {{ section.settings.divider_color }};
+          --color-bg: {{ section.settings.label_bg_color }};
+          --color-body: {{ section.settings.label_text_color }};
+          --overlay-opacity: 0;
+        "
+      >
+        {%- comment -%} Bottom layer: After (clean) image {%- endcomment -%}
+        <div
+          class="before-after-image--media before-after-image--image desktop-height-image"
+          style="--image-aspect: {{ section.settings.image_ratio }};"
+        >
+          {%- if section.settings.after_image != blank -%}
+            {{
+              section.settings.after_image
+              | image_url: width: 1400
+              | image_tag: loading: 'lazy', alt: section.settings.after_image.alt
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} After label (top-left) {%- endcomment -%}
+        <div class="before-after-image--content" style="z-index:4;">
+          {%- if section.settings.after_label != blank -%}
+            <span class="before-after-image--label">{{ section.settings.after_label }}</span>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Top layer: Before (dirty) image, clipped from left {%- endcomment -%}
+        <div class="before-after-image--2">
+          <div class="before-after-image--inner">
+            {%- if section.settings.before_image != blank -%}
+              {{
+                section.settings.before_image
+                | image_url: width: 1400
+                | image_tag: loading: 'lazy', alt: section.settings.before_image.alt
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+
+          {%- comment -%} Before label (top-right, via justify-content:flex-end) {%- endcomment -%}
+          <div class="before-after-image--content" style="z-index:4;">
+            {%- if section.settings.before_label != blank -%}
+              <span class="before-after-image--label">{{ section.settings.before_label }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- comment -%} Vertical divider line + handle {%- endcomment -%}
+        <div class="before-after-image--divider">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="22" fill="{{ section.settings.divider_color }}"/>
+            <path d="M17 15L10 22L17 29M27 15L34 22L27 29" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        {%- comment -%} Invisible range input for dragging {%- endcomment -%}
+        <input
+          class="before-after-image--slider"
+          type="range"
+          min="0"
+          max="100"
+          value="{{ section.settings.initial_position }}"
+          aria-label="Before and after image slider"
+        >
+      </div>
+
+      {%- comment -%} ── TEXT CONTENT ── {%- endcomment -%}
+      <div class="before-after-image--text">
+        {%- if section.settings.badge != blank -%}
+          <div class="before-after--badge">
+            <span class="before-after--badge-dot"></span>
+            {{ section.settings.badge }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="before-after--title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class="before-after--description rte">{{ section.settings.text }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="btn{% if section.settings.button_style == 'secondary' %} btn--tertiary{% endif %}"
+          >
+            {{ section.settings.button_label }}
+          </a>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var sections = document.querySelectorAll('[data-before-after-section]');
+    sections.forEach(function(section) {
+      var container = section.querySelector('.before-after-image--container');
+      var slider    = section.querySelector('.before-after-image--slider');
+      if (!slider || !container) return;
+
+      function updatePercent(val) {
+        container.style.setProperty('--percent', val + '%');
+      }
+
+      // Init
+      updatePercent(slider.value);
+
+      // Range drag
+      slider.addEventListener('input', function() {
+        updatePercent(this.value);
+      });
+
+      // Touch support (already handled by range input, but ensure smooth feel)
+      slider.addEventListener('change', function() {
+        updatePercent(this.value);
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Before / After Image",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "after_image",
+      "label": "After image (clean / result)"
+    },
+    {
+      "type": "image_picker",
+      "id": "before_image",
+      "label": "Before image (original / problem)"
+    },
+    {
+      "type": "text",
+      "id": "after_label",
+      "label": "After label",
+      "default": "After"
+    },
+    {
+      "type": "text",
+      "id": "before_label",
+      "label": "Before label",
+      "default": "Before"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image aspect ratio",
+      "default": "4/3",
+      "options": [
+        { "value": "1/1",  "label": "Square (1:1)" },
+        { "value": "4/3",  "label": "Landscape (4:3)" },
+        { "value": "16/9", "label": "Wide (16:9)" },
+        { "value": "3/4",  "label": "Portrait (3:4)" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "initial_position",
+      "label": "Initial slider position",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "default": 50,
+      "unit": "%"
+    },
+    {
+      "type": "header",
+      "content": "Text content"
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge text",
+      "default": "Real Results"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "See the Difference"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "default": "<p>Experience the transformation. Our product removes dust, allergens, and pollutants, leaving your air visibly cleaner and fresher.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "primary",
+      "options": [
+        { "value": "primary",   "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image position",
+      "default": "text_first",
+      "options": [
+        { "value": "text_first",  "label": "Image left, text right" },
+        { "value": "image_first", "label": "Image right, text left" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Corner radius",
+      "min": 0,
+      "max": 32,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Divider & labels style"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider & handle color",
+      "default": "#4A90D9"
+    },
+    {
+      "type": "color",
+      "id": "label_bg_color",
+      "label": "Label background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "label_text_color",
+      "label": "Label text color",
+      "default": "#1a1a1a"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Before / After Image"
+    }
+  ]
+}
+{% endschema %}

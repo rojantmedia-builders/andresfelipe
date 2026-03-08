@@ -1,0 +1,27 @@
+/* Before After Image Section */
+.before-after-image--container{isolation:isolate;border-radius:var(--block-border-radius, 16px)}.before-after-image{display:flex;gap:30px;flex-direction:column}@media only screen and (min-width:1068px){.before-after-image{gap:60px}}@media only screen and (min-width:1068px){.before-after-image.image-position--image_first{flex-direction:row-reverse;align-items:center}}@media only screen and (min-width:1068px){.before-after-image.image-position--text_first{flex-direction:row;align-items:center}}.before-after-image--text{width:100%}.before-after-image--text>*:last-child,.before-after-image--text .rte>*:last-child{margin-bottom:0}.before-after-image--container{width:100%;display:block;position:relative;overflow:hidden}.before-after-image--media{display:block;position:relative;overflow:hidden}.before-after-image--media:after{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;pointer-events:none;background:rgba(var(--color-overlay-rgb),var(--overlay-opacity))}.before-after-image--image .thb-placeholder,.before-after-image--image img{position:absolute;top:0;left:0;width:100%;height:100%}.before-after-image--image .thb-placeholder svg,.before-after-image--image img svg{object-fit:contain}.before-after-image--image img{object-fit:cover}@media only screen and (max-width:767px){.before-after-image--image.mobile-height-image{aspect-ratio:var(--image-aspect);min-height:unset}}@media only screen and (min-width:768px){.before-after-image--image.desktop-height-image{aspect-ratio:var(--image-aspect);min-height:unset}}.before-after-image--2{clip-path:inset(0px 0px 0px var(--percent));position:absolute;z-index:3;top:0;left:0;width:100%;height:100%;overflow:hidden}.before-after-image--2 .before-after-image--content{justify-content:flex-end}.before-after-image--content{position:absolute;z-index:2;top:0;left:0;width:100%;height:100%;display:flex;padding:20px;align-items:flex-start}.before-after-image--content-center{align-items:center}.before-after-image--content-bottom{align-items:flex-end}.before-after-image--label{background:var(--color-bg);color:var(--color-body);border-radius:calc(var(--block-border-radius, 16px) / 2);padding:8px 14px;font-size:.9375rem;line-height:1}.before-after-image--label-medium{font-size:1.0625rem}.before-after-image--label-large{font-size:1.25rem}.before-after-image--slider{position:absolute;top:50%;width:100%;left:0;z-index:40;transform:translateY(-50%);opacity:0;height:54px;cursor:pointer}.before-after-image--divider{position:absolute;top:0;bottom:0;z-index:10;width:2px;left:calc(var(--percent) - 1px);background:var(--color-line, #4A90D9);box-shadow:0 4px 4px #00000040}.before-after-image--divider svg{position:absolute;top:50%;left:50%;z-index:11;transform:translate3d(-50%,-50%,0);z-index:20;border-radius:20px;box-shadow:0 1px 6px #0000001a;cursor:pointer}.before-after-image--mobile{display:block}@media only screen and (min-width:768px){.before-after-image--mobile{display:none}}.before-after-image--desktop{display:none}@media only screen and (min-width:768px){.before-after-image--desktop{display:block}}
+
+/* Inner image fill for --2 layer */
+.before-after-image--2 .before-after-image--inner{position:absolute;top:0;left:0;width:100%;height:100%}
+.before-after-image--2 .before-after-image--inner img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+
+/* Badge */
+.before-after--badge{display:inline-flex;align-items:center;gap:8px;background-color:#e8473f;color:#fff;border-radius:50px;padding:8px 16px;font-size:.875rem;font-weight:600;margin-bottom:16px}
+.before-after--badge-dot{width:8px;height:8px;border-radius:50%;background:#fff;flex-shrink:0}
+
+/* Title */
+.before-after--title{font-size:2.25rem;font-weight:700;line-height:1.15;margin:0 0 16px;color:var(--color-text, #1a1a1a)}
+@media only screen and (max-width:767px){.before-after--title{font-size:1.625rem}}
+
+/* Description */
+.before-after--description{font-size:1rem;line-height:1.6;color:var(--color-text-secondary, #555);margin:0 0 24px}
+
+/* Section padding */
+.section-before-after{padding:60px 0}
+@media only screen and (max-width:767px){.section-before-after{padding:40px 0}}
+
+/* Equal width columns on desktop */
+@media only screen and (min-width:1068px){
+  .before-after-image .before-after-image--container,
+  .before-after-image .before-after-image--text{flex:1 1 0;min-width:0}
+}
