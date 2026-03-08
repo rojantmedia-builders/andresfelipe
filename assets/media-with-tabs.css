@@ -126,6 +126,9 @@
       height: auto; }
     .media-with-tabs.desktop-height-auto .media-with-tabs--media--container video,
     .media-with-tabs.desktop-height-auto .media-with-tabs--media--container img {
-      height: auto; } }
+      height: 800px;
+        width: auto;
+        object-fit: cover;
+       } }
   .media-with-tabs.desktop-height-auto .flickity-viewport {
     min-height: 100%; }
