@@ -2,9 +2,10 @@
 {{ 'product-grid.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
-  assign coleccion      = collections[section.settings.coleccion]
-  assign columnas       = section.settings.columnas_desktop
-  assign usar_bloques   = false
+  assign coleccion        = collections[section.settings.coleccion]
+  assign columnas         = section.settings.columnas_desktop
+  assign columnas_mobile  = section.settings.columnas_mobile
+  assign usar_bloques     = false
 
   if section.blocks.size > 0
     assign usar_bloques = true
@@ -18,7 +19,7 @@
   endunless
 -%}
 
-<div class="featured-collection section-spacing" style="--fc-columns: {{ columnas }};">
+<div class="featured-collection section-spacing" style="--fc-columns: {{ columnas }}; --fc-columns-mobile: {{ columnas_mobile }};">
   <div class="row">
     <div class="small-12 columns">
 
@@ -170,6 +171,15 @@
       "type": "range",
       "id": "columnas_desktop",
       "label": "Columnas (desktop)",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columnas_mobile",
+      "label": "Columnas (mobile)",
       "min": 2,
       "max": 4,
       "step": 1,
