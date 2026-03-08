@@ -560,6 +560,27 @@
         "text": "<p>Diseñado con tecnología de vanguardia, el purificador de aire iónico ofrece funciones potentes para un aire más limpio y saludable todos los días.</p>"
       }
     },
+    "before_after_image_HLhGAm": {
+      "type": "before-after-image",
+      "name": "Before / After Image",
+      "settings": {
+        "after_label": "After",
+        "before_label": "Before",
+        "image_ratio": "4/3",
+        "initial_position": 50,
+        "badge": "Real Results",
+        "title": "See the Difference",
+        "text": "<p>Experience the transformation. Our product removes dust, allergens, and pollutants, leaving your air visibly cleaner and fresher.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "layout": "text_first",
+        "border_radius": 16,
+        "divider_color": "#4A90D9",
+        "label_bg_color": "#ffffff",
+        "label_text_color": "#1a1a1a"
+      }
+    },
     "faqs_acordeon_anmJBF": {
       "type": "faqs-acordeon",
       "blocks": {
@@ -707,6 +728,7 @@
     "galeria_3_imagenes_kFPkEL",
     "testimonios_clientes_toggle_3B3PCd",
     "media_with_tabs_Pcc6Ta",
+    "before_after_image_HLhGAm",
     "faqs_acordeon_anmJBF",
     "call_to_action_yz63hM",
     "scrolling_text_BbLWyt"
