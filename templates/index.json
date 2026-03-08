@@ -358,6 +358,7 @@
       "type": "collection-callout",
       "name": "Destacado de colección",
       "settings": {
+        "image_1": "shopify://shop_images/Sin_filtros_33.png",
         "image_2": "shopify://shop_images/500x500_2.webp",
         "image_3": "shopify://shop_images/500x500_1.webp",
         "image_ratio": "portrait",
