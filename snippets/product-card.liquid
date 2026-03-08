@@ -1,0 +1,83 @@
+{%- liquid
+  comment
+    Parámetros aceptados:
+      - product                  {product}  Requerido. Objeto de producto Shopify.
+      - imagen_custom            {image}    Opcional. Sobreescribe la imagen principal del producto.
+      - imagen_secundaria_custom {image}    Opcional. Sobreescribe la imagen de hover del producto.
+  endcomment
+
+  assign img_principal  = product.featured_media.preview_image
+  assign img_secundaria = blank
+
+  if imagen_custom != blank
+    assign img_principal = imagen_custom
+  endif
+
+  if imagen_secundaria_custom != blank
+    assign img_secundaria = imagen_secundaria_custom
+  elsif product.images.size > 1 and imagen_custom == blank
+    assign img_secundaria = product.images[1]
+  endif
+
+  assign padding = 100
+  if img_principal and img_principal.aspect_ratio
+    assign padding = 100 | divided_by: img_principal.aspect_ratio
+  endif
+-%}
+
+<product-card class="product-card text-left product-card--content-spacing-false product-card--border-false has-shadow--false">
+  <figure class="product-featured-image thb-hover">
+    <span class="product-card--badges top left"></span>
+
+    <a
+      href="{{ product.url }}"
+      title="{{ product.title | escape }}"
+      class="product-featured-image-link aspect-ratio aspect-ratio--adapt"
+      style="--padding-bottom: {{ padding }}%;"
+    >
+      {%- if img_secundaria != blank -%}
+        <img
+          class="product-secondary-image"
+          src="{{ img_secundaria | image_url: width: 596 }}"
+          srcset="{{ img_secundaria | image_url: width: 298 }} 298w, {{ img_secundaria | image_url: width: 596 }} 596w"
+          sizes="(min-width: 768px) 33vw, 50vw"
+          width="{{ img_secundaria.width }}"
+          height="{{ img_secundaria.height }}"
+          loading="lazy"
+          alt="{{ product.title | escape }}">
+      {%- endif -%}
+
+      {%- if img_principal != blank -%}
+        <img
+          class="product-primary-image"
+          src="{{ img_principal | image_url: width: 596 }}"
+          srcset="{{ img_principal | image_url: width: 298 }} 298w, {{ img_principal | image_url: width: 596 }} 596w"
+          sizes="(min-width: 768px) 33vw, 50vw"
+          width="{{ img_principal.width }}"
+          height="{{ img_principal.height }}"
+          loading="lazy"
+          alt="{{ product.title | escape }}"
+          style="object-position: 50% 50%;">
+      {%- endif -%}
+    </a>
+  </figure>
+
+  <div class="product-card-info">
+    <span class="price">
+      <ins>
+        <span class="amount">
+          {%- if product.price_varies -%}
+            <span class="from">Desde</span>
+          {%- endif -%}
+          <span class="money">{{ product.price_min | money }}</span>
+        </span>
+      </ins>
+    </span>
+
+    <a href="{{ product.url }}" title="{{ product.title | escape }}" class="product-card-title">
+      {{- product.title -}}
+    </a>
+
+    <div id="inventory-{{ product.selected_or_first_available_variant.id }}" class="product-inventory-notice--wrapper"></div>
+  </div>
+</product-card>
