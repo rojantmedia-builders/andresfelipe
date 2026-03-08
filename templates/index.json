@@ -382,13 +382,13 @@
         "item_xP8UUP": {
           "type": "item",
           "settings": {
-            "imagen": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp"
+            "imagen": "shopify://shop_images/Sin_filtros_30.png"
           }
         },
         "item_zLExzE": {
           "type": "item",
           "settings": {
-            "imagen": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp"
+            "imagen": "shopify://shop_images/Sin_filtros_31.png"
           }
         }
       },
@@ -578,7 +578,7 @@
         "button_style": "primary",
         "layout": "text_first",
         "border_radius": 16,
-        "divider_color": "#4A90D9",
+        "divider_color": "#4a90d9",
         "label_bg_color": "#ffffff",
         "label_text_color": "#1a1a1a"
       }
