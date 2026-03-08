@@ -502,7 +502,7 @@
           "settings": {
             "image": "shopify://shop_images/2__Problem_Mechanism_Explainer.webp",
             "focal_point": "50% 50%",
-            "tab_title": "Diseño sin filtro",
+            "tab_title": "Diseño sin filtro:",
             "tab_text": "No es necesario reemplazar filtros, lo que le ahorra tiempo y dinero."
           }
         },
