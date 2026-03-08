@@ -523,13 +523,23 @@
             "tab_title": "Eficiencia energética:",
             "tab_text": "Limpia el aire manteniendo bajo el consumo de energía."
           }
+        },
+        "tab_GHPqHH": {
+          "type": "tab",
+          "settings": {
+            "image": "shopify://shop_images/2__Problem_Mechanism_Explainer_3a3fccb3-0b86-4ec3-b24e-f07876a30d94.webp",
+            "focal_point": "50% 50%",
+            "tab_title": "Sin complicaciones",
+            "tab_text": "Disfrute de un funcionamiento sin complicaciones sin necesidad de costosos reemplazos de filtros."
+          }
         }
       },
       "block_order": [
         "tab_YLT8jM",
         "tab_4pgKhB",
         "tab_7AfJRE",
-        "tab_CRXJ34"
+        "tab_CRXJ34",
+        "tab_GHPqHH"
       ],
       "custom_css": [],
       "name": "Galería con tabs",
