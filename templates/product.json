@@ -423,6 +423,7 @@
           "type": "icon",
           "settings": {
             "label": "Mascotas",
+            "image": "shopify://shop_images/Pets-min.avif",
             "icon_svg": ""
           }
         },
