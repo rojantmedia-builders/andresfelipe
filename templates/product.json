@@ -62,7 +62,8 @@
           "settings": {
             "text": "EXCLUSIVE ONLY 130 UNITS",
             "text_color": "#1a1a1a",
-            "font_size": 18
+            "font_size": 18,
+            "text_align": "center"
           }
         },
         "variant_picker": {
