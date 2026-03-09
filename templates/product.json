@@ -148,7 +148,7 @@
       "name": "Ionic – Title Banner",
       "settings": {
         "title": "YOUR NEW IONIC AIR PURIFIER WILL:",
-        "bg_color": "#f2f2f2",
+        "bg_color": "#fafafa",
         "text_color": "#1a1a1a",
         "font_size": 44,
         "padding_top": 64,
