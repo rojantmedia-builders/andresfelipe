@@ -224,22 +224,35 @@
       "blocks": {
         "bullet_kBgmhj": {
           "type": "bullet",
-          "settings": { "item": "100% Sin riesgo" }
+          "settings": {
+            "item": "100% Sin riesgo"
+          }
         },
         "bullet_VhanQE": {
           "type": "bullet",
-          "settings": { "item": "Garantía de devolución de dinero" }
+          "settings": {
+            "item": "Garantía de devolución de dinero"
+          }
         },
         "bullet_NqJ96V": {
           "type": "bullet",
-          "settings": { "item": "Garantía del fabricante por 2 años" }
+          "settings": {
+            "item": "Garantía del fabricante por 2 años"
+          }
         },
         "bullet_bwpJHL": {
           "type": "bullet",
-          "settings": { "item": "Recomendado para alergias" }
+          "settings": {
+            "item": "Recomendado para alergias"
+          }
         }
       },
-      "block_order": ["bullet_kBgmhj","bullet_VhanQE","bullet_NqJ96V","bullet_bwpJHL"],
+      "block_order": [
+        "bullet_kBgmhj",
+        "bullet_VhanQE",
+        "bullet_NqJ96V",
+        "bullet_bwpJHL"
+      ],
       "name": "Ionic – Guarantee",
       "settings": {
         "heading": "RESPIRARÁS MEJOR, Y LO GARANTIZAMOS",
@@ -271,12 +284,35 @@
     "ionic_one_column_MxWpLD": {
       "type": "ionic-one-column",
       "blocks": {
-        "stat_a1": { "type": "stat", "settings": { "number": "200.000+", "label": "Clientes satisfechos" } },
-        "stat_a2": { "type": "stat", "settings": { "number": "99%", "label": "Tasa de satisfacción" } },
-        "stat_a3": { "type": "stat", "settings": { "number": "2 años", "label": "Garantía del fabricante" } }
+        "stat_a1": {
+          "type": "stat",
+          "settings": {
+            "number": "200.000+",
+            "label": "Clientes satisfechos"
+          }
+        },
+        "stat_a2": {
+          "type": "stat",
+          "settings": {
+            "number": "99%",
+            "label": "Tasa de satisfacción"
+          }
+        },
+        "stat_a3": {
+          "type": "stat",
+          "settings": {
+            "number": "2 años",
+            "label": "Garantía del fabricante"
+          }
+        }
       },
-      "block_order": ["stat_a1","stat_a2","stat_a3"],
+      "block_order": [
+        "stat_a1",
+        "stat_a2",
+        "stat_a3"
+      ],
       "settings": {
+        "eyebrow": "",
         "heading": "EL PURIFICADOR DE AIRE #1 EN AMÉRICA",
         "uppercase_heading": true,
         "body": "<p>Únete a miles de familias que ya respiran un aire más limpio y saludable en su hogar.</p>",
@@ -297,7 +333,8 @@
         "option_b1": {
           "type": "option",
           "settings": {
-            "title": "1 Unidad – Purificador Iónico"
+            "title": "1 Unidad – Purificador Iónico",
+            "badge": ""
           }
         },
         "option_b2": {
@@ -315,8 +352,13 @@
           }
         }
       },
-      "block_order": ["option_b1","option_b2","option_b3"],
+      "block_order": [
+        "option_b1",
+        "option_b2",
+        "option_b3"
+      ],
       "settings": {
+        "product": "",
         "heading": "ELIGE TU PAQUETE",
         "btn_label": "AGREGAR AL CARRITO",
         "guarantee_text": "🔒 Pago seguro · Garantía de devolución de dinero · Envío rápido",
@@ -352,16 +394,73 @@
     "ionic_why_ionic_BpKqRs": {
       "type": "ionic-why-ionic",
       "blocks": {
-        "icon_w1": { "type": "icon", "settings": { "label": "Alergias" } },
-        "icon_w2": { "type": "icon", "settings": { "label": "Polvo" } },
-        "icon_w3": { "type": "icon", "settings": { "label": "Asma" } },
-        "icon_w4": { "type": "icon", "settings": { "label": "Mascotas" } },
-        "icon_w5": { "type": "icon", "settings": { "label": "Humo" } },
-        "icon_w6": { "type": "icon", "settings": { "label": "Bebés" } },
-        "icon_w7": { "type": "icon", "settings": { "label": "Moho" } },
-        "icon_w8": { "type": "icon", "settings": { "label": "Olores" } }
+        "icon_w1": {
+          "type": "icon",
+          "settings": {
+            "label": "Alergias",
+            "icon_svg": ""
+          }
+        },
+        "icon_w2": {
+          "type": "icon",
+          "settings": {
+            "label": "Polvo",
+            "icon_svg": ""
+          }
+        },
+        "icon_w3": {
+          "type": "icon",
+          "settings": {
+            "label": "Asma",
+            "icon_svg": ""
+          }
+        },
+        "icon_w4": {
+          "type": "icon",
+          "settings": {
+            "label": "Mascotas",
+            "icon_svg": ""
+          }
+        },
+        "icon_w5": {
+          "type": "icon",
+          "settings": {
+            "label": "Humo",
+            "icon_svg": ""
+          }
+        },
+        "icon_w6": {
+          "type": "icon",
+          "settings": {
+            "label": "Bebés",
+            "icon_svg": ""
+          }
+        },
+        "icon_w7": {
+          "type": "icon",
+          "settings": {
+            "label": "Moho",
+            "icon_svg": ""
+          }
+        },
+        "icon_w8": {
+          "type": "icon",
+          "settings": {
+            "label": "Olores",
+            "icon_svg": ""
+          }
+        }
       },
-      "block_order": ["icon_w1","icon_w2","icon_w3","icon_w4","icon_w5","icon_w6","icon_w7","icon_w8"],
+      "block_order": [
+        "icon_w1",
+        "icon_w2",
+        "icon_w3",
+        "icon_w4",
+        "icon_w5",
+        "icon_w6",
+        "icon_w7",
+        "icon_w8"
+      ],
       "settings": {
         "heading": "¿Por qué la Tecnología Iónica?",
         "body": "<ul><li>El mejor purificador de aire para alergias y mascotas.</li><li>Captura el 99,97% del polvo y alérgenos tan pequeños como 0,3 micrones.</li><li>Elimina partículas como contaminantes, caspa de mascotas, pollen, ácaros del polvo, esporas de moho, olores y polvo del hogar.</li><li>El aire más fresco gracias a la mejor tecnología de purificación del mundo.</li></ul>",
@@ -377,6 +476,7 @@
     },
     "text-and-image": {
       "type": "text-and-image",
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/download-2.webp",
         "image2": "shopify://shop_images/Coverage-Area.webp",
@@ -394,8 +494,9 @@
     },
     "ionic_html_block_924_TqLpWz": {
       "type": "ionic-html-block",
+      "disabled": true,
       "settings": {
-        "html_content": "<p class='ionic-html-block__media-title'>Como se vio en</p><div class='ionic-html-block__media-logos'><span style='font-weight:900;font-size:1.2rem;letter-spacing:-0.02em;'>Forbes</span><span style='font-weight:900;font-size:1.2rem;'>CNN</span><span style='font-weight:900;font-size:1rem;'>NBC News</span><span style='font-weight:900;font-size:1rem;'>USA Today</span></div>",
+        "html_content": "<p class=\"ionic-html-block__media-title\">Como se vio en</p><div class=\"ionic-html-block__media-logos\">\n<span style=\"font-weight:900;font-size:1.2rem;letter-spacing:-0.02em;\">Forbes</span><span style=\"font-weight:900;font-size:1.2rem;\">CNN</span><span style=\"font-weight:900;font-size:1rem;\">NBC News</span><span style=\"font-weight:900;font-size:1rem;\">USA Today</span>\n</div>",
         "bg_color": "#ffffff",
         "content_max_width": 960,
         "padding_top": 48,
@@ -427,9 +528,15 @@
           }
         }
       },
-      "block_order": ["step_c1","step_c2","step_c3"],
+      "block_order": [
+        "step_c1",
+        "step_c2",
+        "step_c3"
+      ],
       "settings": {
         "layout": "image_right",
+        "img_radius": 12,
+        "eyebrow": "",
         "heading": "CÓMO FUNCIONA EN 3 PASOS",
         "uppercase": true,
         "body": "<p>El purificador iónico trabaja de forma silenciosa y eficiente para mantenerte saludable.</p>",
@@ -439,7 +546,6 @@
         "heading_size": 40,
         "body_size": 16,
         "gap": 60,
-        "img_radius": 12,
         "padding_top": 72,
         "padding_bottom": 72
       }
@@ -447,7 +553,7 @@
     "ionic_html_block_926_BnVpLk": {
       "type": "ionic-html-block",
       "settings": {
-        "html_content": "<h2 style='text-align:center;font-weight:900;font-size:2rem;text-transform:uppercase;margin:0 0 32px;'>COMPARACIÓN DE PURIFICADORES</h2><table><thead><tr><th>Característica</th><th>Purificador Iónico</th><th>Purificador HEPA</th></tr></thead><tbody><tr><td>Filtros de reemplazo</td><td>No necesita</td><td>Cada 6-12 meses</td></tr><tr><td>Nivel de ruido</td><td>Completamente silencioso</td><td>Ruidoso (ventilador)</td></tr><tr><td>Consumo de energía</td><td>Menos de 5W</td><td>30-200W</td></tr><tr><td>Mantenimiento</td><td>Limpieza con paño seco</td><td>Cambio de filtros costosos</td></tr><tr><td>Garantía</td><td>2 años</td><td>1 año</td></tr></tbody></table>",
+        "html_content": "<h2 style=\"text-align:center;font-weight:900;font-size:2rem;text-transform:uppercase;margin:0 0 32px;\">COMPARACIÓN DE PURIFICADORES</h2><table>\n<thead><tr>\n<th>Característica</th>\n<th>Purificador Iónico</th>\n<th>Purificador HEPA</th>\n</tr></thead>\n<tbody>\n<tr>\n<td>Filtros de reemplazo</td>\n<td>No necesita</td>\n<td>Cada 6-12 meses</td>\n</tr>\n<tr>\n<td>Nivel de ruido</td>\n<td>Completamente silencioso</td>\n<td>Ruidoso (ventilador)</td>\n</tr>\n<tr>\n<td>Consumo de energía</td>\n<td>Menos de 5W</td>\n<td>30-200W</td>\n</tr>\n<tr>\n<td>Mantenimiento</td>\n<td>Limpieza con paño seco</td>\n<td>Cambio de filtros costosos</td>\n</tr>\n<tr>\n<td>Garantía</td>\n<td>2 años</td>\n<td>1 año</td>\n</tr>\n</tbody>\n</table>",
         "bg_color": "#ffffff",
         "content_max_width": 1000,
         "padding_top": 72,
@@ -457,12 +563,37 @@
     "ionic_hero_carousel_DpWnMx": {
       "type": "ionic-hero-carousel",
       "blocks": {
-        "slide_d1": { "type": "slide", "settings": { "label": "Vista frontal" } },
-        "slide_d2": { "type": "slide", "settings": { "label": "En uso" } },
-        "slide_d3": { "type": "slide", "settings": { "label": "Cobertura 360°" } },
-        "slide_d4": { "type": "slide", "settings": { "label": "Tamaño compacto" } }
+        "slide_d1": {
+          "type": "slide",
+          "settings": {
+            "label": "Vista frontal"
+          }
+        },
+        "slide_d2": {
+          "type": "slide",
+          "settings": {
+            "label": "En uso"
+          }
+        },
+        "slide_d3": {
+          "type": "slide",
+          "settings": {
+            "label": "Cobertura 360°"
+          }
+        },
+        "slide_d4": {
+          "type": "slide",
+          "settings": {
+            "label": "Tamaño compacto"
+          }
+        }
       },
-      "block_order": ["slide_d1","slide_d2","slide_d3","slide_d4"],
+      "block_order": [
+        "slide_d1",
+        "slide_d2",
+        "slide_d3",
+        "slide_d4"
+      ],
       "settings": {
         "heading": "MÍRALO EN ACCIÓN",
         "bg_color": "#ffffff",
@@ -478,14 +609,63 @@
     "ionic_benefit_cards_EpRkNq": {
       "type": "ionic-benefit-cards",
       "blocks": {
-        "card_e1": { "type": "card", "settings": { "title": "Sin filtros que cambiar", "body": "A diferencia de los purificadores HEPA, el Iónico no necesita filtros de reemplazo costosos." } },
-        "card_e2": { "type": "card", "settings": { "title": "Ultra silencioso", "body": "Funciona en silencio absoluto para que puedas dormir, trabajar y relajarte sin interrupciones." } },
-        "card_e3": { "type": "card", "settings": { "title": "Diseño compacto", "body": "Su tamaño reducido le permite encajar perfectamente en cualquier habitación, oficina o auto." } },
-        "card_e4": { "type": "card", "settings": { "title": "Bajo consumo", "body": "Consume menos de 5 vatios de energía, siendo amigable con el medioambiente y tu factura." } },
-        "card_e5": { "type": "card", "settings": { "title": "Cobertura amplia", "body": "Purifica el aire en espacios de hasta 500 pies cuadrados de manera efectiva." } },
-        "card_e6": { "type": "card", "settings": { "title": "Fácil de mantener", "body": "Solo limpia el colector de polvo con un paño seco cada pocas semanas." } }
+        "card_e1": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Sin filtros que cambiar",
+            "body": "A diferencia de los purificadores HEPA, el Iónico no necesita filtros de reemplazo costosos."
+          }
+        },
+        "card_e2": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Ultra silencioso",
+            "body": "Funciona en silencio absoluto para que puedas dormir, trabajar y relajarte sin interrupciones."
+          }
+        },
+        "card_e3": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Diseño compacto",
+            "body": "Su tamaño reducido le permite encajar perfectamente en cualquier habitación, oficina o auto."
+          }
+        },
+        "card_e4": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Bajo consumo",
+            "body": "Consume menos de 5 vatios de energía, siendo amigable con el medioambiente y tu factura."
+          }
+        },
+        "card_e5": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Cobertura amplia",
+            "body": "Purifica el aire en espacios de hasta 500 pies cuadrados de manera efectiva."
+          }
+        },
+        "card_e6": {
+          "type": "card",
+          "settings": {
+            "icon_svg": "",
+            "title": "Fácil de mantener",
+            "body": "Solo limpia el colector de polvo con un paño seco cada pocas semanas."
+          }
+        }
       },
-      "block_order": ["card_e1","card_e2","card_e3","card_e4","card_e5","card_e6"],
+      "block_order": [
+        "card_e1",
+        "card_e2",
+        "card_e3",
+        "card_e4",
+        "card_e5",
+        "card_e6"
+      ],
       "settings": {
         "heading": "¿POR QUÉ ELEGIR EL IÓNICO?",
         "subheading": "Tecnología probada para un aire más limpio cada día.",
@@ -511,28 +691,28 @@
           "type": "feature",
           "settings": {
             "label": "Ahorra en paquete",
-            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z'/></svg>"
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z\"></path></svg>"
           }
         },
         "feat_f2": {
           "type": "feature",
           "settings": {
             "label": "Protección todo el año",
-            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z'/></svg>"
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z\"></path></svg>"
           }
         },
         "feat_f3": {
           "type": "feature",
           "settings": {
             "label": "Envío gratis",
-            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>"
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z\"></path></svg>"
           }
         },
         "feat_f4": {
           "type": "feature",
           "settings": {
             "label": "Soporte 7 días a la semana",
-            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z'/></svg>"
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewbox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z\"></path></svg>"
           }
         },
         "q1": {
@@ -571,7 +751,17 @@
           }
         }
       },
-      "block_order": ["feat_f1","feat_f2","feat_f3","feat_f4","q1","q2","q3","q4","q5"],
+      "block_order": [
+        "feat_f1",
+        "feat_f2",
+        "feat_f3",
+        "feat_f4",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
       "settings": {
         "heading": "Preguntas Frecuentes",
         "first_open": true,
@@ -688,7 +878,6 @@
     },
     "rich_text_ijhMnJ": {
       "type": "rich-text",
-      "disabled": true,
       "blocks": {
         "text_XgHbNt": {
           "type": "text",
@@ -698,7 +887,10 @@
           }
         }
       },
-      "block_order": ["text_XgHbNt"],
+      "block_order": [
+        "text_XgHbNt"
+      ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "align_text": "center",
@@ -719,7 +911,9 @@
           }
         }
       },
-      "block_order": ["judge_me_reviews_review_widget_CdbRNA"],
+      "block_order": [
+        "judge_me_reviews_review_widget_CdbRNA"
+      ],
       "settings": {
         "full_width": false,
         "space_around": true
