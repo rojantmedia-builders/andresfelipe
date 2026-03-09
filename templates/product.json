@@ -66,12 +66,16 @@
             "text_align": "center"
           }
         },
-        "variant_picker": {
-          "type": "variant_picker",
+        "variant_cards_ji3pGW": {
+          "type": "variant_cards",
           "settings": {
-            "variant_labels": true,
-            "picker_type": "button",
-            "color_swatches": false
+            "label": "",
+            "selected_color": "#1a7a4a",
+            "sale_color": "#1a7a4a",
+            "badge_position": 0,
+            "badge_text": "MOSTPOPULAR",
+            "badge_color": "#1a7a4a",
+            "badge_text_color": "#ffffff"
           }
         },
         "buy_buttons": {
@@ -114,7 +118,7 @@
         "inventory_status",
         "description",
         "urgency_text_AaRtCq",
-        "variant_picker",
+        "variant_cards_ji3pGW",
         "buy_buttons",
         "tab",
         "contact",
@@ -128,6 +132,68 @@
         "thumbnail_arrows": true,
         "enable_video_looping": true,
         "product_video_style": "muted"
+      }
+    },
+    "ionic_title_banner_PTN8HA": {
+      "type": "ionic-title-banner",
+      "name": "Ionic – Title Banner",
+      "settings": {
+        "title": "YOUR NEW IONIC AIR PURIFIER WILL:",
+        "bg_color": "#fafafa",
+        "text_color": "#1a1a1a",
+        "font_size": 44,
+        "padding_top": 64,
+        "padding_bottom": 20
+      }
+    },
+    "ionic_four_features_QWeaME": {
+      "type": "ionic-four-features",
+      "blocks": {
+        "feature_jQkXyK": {
+          "type": "feature",
+          "settings": {
+            "icon": "allergies",
+            "title": "Relieve Allergies",
+            "description": "Say goodbye to the itchy eyes, runny nose, and non-stop sneezing you suffer through every hayfever season."
+          }
+        },
+        "feature_GAJrhb": {
+          "type": "feature",
+          "settings": {
+            "icon": "smoke",
+            "title": "Protect Against Smoke",
+            "description": "Prevent breathing in tobacco and cigarette smoke that can result in the development of chronic diseases."
+          }
+        },
+        "feature_JTkKhy": {
+          "type": "feature",
+          "settings": {
+            "icon": "virus",
+            "title": "Remove Viruses & Bacteria",
+            "description": "Eliminate viruses and bacteria in the air, preventing airborne infections and safeguarding your health."
+          }
+        },
+        "feature_wJebNz": {
+          "type": "feature",
+          "settings": {
+            "icon": "lungs",
+            "title": "Destroy Pollutants",
+            "description": "Dust, cooking smoke, and plastic fumes, among other pollutants, can all trigger negative reactions in the human body. The Ionic will take care of that."
+          }
+        }
+      },
+      "block_order": [
+        "feature_jQkXyK",
+        "feature_GAJrhb",
+        "feature_JTkKhy",
+        "feature_wJebNz"
+      ],
+      "name": "Ionic – Four Features",
+      "settings": {
+        "bg_color": "#fafafa",
+        "text_color": "#1a1a1a",
+        "padding_top": 20,
+        "padding_bottom": 64
       }
     },
     "sub": {
@@ -290,6 +356,8 @@
   },
   "order": [
     "main",
+    "ionic_title_banner_PTN8HA",
+    "ionic_four_features_QWeaME",
     "sub",
     "background-image-text",
     "text-and-image",
