@@ -154,6 +154,96 @@
         "limit": 1
       },
       {
+        "type": "safe_checkout",
+        "name": "Safe checkout",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label text",
+            "default": "Guaranteed Safe Checkout"
+          },
+          {
+            "type": "range",
+            "id": "font_size",
+            "label": "Font size",
+            "min": 10,
+            "max": 20,
+            "step": 1,
+            "default": 13,
+            "unit": "px"
+          },
+          {
+            "type": "range",
+            "id": "icon_height",
+            "label": "Icon height",
+            "min": 16,
+            "max": 40,
+            "step": 2,
+            "default": 24,
+            "unit": "px"
+          }
+        ]
+      },
+      {
+        "type": "variant_cards",
+        "name": "Variant cards",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "PACKS"
+          },
+          {
+            "type": "color",
+            "id": "selected_color",
+            "label": "Selected border color",
+            "default": "#1a7a4a"
+          },
+          {
+            "type": "color",
+            "id": "sale_color",
+            "label": "Sale price color",
+            "default": "#1a7a4a"
+          },
+          {
+            "type": "header",
+            "content": "Badge"
+          },
+          {
+            "type": "range",
+            "id": "badge_position",
+            "label": "Badge on variant #",
+            "info": "0 = no badge",
+            "min": 0,
+            "max": 10,
+            "step": 1,
+            "default": 0
+          },
+          {
+            "type": "text",
+            "id": "badge_text",
+            "label": "Badge text",
+            "default": "MOST\nPOPULAR"
+          },
+          {
+            "type": "color",
+            "id": "badge_color",
+            "label": "Badge background",
+            "default": "#1a7a4a"
+          },
+          {
+            "type": "color",
+            "id": "badge_text_color",
+            "label": "Badge text color",
+            "default": "#ffffff"
+          }
+        ]
+      },
+      {
         "type": "urgency_text",
         "name": "Urgency text",
         "settings": [

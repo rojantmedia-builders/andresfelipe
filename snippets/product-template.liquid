@@ -103,6 +103,81 @@
                         </p>
                       {%- endif -%}
                     </div>
+                  {%- when 'variant_cards' -%}
+                    
+                    <style>
+                      .variant-cards{display:flex;flex-wrap:wrap;gap:10px}
+                      .variant-card{position:relative;cursor:pointer;text-align:center;border:2px solid #e5e5e5;border-radius:10px;padding:12px 10px 10px;flex:1 1 calc(33.333% - 10px);min-width:90px;box-sizing:border-box;transition:border-color .2s,box-shadow .2s}
+                      .variant-card:hover{border-color:#aaa}
+                      .variant-card.is-selected{border-color:{{ block.settings.selected_color }};box-shadow:0 0 0 1px {{ block.settings.selected_color }}}
+                      .variant-card--disabled{opacity:.4;cursor:not-allowed;pointer-events:none}
+                      .variant-card__radio{width:18px;height:18px;border-radius:50%;border:2px solid #ccc;margin:0 auto 10px;position:relative}
+                      .variant-card.is-selected .variant-card__radio{border-color:{{ block.settings.selected_color }}}
+                      .variant-card.is-selected .variant-card__radio:after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:8px;height:8px;border-radius:50%;background:{{ block.settings.selected_color }}}
+                      .variant-card__badge{position:absolute;top:0;left:0;right:0;background:{{ block.settings.badge_color }};color:{{ block.settings.badge_text_color }};font-weight:800;font-size:.6rem;letter-spacing:.08em;padding:5px 4px;border-radius:8px 8px 0 0;line-height:1.3}
+                      .variant-card__img{width:100%;aspect-ratio:1;object-fit:contain;margin-bottom:8px}
+                      .variant-card__title{font-size:.82rem;margin:0 0 4px;line-height:1.3}
+                      .variant-card__price{font-weight:700;font-size:.92rem;margin:0 0 2px}
+                      .variant-card__compare{font-size:.78rem;color:#999;text-decoration:line-through;margin:0}
+                    </style>
+                    <div class="product-block" {{ block.shopify_attributes }}>
+                      {%- if block.settings.label != blank -%}
+                        <p style="font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;margin:0 0 12px;">{{ block.settings.label }}</p>
+                      {%- endif -%}
+                      <div class="variant-cards" id="variant-cards-{{ section_id }}-{{ product.id }}">
+                        {%- for variant in product.variants -%}
+                          <div
+                            class="variant-card{% if variant == current_variant %} is-selected{% endif %}{% unless variant.available %} variant-card--disabled{% endunless %}"
+                            data-variant-id="{{ variant.id }}"
+                          >
+                            {%- if block.settings.badge_position == forloop.index -%}
+                              <div class="variant-card__badge">{{ block.settings.badge_text }}</div>
+                            {%- endif -%}
+                            <div class="variant-card__radio"></div>
+                            {%- if variant.featured_image -%}
+                              <img class="variant-card__img" src="{{ variant.featured_image | image_url: width: 300 }}" alt="{{ variant.title }}" width="300" height="300" loading="lazy">
+                            {%- elsif product.featured_image -%}
+                              <img class="variant-card__img" src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}" width="300" height="300" loading="lazy">
+                            {%- endif -%}
+                            <p class="variant-card__title">{{ variant.title }}</p>
+                            <p class="variant-card__price" style="color:{{ block.settings.sale_color }};">{{ variant.price | money }}</p>
+                            {%- if variant.compare_at_price > variant.price -%}
+                              <p class="variant-card__compare">{{ variant.compare_at_price | money }}</p>
+                            {%- endif -%}
+                          </div>
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                    <script>
+                      (function(){
+                        var cards = document.getElementById('variant-cards-{{ section_id }}-{{ product.id }}');
+                        if(!cards) return;
+                        cards.addEventListener('click', function(e){
+                          var card = e.target.closest('.variant-card');
+                          if(!card || card.classList.contains('variant-card--disabled')) return;
+                          cards.querySelectorAll('.variant-card').forEach(function(c){ c.classList.remove('is-selected'); });
+                          card.classList.add('is-selected');
+                          var form = document.getElementById('AddToCartForm-{{ section_id }}-{{ product.id }}');
+                          if(!form) return;
+                          var sel = form.querySelector('[data-product-select]');
+                          if(sel){ sel.value = card.dataset.variantId; sel.dispatchEvent(new Event('change',{bubbles:true})); }
+                        });
+                      })();
+                    </script>
+                  {%- when 'safe_checkout' -%}
+                    <div class="product-block" {{ block.shopify_attributes }}>
+                      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+                        <span style="display:flex; align-items:center; gap:6px; font-weight:700; font-size:{{ block.settings.font_size }}px; white-space:nowrap;">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                          {{ block.settings.label }}
+                        </span>
+                        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:5px;">
+                          {%- for type in shop.enabled_payment_types -%}
+                            <img src="{{ type | payment_type_img_url }}" alt="{{ type }}" width="38" height="{{ block.settings.icon_height }}" style="height:{{ block.settings.icon_height }}px; width:auto; display:block;">
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    </div>
                   {%- when 'urgency_text' -%}
                     <div class="product-block" {{ block.shopify_attributes }}>
                       <p style="font-size: {{ block.settings.font_size }}px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 0; color: {{ block.settings.text_color }}; text-align: {{ block.settings.text_align }};">
