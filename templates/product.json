@@ -311,6 +311,7 @@
         "stat_a2",
         "stat_a3"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "",
         "heading": "EL PURIFICADOR DE AIRE #1 EN AMÉRICA",
