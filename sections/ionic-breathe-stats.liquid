@@ -1,0 +1,147 @@
+{% comment %} ba-16458917 + ba-16458918 – zpa-plain-text-002 {% endcomment %}
+
+<style>
+  .ionic-breathe-stats {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-breathe-stats__inner {
+    max-width: {{ section.settings.content_max_width }}px;
+    margin: 0 auto;
+    text-align: {{ section.settings.text_align }};
+  }
+  .ionic-breathe-stats__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 28px;
+    color: {{ section.settings.text_color }};
+  }
+  .ionic-breathe-stats__body {
+    font-size: {{ section.settings.body_size }}px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ionic-breathe-stats__body p {
+    margin: 0 0 14px;
+  }
+  .ionic-breathe-stats__body p:last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 768px) {
+    .ionic-breathe-stats__heading {
+      font-size: {{ section.settings.heading_size | times: 0.6 | round }}px;
+    }
+  }
+</style>
+
+<div class="ionic-breathe-stats">
+  <div class="ionic-breathe-stats__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ionic-breathe-stats__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.body != blank -%}
+      <div class="ionic-breathe-stats__body">{{ section.settings.body }}</div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{ 
+  "name": "Ionic – Breathe", 
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You Breathe 2,800 Gallons Of Air Each Day. That's A Lot Of Air!"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>The Environmental Protection Agency has ranked indoor air quality as one of the most concerning dangers we face daily. The EPA estimates that our indoor air has almost five times more pollutants than outdoor air. Our homes, offices, and cars all contain airborne chemicals, gases, and particles, which can be devastating to our health.</p><p>We tested tens of air purifiers, but all came up short on the most important thing - providing clean air. The famous saying goes, \"If you want something done right, you have to do it yourself.\" Well, that's exactly what we did.</p>"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text alignment",
+      "default": "left",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Max content width",
+      "min": 480,
+      "max": 1200,
+      "step": 40,
+      "default": 960,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading font size (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "default": 52,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Body font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 72,
+      "unit": "px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Breathe Stats Text"
+    }
+  ]
+}
+{% endschema %}

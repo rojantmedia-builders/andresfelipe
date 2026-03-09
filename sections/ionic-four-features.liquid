@@ -1,0 +1,237 @@
+{% comment %} ba-16458916 – zpa-text-four-images-with-text {% endcomment %}
+
+<style>
+  .ionic-four-features {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-four-features__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ionic-four-features__item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ionic-four-features__icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ionic-four-features__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .ionic-four-features__item-title {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: {{ section.settings.text_color }};
+    text-align: center;
+  }
+  .ionic-four-features__item-text {
+    font-size: 0.9rem;
+    color: {{ section.settings.text_color }};
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+  }
+  @media (max-width: 900px) {
+    .ionic-four-features__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 24px;
+    }
+  }
+  @media (max-width: 500px) {
+    .ionic-four-features__grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+  }
+</style>
+
+<div class="ionic-four-features">
+  <div class="ionic-four-features__grid">
+
+    {%- for block in section.blocks -%}
+      <div class="ionic-four-features__item" {{ block.shopify_attributes }}>
+        <div class="ionic-four-features__icon">
+          {%- case block.settings.icon -%}
+            {%- when 'allergies' -%}
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M38 8C27 8 19 17 19 28C19 33 21 37.5 24 41L24 56L33 56L33 62L46 62L46 56L55 56L55 41C58 37.5 60 33 60 28C60 17 52 8 38 8Z" fill="#1a1a1a"/>
+                <ellipse cx="31" cy="27" rx="3" ry="4" fill="white"/>
+                <ellipse cx="46" cy="27" rx="3" ry="4" fill="white"/>
+                <circle cx="63" cy="44" r="3.5" fill="#1a1a1a"/>
+                <circle cx="70" cy="36" r="3.5" fill="#1a1a1a"/>
+                <circle cx="72" cy="48" r="3.5" fill="#1a1a1a"/>
+              </svg>
+            {%- when 'smoke' -%}
+              <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round">
+                <path d="M8 12 Q20 6 32 12 Q44 18 56 12 Q68 6 76 12"/>
+                <path d="M8 30 Q20 24 32 30 Q44 36 56 30 Q68 24 76 30"/>
+                <path d="M8 48 Q20 42 32 48 Q44 54 56 48 Q68 42 76 48"/>
+              </svg>
+            {%- when 'virus' -%}
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="20" fill="#1a1a1a"/>
+                <circle cx="40" cy="40" r="11" fill="white"/>
+                <circle cx="34" cy="37" r="3.5" fill="#1a1a1a"/>
+                <circle cx="46" cy="43" r="3.5" fill="#1a1a1a"/>
+                <line x1="40" y1="20" x2="40" y2="6" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="40" y1="60" x2="40" y2="74" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="20" y1="40" x2="6" y2="40" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="60" y1="40" x2="74" y2="40" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="26" y1="26" x2="16" y2="16" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="54" y1="54" x2="64" y2="64" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="54" y1="26" x2="64" y2="16" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+                <line x1="26" y1="54" x2="16" y2="64" stroke="#1a1a1a" stroke-width="4.5" stroke-linecap="round"/>
+              </svg>
+            {%- when 'lungs' -%}
+              <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M40 10 L40 28" />
+                <path d="M40 28 C40 28, 35 28, 30 32 C24 38, 18 44, 16 52 C14 60, 17 70, 24 70 C29 70, 34 66, 36 60 C37 56, 37 50, 37 44 L37 28" fill="#1a1a1a" stroke="none"/>
+                <path d="M40 28 C40 28, 45 28, 50 32 C56 38, 62 44, 64 52 C66 60, 63 70, 56 70 C51 70, 46 66, 44 60 C43 56, 43 50, 43 44 L43 28" fill="#1a1a1a" stroke="none"/>
+                <path d="M37 50 C30 50, 20 52, 18 60"/>
+                <path d="M43 50 C50 50, 60 52, 62 60"/>
+              </svg>
+            {%- else -%}
+              {%- if block.settings.custom_icon != blank -%}
+                <img src="{{ block.settings.custom_icon | image_url: width: 144 }}" alt="{{ block.settings.title }}" width="72" height="72" loading="lazy">
+              {%- endif -%}
+          {%- endcase -%}
+        </div>
+        <p class="ionic-four-features__item-title">{{ block.settings.title }}</p>
+        <p class="ionic-four-features__item-text">{{ block.settings.description }}</p>
+      </div>
+    {%- endfor -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ionic – Four Features",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "allergies",
+          "options": [
+            { "value": "allergies", "label": "Allergies (head)" },
+            { "value": "smoke",     "label": "Smoke (waves)" },
+            { "value": "virus",     "label": "Virus / Bacteria" },
+            { "value": "lungs",     "label": "Lungs" },
+            { "value": "custom",    "label": "Custom image" }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Custom icon image (used when Icon = Custom image)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Describe this feature here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Four Features",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "allergies",
+            "title": "Relieve Allergies",
+            "description": "Say goodbye to the itchy eyes, runny nose, and non-stop sneezing you suffer through every hayfever season."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "smoke",
+            "title": "Protect Against Smoke",
+            "description": "Prevent breathing in tobacco and cigarette smoke that can result in the development of chronic diseases."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "virus",
+            "title": "Remove Viruses & Bacteria",
+            "description": "Eliminate viruses and bacteria in the air, preventing airborne infections and safeguarding your health."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "lungs",
+            "title": "Destroy Pollutants",
+            "description": "Dust, cooking smoke, and plastic fumes, among other pollutants, can all trigger negative reactions in the human body. The Ionic will take care of that."
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}
