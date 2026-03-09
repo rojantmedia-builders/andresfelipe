@@ -145,6 +145,7 @@
         "blocks": {
           "footer-promotions-0": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "image": "shopify://shop_images/1_cb7a33a4-2a96-49e9-b65e-ba01b43f0dda.webp",
@@ -157,6 +158,7 @@
           },
           "footer-promotions-1": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "image": "shopify://shop_images/2__Problem_Mechanism_Explainer.webp",
@@ -169,6 +171,7 @@
           },
           "footer-promotions-2": {
             "type": "promotion",
+            "disabled": true,
             "settings": {
               "enable_image": true,
               "image": "shopify://shop_images/Blue_bd998340-69c3-403c-9eb4-da6d09ac20b2.webp",
