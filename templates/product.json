@@ -407,6 +407,7 @@
           "type": "icon",
           "settings": {
             "label": "Polvo",
+            "image": "shopify://shop_images/Dust-min.avif",
             "icon_svg": ""
           }
         },
