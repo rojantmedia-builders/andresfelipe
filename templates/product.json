@@ -16,6 +16,12 @@
           "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
+        "text_gpFtrL": {
+          "type": "text",
+          "settings": {
+            "text": "New Color Drop"
+          }
+        },
         "title_CP6Bxh": {
           "type": "title",
           "settings": {}
@@ -49,6 +55,14 @@
           "type": "description",
           "settings": {
             "is_tab": false
+          }
+        },
+        "urgency_text_AaRtCq": {
+          "type": "urgency_text",
+          "settings": {
+            "text": "EXCLUSIVE ONLY 130 UNITS",
+            "text_color": "#1a1a1a",
+            "font_size": 18
           }
         },
         "variant_picker": {
@@ -90,12 +104,14 @@
       },
       "block_order": [
         "judge_me_reviews_preview_badge_qC3APY",
+        "text_gpFtrL",
         "title_CP6Bxh",
         "price",
         "separator",
         "sales_point",
         "inventory_status",
         "description",
+        "urgency_text_AaRtCq",
         "variant_picker",
         "buy_buttons",
         "tab",
