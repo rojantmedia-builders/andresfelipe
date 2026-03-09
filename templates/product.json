@@ -14,6 +14,7 @@
       "blocks": {
         "price": {
           "type": "price",
+          "disabled": true,
           "settings": {}
         },
         "separator": {
@@ -30,6 +31,7 @@
         },
         "sales_point": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "globe",
             "text": "Envío gratuito a todo el mundo"
@@ -37,9 +39,16 @@
         },
         "inventory_status": {
           "type": "inventory_status",
+          "disabled": true,
           "settings": {
             "inventory_threshold": 10,
             "inventory_transfers_enable": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": false
           }
         },
         "buy_buttons": {
@@ -47,12 +56,6 @@
           "settings": {
             "show_dynamic_checkout": true,
             "surface_pickup_enable": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
           }
         },
         "tab": {
@@ -81,8 +84,8 @@
         "variant_picker",
         "sales_point",
         "inventory_status",
-        "buy_buttons",
         "description",
+        "buy_buttons",
         "tab",
         "contact",
         "share"
