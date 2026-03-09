@@ -205,6 +205,22 @@
         "padding_bottom": 64
       }
     },
+    "ionic_breathe_stats_tDHFDK": {
+      "type": "ionic-breathe-stats",
+      "name": "Ionic – Breathe Stats Text",
+      "settings": {
+        "heading": "Respiras 10.600 Litros De Aire Cada Día. ¡Eso Es Mucho Aire!",
+        "body": "<p>La Agencia de Protección Ambiental ha clasificado la calidad del aire interior como uno de los peligros más preocupantes que enfrentamos a diario. La EPA estima que el aire de nuestros hogares tiene casi cinco veces más contaminantes que el aire exterior. Nuestras casas, oficinas y autos contienen químicos, gases y partículas en el aire que pueden ser devastadores para nuestra salud.</p><p>Probamos decenas de purificadores de aire, pero todos fallaron en lo más importante: proporcionar aire limpio. El dicho reza: \"Si quieres que algo salga bien, hazlo tú mismo.\" Pues exactamente eso fue lo que hicimos.</p>",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "text_align": "left",
+        "content_max_width": 960,
+        "heading_size": 52,
+        "body_size": 16,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -367,6 +383,7 @@
     "main",
     "ionic_title_banner_nFjDcK",
     "ionic_four_features_Acm798",
+    "ionic_breathe_stats_tDHFDK",
     "sub",
     "background-image-text",
     "text-and-image",
