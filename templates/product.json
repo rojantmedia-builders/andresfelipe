@@ -508,41 +508,14 @@
     },
     "ionic_image_text_2_KmRpQs": {
       "type": "ionic-image-text-2",
-      "blocks": {
-        "step_c1": {
-          "type": "step",
-          "settings": {
-            "title": "Ionización del aire",
-            "description": "El dispositivo libera iones negativos que se adhieren a los contaminantes del aire."
-          }
-        },
-        "step_c2": {
-          "type": "step",
-          "settings": {
-            "title": "Atracción de partículas",
-            "description": "Los iones cargan las partículas peligrosas como virus, bacterias y polvo."
-          }
-        },
-        "step_c3": {
-          "type": "step",
-          "settings": {
-            "title": "Aire limpio",
-            "description": "Las partículas cargadas caen al suelo, alejándose del aire que respiras."
-          }
-        }
-      },
-      "block_order": [
-        "step_c1",
-        "step_c2",
-        "step_c3"
-      ],
       "settings": {
         "layout": "image_left",
+        "image": "shopify://shop_images/Sin_filtros_37.png",
         "img_radius": 12,
         "eyebrow": "",
         "heading": "CÓMO FUNCIONA EN 3 PASOS",
         "uppercase": true,
-        "body": "<p>El purificador iónico trabaja de forma silenciosa y eficiente para mantenerte saludable.</p>",
+        "body": "<p>Each Ionic Will Cover 250 Square Feet Of Your Home, Get Our Top Selling Bundle Now and Enjoy a Full House Protection & Freshness<br/><br/></p>",
         "bg_color": "#f2f2f2",
         "text_color": "#1a1a1a",
         "accent_color": "#1a1a1a",
