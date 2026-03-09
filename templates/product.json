@@ -155,6 +155,56 @@
         "padding_bottom": 20
       }
     },
+    "ionic_four_features_Acm798": {
+      "type": "ionic-four-features",
+      "blocks": {
+        "feature_py9kQa": {
+          "type": "feature",
+          "settings": {
+            "icon": "allergies",
+            "title": "Alivia las Alergias",
+            "description": "Di adiós a los ojos llorosos, la nariz mocosa y los estornudos constantes que sufres cada temporada de alergia."
+          }
+        },
+        "feature_d4JkBx": {
+          "type": "feature",
+          "settings": {
+            "icon": "smoke",
+            "title": "Protege Contra el Humo",
+            "description": "Evita respirar el humo del tabaco y cigarrillo que puede provocar el desarrollo de enfermedades crónicas."
+          }
+        },
+        "feature_whM9aJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "virus",
+            "title": "Elimina Virus y Bacterias",
+            "description": "Destruye virus y bacterias en el aire, previniendo infecciones aéreas y protegiendo tu salud."
+          }
+        },
+        "feature_8y83DQ": {
+          "type": "feature",
+          "settings": {
+            "icon": "lungs",
+            "title": "Destruye Contaminantes",
+            "description": "El polvo, el humo de cocina y los gases plásticos, entre otros contaminantes, pueden generar reacciones negativas en el cuerpo. El Iónico se encarga de eso."
+          }
+        }
+      },
+      "block_order": [
+        "feature_py9kQa",
+        "feature_d4JkBx",
+        "feature_whM9aJ",
+        "feature_8y83DQ"
+      ],
+      "name": "Ionic – Four Features",
+      "settings": {
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "padding_top": 20,
+        "padding_bottom": 64
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -316,6 +366,7 @@
   "order": [
     "main",
     "ionic_title_banner_nFjDcK",
+    "ionic_four_features_Acm798",
     "sub",
     "background-image-text",
     "text-and-image",
