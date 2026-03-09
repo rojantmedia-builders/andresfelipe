@@ -758,6 +758,7 @@
     },
     "testimonials_XjKDNg": {
       "type": "testimonials",
+      "disabled": true,
       "blocks": {
         "testimonial_6eMU6F": {
           "type": "testimonial",
@@ -767,57 +768,65 @@
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
-        },
-        "testimonial_T83E3r": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "author": "Author name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_cHdTKb": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "author": "Author name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_yc9DkW": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "author": "Author name",
-            "author_info": "Los Angeles, CA"
-          }
-        },
-        "testimonial_B6yDny": {
-          "type": "testimonial",
-          "settings": {
-            "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
-            "author": "Author name",
-            "author_info": "Los Angeles, CA"
-          }
         }
       },
-      "block_order": [
-        "testimonial_6eMU6F",
-        "testimonial_T83E3r",
-        "testimonial_cHdTKb",
-        "testimonial_yc9DkW",
-        "testimonial_B6yDny"
-      ],
+      "block_order": ["testimonial_6eMU6F"],
       "name": "Customer testimonials",
       "settings": {
         "title": "Con la confianza de la gente, amado por los clientes",
         "round_images": true,
         "color_background": "#f9f9f9",
         "color_text": "#1c1d1d"
+      }
+    },
+    "ionic_testimonials_GpRkNs": {
+      "type": "ionic-testimonials",
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Era escéptica al principio, pero después de leer las reseñas decidí probarlo. He sufrido de alergias toda mi vida. Desde el 3er día de uso no sufro más y he visto una gran reducción en las partículas flotantes. No hace ningún ruido.",
+            "author": "Celina G.",
+            "title": "Lo amé"
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Compré 3 de estos purificadores para mi hogar. Tengo 5 loros y 2 gatos, y eso genera mucho polvo. Los he tenido por 2 semanas y puedo notar la diferencia. Estoy muy satisfecha.",
+            "author": "Dorothy E.",
+            "title": "Producto increíble"
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Uso 3 unidades en habitaciones separadas para ionizar y cargar el aire. Los resultados son excelentes, con niveles de energía altos, aire respirable y mucho menos polvo flotante.",
+            "author": "Amelia B.",
+            "title": "Maravilloso"
+          }
+        },
+        "t4": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Elegí este purificador porque mi vecino fuma y quema incienso. Todos esos olores se meten a mi casa. Mantengo el purificador en la sala y lo paso a mi habitación en la noche.",
+            "author": "John D.",
+            "title": "Artículo de calidad"
+          }
+        }
+      },
+      "block_order": ["t1","t2","t3","t4"],
+      "settings": {
+        "eyebrow": "NO SOLO NOS CREAS A NOSOTROS",
+        "heading": "Confiado por la gente, amado por los clientes",
+        "subheading": "4.8/5 en más de 4.579 reseñas",
+        "bg_color": "#f5f5f5",
+        "text_color": "#1a1a1a",
+        "star_color": "#22c55e",
+        "heading_size": 36,
+        "body_size": 15,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "product-recommendations": {
@@ -920,6 +929,7 @@
     "ionic_hero_carousel_DpWnMx",
     "ionic_benefit_cards_EpRkNq",
     "ionic_accordion_FpTkLm",
+    "ionic_testimonials_GpRkNs",
     "testimonials_XjKDNg",
     "product-recommendations",
     "collection-return",

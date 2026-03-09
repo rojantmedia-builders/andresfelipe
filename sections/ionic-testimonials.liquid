@@ -1,0 +1,416 @@
+{% comment %} ba-16458927 – Testimonials slider with photos {% endcomment %}
+
+<style>
+  .ionic-testimonials {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-testimonials__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ionic-testimonials__header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .ionic-testimonials__eyebrow {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 14px;
+  }
+  .ionic-testimonials__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 400;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+  .ionic-testimonials__subheading {
+    font-size: {{ section.settings.body_size }}px;
+    color: {{ section.settings.text_color }};
+    opacity: 0.7;
+    margin: 0;
+  }
+  /* Slider wrapper */
+  .ionic-testimonials__slider-wrap {
+    position: relative;
+  }
+  .ionic-testimonials__track-outer {
+    overflow: hidden;
+  }
+  .ionic-testimonials__track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+  }
+  /* Cards */
+  .ionic-testimonials__card {
+    flex: 0 0 calc(25% - 15px);
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+  }
+  .ionic-testimonials__card-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+  }
+  .ionic-testimonials__card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .ionic-testimonials__stars {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 14px;
+  }
+  .ionic-testimonials__star {
+    width: 18px;
+    height: 18px;
+    fill: {{ section.settings.star_color }};
+  }
+  .ionic-testimonials__quote {
+    font-size: 0.88rem;
+    color: {{ section.settings.text_color }};
+    line-height: 1.65;
+    margin: 0 0 16px;
+    flex: 1;
+    text-align: left;
+  }
+  .ionic-testimonials__author {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 2px;
+  }
+  .ionic-testimonials__title {
+    font-size: 0.82rem;
+    color: {{ section.settings.text_color }};
+    opacity: 0.6;
+    margin: 0;
+  }
+  /* Navigation arrows */
+  .ionic-testimonials__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+  }
+  .ionic-testimonials__arrow:hover { background: #f5f5f5; }
+  .ionic-testimonials__arrow svg { width: 18px; height: 18px; }
+  .ionic-testimonials__arrow--prev { left: -22px; }
+  .ionic-testimonials__arrow--next { right: -22px; }
+  /* Dots */
+  .ionic-testimonials__dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 28px;
+  }
+  .ionic-testimonials__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: none;
+    padding: 0;
+  }
+  .ionic-testimonials__dot.is-active { background: {{ section.settings.star_color }}; }
+  @media (max-width: 900px) {
+    .ionic-testimonials__card { flex: 0 0 calc(50% - 10px); }
+    .ionic-testimonials__arrow--prev { left: -16px; }
+    .ionic-testimonials__arrow--next { right: -16px; }
+  }
+  @media (max-width: 540px) {
+    .ionic-testimonials__card { flex: 0 0 calc(100%); }
+    .ionic-testimonials__heading {
+      font-size: {{ section.settings.heading_size | times: 0.65 | round }}px;
+    }
+  }
+</style>
+
+<div class="ionic-testimonials">
+  <div class="ionic-testimonials__inner">
+
+    <div class="ionic-testimonials__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ionic-testimonials__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ionic-testimonials__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <p class="ionic-testimonials__subheading">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="ionic-testimonials__slider-wrap">
+        <button class="ionic-testimonials__arrow ionic-testimonials__arrow--prev" id="ionic-t-prev-{{ section.id }}" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15,18 9,12 15,6"/></svg>
+        </button>
+        <button class="ionic-testimonials__arrow ionic-testimonials__arrow--next" id="ionic-t-next-{{ section.id }}" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,6 15,12 9,18"/></svg>
+        </button>
+
+        <div class="ionic-testimonials__track-outer">
+          <div class="ionic-testimonials__track" id="ionic-t-track-{{ section.id }}">
+            {%- for block in section.blocks -%}
+              <div class="ionic-testimonials__card" {{ block.shopify_attributes }}>
+                {%- if block.settings.photo != blank -%}
+                  <img class="ionic-testimonials__card-photo"
+                    src="{{ block.settings.photo | image_url: width: 600 }}"
+                    alt="{{ block.settings.author }}"
+                    width="{{ block.settings.photo.width }}"
+                    height="{{ block.settings.photo.height }}"
+                    loading="lazy">
+                {%- endif -%}
+                <div class="ionic-testimonials__card-body">
+                  <div class="ionic-testimonials__stars">
+                    {%- for i in (1..5) -%}
+                      <svg class="ionic-testimonials__star" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                      </svg>
+                    {%- endfor -%}
+                  </div>
+                  <p class="ionic-testimonials__quote">{{ block.settings.quote }}</p>
+                  {%- if block.settings.author != blank -%}
+                    <p class="ionic-testimonials__author">{{ block.settings.author }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.title != blank -%}
+                    <p class="ionic-testimonials__title">{{ block.settings.title }}</p>
+                  {%- endif -%}
+                  <p class="ionic-testimonials__title">Verified Customer</p>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="ionic-testimonials__dots" id="ionic-t-dots-{{ section.id }}"></div>
+      </div>
+    {%- endif -%}
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var track   = document.getElementById('ionic-t-track-{{ section.id }}');
+  var prevBtn = document.getElementById('ionic-t-prev-{{ section.id }}');
+  var nextBtn = document.getElementById('ionic-t-next-{{ section.id }}');
+  var dotsWrap= document.getElementById('ionic-t-dots-{{ section.id }}');
+  if (!track) return;
+
+  var cards = track.querySelectorAll('.ionic-testimonials__card');
+  var total  = cards.length;
+  var current = 0;
+  var perPage = 4;
+
+  function getPerPage() {
+    if (window.innerWidth <= 540) return 1;
+    if (window.innerWidth <= 900) return 2;
+    return 4;
+  }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    perPage = getPerPage();
+    var pages = Math.ceil(total / perPage);
+    for (var i = 0; i < pages; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'ionic-testimonials__dot' + (i === 0 ? ' is-active' : '');
+      dot.setAttribute('aria-label', 'Página ' + (i+1));
+      dot.dataset.page = i;
+      dot.addEventListener('click', function(){ goTo(parseInt(this.dataset.page)); });
+      dotsWrap.appendChild(dot);
+    }
+  }
+
+  function goTo(page) {
+    perPage = getPerPage();
+    var pages = Math.ceil(total / perPage);
+    if (page < 0) page = pages - 1;
+    if (page >= pages) page = 0;
+    current = page;
+    var cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = 'translateX(-' + (current * perPage * cardWidth) + 'px)';
+    dotsWrap.querySelectorAll('.ionic-testimonials__dot').forEach(function(d, i){
+      d.classList.toggle('is-active', i === current);
+    });
+  }
+
+  prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+  nextBtn.addEventListener('click', function(){ goTo(current + 1); });
+
+  buildDots();
+  window.addEventListener('resize', function(){ buildDots(); goTo(0); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Ionic – Testimonios",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Texto pequeño superior",
+      "default": "NO SOLO NOS CREAS A NOSOTROS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Confiado por la gente, amado por los clientes"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "4.8/5 en más de 4.579 reseñas"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Color de estrellas",
+      "default": "#22c55e"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 20, "max": 60, "step": 2,
+      "default": 36, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Tamaño del texto",
+      "min": 12, "max": 22, "step": 1,
+      "default": 15, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Relleno superior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Relleno inferior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Foto del cliente"
+        },
+        {
+          "type": "text",
+          "id": "quote",
+          "label": "Reseña",
+          "default": "Este producto cambió mi vida. Respiro mucho mejor desde que lo uso en casa."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Nombre del cliente",
+          "default": "María G."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título de la reseña",
+          "default": "Excelente Producto"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Testimonios",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Era escéptica al principio, pero después de leer las reseñas decidí probarlo. He sufrido de alergias toda mi vida. Mi casa es muy polvorienta. Desde el 3er día de uso no sufro más y he visto una gran reducción en las partículas flotantes. No hace ningún ruido.",
+            "author": "Celina G.",
+            "title": "Lo amé"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Compré 3 de estos purificadores para mi hogar. Tengo 5 loros y 2 gatos, y eso genera mucho polvo. Los he tenido por 2 semanas y puedo notar la diferencia. Estoy muy satisfecha.",
+            "author": "Dorothy E.",
+            "title": "Producto increíble"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Uso 3 unidades en habitaciones separadas para ionizar y cargar el aire. Los resultados son excelentes, con niveles de energía altos, aire respirable y mucho menos polvo flotante.",
+            "author": "Amelia B.",
+            "title": "Maravilloso"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Elegí este purificador porque mi vecino fuma y quema incienso. Todos esos olores se meten a mi casa. Mantengo el purificador en la sala y lo paso a mi habitación en la noche.",
+            "author": "John D.",
+            "title": "Artículo de calidad"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
