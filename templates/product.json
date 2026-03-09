@@ -221,6 +221,53 @@
         "padding_bottom": 72
       }
     },
+    "ionic_guarantee_zrcNhn": {
+      "type": "ionic-guarantee",
+      "blocks": {
+        "bullet_kBgmhj": {
+          "type": "bullet",
+          "settings": {
+            "item": "100% Sin riesgo"
+          }
+        },
+        "bullet_VhanQE": {
+          "type": "bullet",
+          "settings": {
+            "item": "Garantía de devolución de dinero"
+          }
+        },
+        "bullet_NqJ96V": {
+          "type": "bullet",
+          "settings": {
+            "item": "Garantía del fabricante por 2 años"
+          }
+        },
+        "bullet_bwpJHL": {
+          "type": "bullet",
+          "settings": {
+            "item": "Recomendado para alergias"
+          }
+        }
+      },
+      "block_order": [
+        "bullet_kBgmhj",
+        "bullet_VhanQE",
+        "bullet_NqJ96V",
+        "bullet_bwpJHL"
+      ],
+      "name": "Ionic – Guarantee",
+      "settings": {
+        "heading": "RESPIRARÁS MEJOR, Y LO GARANTIZAMOS",
+        "image": "shopify://shop_images/download-2_928b2150-f35a-4f90-b8ae-a3d02bf9cf29.webp",
+        "image_border_radius": 14,
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "heading_size": 44,
+        "list_font_size": 18,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
     "ionic_community_bMdBQH": {
       "type": "ionic-community",
       "name": "Ionic – Community Text",
@@ -399,6 +446,7 @@
     "ionic_title_banner_nFjDcK",
     "ionic_four_features_Acm798",
     "ionic_breathe_stats_tDHFDK",
+    "ionic_guarantee_zrcNhn",
     "ionic_community_bMdBQH",
     "sub",
     "background-image-text",
