@@ -18,6 +18,7 @@
         },
         "text_gpFtrL": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Nueva gota de color"
           }
