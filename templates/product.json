@@ -224,35 +224,22 @@
       "blocks": {
         "bullet_kBgmhj": {
           "type": "bullet",
-          "settings": {
-            "item": "100% Sin riesgo"
-          }
+          "settings": { "item": "100% Sin riesgo" }
         },
         "bullet_VhanQE": {
           "type": "bullet",
-          "settings": {
-            "item": "Garantía de devolución de dinero"
-          }
+          "settings": { "item": "Garantía de devolución de dinero" }
         },
         "bullet_NqJ96V": {
           "type": "bullet",
-          "settings": {
-            "item": "Garantía del fabricante por 2 años"
-          }
+          "settings": { "item": "Garantía del fabricante por 2 años" }
         },
         "bullet_bwpJHL": {
           "type": "bullet",
-          "settings": {
-            "item": "Recomendado para alergias"
-          }
+          "settings": { "item": "Recomendado para alergias" }
         }
       },
-      "block_order": [
-        "bullet_kBgmhj",
-        "bullet_VhanQE",
-        "bullet_NqJ96V",
-        "bullet_bwpJHL"
-      ],
+      "block_order": ["bullet_kBgmhj","bullet_VhanQE","bullet_NqJ96V","bullet_bwpJHL"],
       "name": "Ionic – Guarantee",
       "settings": {
         "heading": "RESPIRARÁS MEJOR, Y LO GARANTIZAMOS",
@@ -281,26 +268,111 @@
         "padding_bottom": 80
       }
     },
-    "sub": {
-      "type": "product-full-width",
-      "disabled": true,
+    "ionic_one_column_MxWpLD": {
+      "type": "ionic-one-column",
+      "blocks": {
+        "stat_a1": { "type": "stat", "settings": { "number": "200.000+", "label": "Clientes satisfechos" } },
+        "stat_a2": { "type": "stat", "settings": { "number": "99%", "label": "Tasa de satisfacción" } },
+        "stat_a3": { "type": "stat", "settings": { "number": "2 años", "label": "Garantía del fabricante" } }
+      },
+      "block_order": ["stat_a1","stat_a2","stat_a3"],
       "settings": {
-        "max_width": true
+        "heading": "EL PURIFICADOR DE AIRE #1 EN AMÉRICA",
+        "uppercase_heading": true,
+        "body": "<p>Únete a miles de familias que ya respiran un aire más limpio y saludable en su hogar.</p>",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "accent_color": "#1a1a1a",
+        "text_align": "center",
+        "content_max_width": 880,
+        "heading_size": 48,
+        "body_size": 16,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
-    "background-image-text": {
-      "type": "background-image-text",
+    "ionic_bundle_picker_RvJqNP": {
+      "type": "ionic-bundle-picker",
+      "blocks": {
+        "option_b1": {
+          "type": "option",
+          "settings": {
+            "title": "1 Unidad – Purificador Iónico"
+          }
+        },
+        "option_b2": {
+          "type": "option",
+          "settings": {
+            "title": "2 Unidades – Purificador Iónico",
+            "badge": "MÁS POPULAR"
+          }
+        },
+        "option_b3": {
+          "type": "option",
+          "settings": {
+            "title": "4 Unidades – Purificador Iónico",
+            "badge": "MEJOR VALOR"
+          }
+        }
+      },
+      "block_order": ["option_b1","option_b2","option_b3"],
       "settings": {
-        "subtitle": "Respiras 2800 galones de aire al día",
-        "title": ". ¡Eso es muchísimo aire!",
-        "text": "<p>La Agencia de Protección Ambiental (EPA) ha clasificado la calidad del aire interior como uno de los peligros más preocupantes que enfrentamos a diario. <br/>Nuestros hogares, oficinas y automóviles contienen sustancias químicas, gases y partículas en el aire que pueden ser devastadoras para nuestra salud.<br/></p>",
-        "button_label": "",
-        "button_link": "",
-        "image": "shopify://shop_images/desktop_1.webp",
-        "focal_point": "center",
-        "layout": "left",
-        "height": 650,
-        "parallax": false
+        "heading": "ELIGE TU PAQUETE",
+        "btn_label": "AGREGAR AL CARRITO",
+        "guarantee_text": "🔒 Pago seguro · Garantía de devolución de dinero · Envío rápido",
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "selected_color": "#1a1a1a",
+        "sale_price_color": "#2a9d4e",
+        "btn_bg": "#1a1a1a",
+        "btn_text": "#ffffff",
+        "badge_color": "#e63737",
+        "badge_text_color": "#ffffff",
+        "heading_size": 36,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ionic_plain_text_2_WbKpMx": {
+      "type": "ionic-plain-text-2",
+      "settings": {
+        "heading": "",
+        "uppercase": false,
+        "body": "<p>Todos los Purificadores de Aire Iónicos incluyen <strong>Garantía Completa del Fabricante de 2 Años</strong>, Y El Mantenimiento Es Tan <strong>Sencillo Como Limpiar</strong> El Purificador De Aire Con Un Paño Seco</p>",
+        "bg_color": "#2d2e33",
+        "text_color": "#ffffff",
+        "text_align": "center",
+        "content_max_width": 880,
+        "heading_size": 44,
+        "body_size": 22,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "ionic_why_ionic_BpKqRs": {
+      "type": "ionic-why-ionic",
+      "blocks": {
+        "icon_w1": { "type": "icon", "settings": { "label": "Alergias" } },
+        "icon_w2": { "type": "icon", "settings": { "label": "Polvo" } },
+        "icon_w3": { "type": "icon", "settings": { "label": "Asma" } },
+        "icon_w4": { "type": "icon", "settings": { "label": "Mascotas" } },
+        "icon_w5": { "type": "icon", "settings": { "label": "Humo" } },
+        "icon_w6": { "type": "icon", "settings": { "label": "Bebés" } },
+        "icon_w7": { "type": "icon", "settings": { "label": "Moho" } },
+        "icon_w8": { "type": "icon", "settings": { "label": "Olores" } }
+      },
+      "block_order": ["icon_w1","icon_w2","icon_w3","icon_w4","icon_w5","icon_w6","icon_w7","icon_w8"],
+      "settings": {
+        "heading": "¿Por qué la Tecnología Iónica?",
+        "body": "<ul><li>El mejor purificador de aire para alergias y mascotas.</li><li>Captura el 99,97% del polvo y alérgenos tan pequeños como 0,3 micrones.</li><li>Elimina partículas como contaminantes, caspa de mascotas, pollen, ácaros del polvo, esporas de moho, olores y polvo del hogar.</li><li>El aire más fresco gracias a la mejor tecnología de purificación del mundo.</li></ul>",
+        "bg_color": "#1eb5ff",
+        "heading_color": "#0d1b4b",
+        "text_color": "#1a1a1a",
+        "icon_color": "#0d1b4b",
+        "heading_size": 40,
+        "body_size": 15,
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "text-and-image": {
@@ -310,8 +382,8 @@
         "image2": "shopify://shop_images/Coverage-Area.webp",
         "image_width": 700,
         "subtitle": "",
-        "title": "RESPIRARÁS MEJOR Y TE LO GARANTIZAMOS",
-        "text": "<ul><li>100% sin riesgo</li><li>Garantía de devolución de dinero</li><li>Garantía del fabricante de 2 años</li><li>Recomendado para personas con alergias</li></ul>",
+        "title": "LO TENEMOS CUBIERTO",
+        "text": "<p>Cada Iónico cubre 250 pies cuadrados de tu hogar. Consigue nuestro paquete más vendido ahora y disfruta de protección y frescura para toda la casa.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -320,37 +392,199 @@
         "divider": false
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
+    "ionic_html_block_924_TqLpWz": {
+      "type": "ionic-html-block",
       "settings": {
-        "show_product_recommendations": true,
-        "product_recommendations_heading": "También te puede interesar",
-        "related_count": 5
+        "html_content": "<p class='ionic-html-block__media-title'>Como se vio en</p><div class='ionic-html-block__media-logos'><span style='font-weight:900;font-size:1.2rem;letter-spacing:-0.02em;'>Forbes</span><span style='font-weight:900;font-size:1.2rem;'>CNN</span><span style='font-weight:900;font-size:1rem;'>NBC News</span><span style='font-weight:900;font-size:1rem;'>USA Today</span></div>",
+        "bg_color": "#ffffff",
+        "content_max_width": 960,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
-    "collection-return": {
-      "type": "collection-return",
-      "settings": {}
-    },
-    "rich_text_ijhMnJ": {
-      "type": "rich-text",
+    "ionic_image_text_2_KmRpQs": {
+      "type": "ionic-image-text-2",
       "blocks": {
-        "text_XgHbNt": {
-          "type": "text",
+        "step_c1": {
+          "type": "step",
           "settings": {
-            "enlarge_text": true,
-            "text": "<p>Todos los purificadores de aire iónicos vienen con una garantía completa del fabricante de 2 años y el mantenimiento es tan sencillo como limpiar el purificador de aire con un paño seco.<br/></p>"
+            "title": "Ionización del aire",
+            "description": "El dispositivo libera iones negativos que se adhieren a los contaminantes del aire."
+          }
+        },
+        "step_c2": {
+          "type": "step",
+          "settings": {
+            "title": "Atracción de partículas",
+            "description": "Los iones cargan las partículas peligrosas como virus, bacterias y polvo."
+          }
+        },
+        "step_c3": {
+          "type": "step",
+          "settings": {
+            "title": "Aire limpio",
+            "description": "Las partículas cargadas caen al suelo, alejándose del aire que respiras."
           }
         }
       },
-      "block_order": [
-        "text_XgHbNt"
-      ],
-      "name": "Rich text",
+      "block_order": ["step_c1","step_c2","step_c3"],
       "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "divider": false
+        "layout": "image_right",
+        "heading": "CÓMO FUNCIONA EN 3 PASOS",
+        "uppercase": true,
+        "body": "<p>El purificador iónico trabaja de forma silenciosa y eficiente para mantenerte saludable.</p>",
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "accent_color": "#1a1a1a",
+        "heading_size": 40,
+        "body_size": 16,
+        "gap": 60,
+        "img_radius": 12,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ionic_html_block_926_BnVpLk": {
+      "type": "ionic-html-block",
+      "settings": {
+        "html_content": "<h2 style='text-align:center;font-weight:900;font-size:2rem;text-transform:uppercase;margin:0 0 32px;'>COMPARACIÓN DE PURIFICADORES</h2><table><thead><tr><th>Característica</th><th>Purificador Iónico</th><th>Purificador HEPA</th></tr></thead><tbody><tr><td>Filtros de reemplazo</td><td>No necesita</td><td>Cada 6-12 meses</td></tr><tr><td>Nivel de ruido</td><td>Completamente silencioso</td><td>Ruidoso (ventilador)</td></tr><tr><td>Consumo de energía</td><td>Menos de 5W</td><td>30-200W</td></tr><tr><td>Mantenimiento</td><td>Limpieza con paño seco</td><td>Cambio de filtros costosos</td></tr><tr><td>Garantía</td><td>2 años</td><td>1 año</td></tr></tbody></table>",
+        "bg_color": "#ffffff",
+        "content_max_width": 1000,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ionic_hero_carousel_DpWnMx": {
+      "type": "ionic-hero-carousel",
+      "blocks": {
+        "slide_d1": { "type": "slide", "settings": { "label": "Vista frontal" } },
+        "slide_d2": { "type": "slide", "settings": { "label": "En uso" } },
+        "slide_d3": { "type": "slide", "settings": { "label": "Cobertura 360°" } },
+        "slide_d4": { "type": "slide", "settings": { "label": "Tamaño compacto" } }
+      },
+      "block_order": ["slide_d1","slide_d2","slide_d3","slide_d4"],
+      "settings": {
+        "heading": "MÍRALO EN ACCIÓN",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "heading_size": 44,
+        "hero_height": 520,
+        "img_radius": 12,
+        "max_width": 1080,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ionic_benefit_cards_EpRkNq": {
+      "type": "ionic-benefit-cards",
+      "blocks": {
+        "card_e1": { "type": "card", "settings": { "title": "Sin filtros que cambiar", "body": "A diferencia de los purificadores HEPA, el Iónico no necesita filtros de reemplazo costosos." } },
+        "card_e2": { "type": "card", "settings": { "title": "Ultra silencioso", "body": "Funciona en silencio absoluto para que puedas dormir, trabajar y relajarte sin interrupciones." } },
+        "card_e3": { "type": "card", "settings": { "title": "Diseño compacto", "body": "Su tamaño reducido le permite encajar perfectamente en cualquier habitación, oficina o auto." } },
+        "card_e4": { "type": "card", "settings": { "title": "Bajo consumo", "body": "Consume menos de 5 vatios de energía, siendo amigable con el medioambiente y tu factura." } },
+        "card_e5": { "type": "card", "settings": { "title": "Cobertura amplia", "body": "Purifica el aire en espacios de hasta 500 pies cuadrados de manera efectiva." } },
+        "card_e6": { "type": "card", "settings": { "title": "Fácil de mantener", "body": "Solo limpia el colector de polvo con un paño seco cada pocas semanas." } }
+      },
+      "block_order": ["card_e1","card_e2","card_e3","card_e4","card_e5","card_e6"],
+      "settings": {
+        "heading": "¿POR QUÉ ELEGIR EL IÓNICO?",
+        "subheading": "Tecnología probada para un aire más limpio cada día.",
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "card_bg": "#ffffff",
+        "card_border": true,
+        "columns": 3,
+        "card_gap": 20,
+        "card_padding": 28,
+        "card_radius": 12,
+        "card_align": "center",
+        "heading_size": 40,
+        "body_size": 16,
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "ionic_accordion_FpTkLm": {
+      "type": "ionic-accordion",
+      "blocks": {
+        "feat_f1": {
+          "type": "feature",
+          "settings": {
+            "label": "Ahorra en paquete",
+            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z'/></svg>"
+          }
+        },
+        "feat_f2": {
+          "type": "feature",
+          "settings": {
+            "label": "Protección todo el año",
+            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h5v5H7z'/></svg>"
+          }
+        },
+        "feat_f3": {
+          "type": "feature",
+          "settings": {
+            "label": "Envío gratis",
+            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>"
+          }
+        },
+        "feat_f4": {
+          "type": "feature",
+          "settings": {
+            "label": "Soporte 7 días a la semana",
+            "icon_svg": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'><path d='M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z'/></svg>"
+          }
+        },
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "¿Funciona con baterías?",
+            "answer": "<p>No. Debe permanecer conectado a una toma de corriente mediante el cable USB y el adaptador incluidos.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "¿Necesita filtros de reemplazo?",
+            "answer": "<p>No. A diferencia de los purificadores HEPA tradicionales, el Iónico no requiere filtros costosos. Solo necesitas limpiar el colector de polvo con un paño seco cada pocas semanas.</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto espacio cubre una unidad?",
+            "answer": "<p>El Iónico cubre eficazmente espacios de hasta 500 pies cuadrados (aproximadamente 46 metros cuadrados).</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "¿Funciona fuera de EE.UU.?",
+            "answer": "<p>Sí. El Iónico es compatible con la mayoría de sistemas eléctricos del mundo (100-240V).</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "¿Es seguro para niños y mascotas?",
+            "answer": "<p>Sí. El Iónico es completamente seguro para toda la familia. No emite ozono dañino ni produce ruido.</p>"
+          }
+        }
+      },
+      "block_order": ["feat_f1","feat_f2","feat_f3","feat_f4","q1","q2","q3","q4","q5"],
+      "settings": {
+        "heading": "Preguntas Frecuentes",
+        "first_open": true,
+        "close_others": true,
+        "bg_color": "#e8f4ff",
+        "text_color": "#1a1a1a",
+        "icon_color": "#3b82f6",
+        "heading_size": 40,
+        "question_size": 16,
+        "answer_size": 15,
+        "content_max_width": 800,
+        "padding_top": 72,
+        "padding_bottom": 72
       }
     },
     "testimonials_XjKDNg": {
@@ -360,7 +594,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
@@ -369,7 +603,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
@@ -378,7 +612,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
@@ -387,7 +621,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
@@ -396,7 +630,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "5-stars",
-            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store's happy customers.</p>",
             "author": "Author name",
             "author_info": "Los Angeles, CA"
           }
@@ -417,6 +651,61 @@
         "color_text": "#1c1d1d"
       }
     },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "También te puede interesar",
+        "related_count": 5
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "background-image-text": {
+      "type": "background-image-text",
+      "disabled": true,
+      "settings": {
+        "subtitle": "Respiras 2800 galones de aire al día",
+        "title": ". ¡Eso es muchísimo aire!",
+        "text": "<p>La Agencia de Protección Ambiental (EPA) ha clasificado la calidad del aire interior como uno de los peligros más preocupantes que enfrentamos a diario.</p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify://shop_images/desktop_1.webp",
+        "focal_point": "center",
+        "layout": "left",
+        "height": 650,
+        "parallax": false
+      }
+    },
+    "rich_text_ijhMnJ": {
+      "type": "rich-text",
+      "disabled": true,
+      "blocks": {
+        "text_XgHbNt": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Todos los purificadores de aire iónicos vienen con una garantía completa del fabricante de 2 años y el mantenimiento es tan sencillo como limpiar el purificador de aire con un paño seco.<br/></p>"
+          }
+        }
+      },
+      "block_order": ["text_XgHbNt"],
+      "name": "Rich text",
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
     "1773016882e593d10a": {
       "type": "apps",
       "blocks": {
@@ -430,9 +719,7 @@
           }
         }
       },
-      "block_order": [
-        "judge_me_reviews_review_widget_CdbRNA"
-      ],
+      "block_order": ["judge_me_reviews_review_widget_CdbRNA"],
       "settings": {
         "full_width": false,
         "space_around": true
@@ -446,13 +733,23 @@
     "ionic_breathe_stats_tDHFDK",
     "ionic_guarantee_zrcNhn",
     "ionic_community_6ywV6G",
-    "sub",
-    "background-image-text",
+    "ionic_one_column_MxWpLD",
+    "ionic_bundle_picker_RvJqNP",
+    "ionic_plain_text_2_WbKpMx",
+    "ionic_why_ionic_BpKqRs",
     "text-and-image",
+    "ionic_html_block_924_TqLpWz",
+    "ionic_image_text_2_KmRpQs",
+    "ionic_html_block_926_BnVpLk",
+    "ionic_hero_carousel_DpWnMx",
+    "ionic_benefit_cards_EpRkNq",
+    "ionic_accordion_FpTkLm",
+    "testimonials_XjKDNg",
     "product-recommendations",
     "collection-return",
+    "sub",
+    "background-image-text",
     "rich_text_ijhMnJ",
-    "testimonials_XjKDNg",
     "1773016882e593d10a"
   ]
 }
