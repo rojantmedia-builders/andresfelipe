@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "judge_me_reviews_preview_badge_qC3APY": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "disabled": true,
@@ -81,6 +85,7 @@
         }
       },
       "block_order": [
+        "judge_me_reviews_preview_badge_qC3APY",
         "price",
         "separator",
         "sales_point",
