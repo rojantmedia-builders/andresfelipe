@@ -586,8 +586,8 @@
       "settings": {
         "after_image": "shopify://shop_images/3_After.webp",
         "before_image": "shopify://shop_images/Sin_filtros_28.png",
-        "after_label": "After",
-        "before_label": "Before",
+        "after_label": "Antes",
+        "before_label": "Despues",
         "image_ratio": "4/3",
         "initial_position": 50,
         "badge": "Resultados reales",
