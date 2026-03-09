@@ -85,14 +85,6 @@
             "surface_pickup_enable": false
           }
         },
-        "safe_checkout_7PPGxQ": {
-          "type": "safe_checkout",
-          "settings": {
-            "label": "Guaranteed Safe Checkout",
-            "font_size": 13,
-            "icon_height": 24
-          }
-        },
         "custom_f9mijW": {
           "type": "custom",
           "settings": {
@@ -134,7 +126,6 @@
         "urgency_text_AaRtCq",
         "variant_cards_ji3pGW",
         "buy_buttons",
-        "safe_checkout_7PPGxQ",
         "custom_f9mijW",
         "tab",
         "contact",
