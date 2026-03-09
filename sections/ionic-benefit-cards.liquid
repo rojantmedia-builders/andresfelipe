@@ -1,0 +1,277 @@
+{% comment %} ba-16458929 – zpa-benefit-cards-223 {% endcomment %}
+
+<style>
+  .ionic-benefit-cards {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-benefit-cards__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ionic-benefit-cards__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 12px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.15;
+  }
+  .ionic-benefit-cards__subheading {
+    font-size: {{ section.settings.body_size }}px;
+    color: {{ section.settings.text_color }};
+    text-align: center;
+    margin: 0 0 40px;
+    opacity: 0.75;
+  }
+  .ionic-benefit-cards__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.settings.columns }}, 1fr);
+    gap: {{ section.settings.card_gap }}px;
+  }
+  .ionic-benefit-cards__card {
+    background: {{ section.settings.card_bg }};
+    border-radius: {{ section.settings.card_radius }}px;
+    padding: {{ section.settings.card_padding }}px;
+    display: flex;
+    flex-direction: column;
+    align-items: {{ section.settings.card_align }};
+    text-align: {{ section.settings.card_align }};
+    {%- if section.settings.card_border %}
+    border: 1px solid rgba(0,0,0,0.08);
+    {%- endif %}
+  }
+  .ionic-benefit-cards__card-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ionic-benefit-cards__card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .ionic-benefit-cards__card-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .ionic-benefit-cards__card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 8px;
+    line-height: 1.3;
+  }
+  .ionic-benefit-cards__card-body {
+    font-size: 0.875rem;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+    line-height: 1.6;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .ionic-benefit-cards__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 500px) {
+    .ionic-benefit-cards__grid {
+      grid-template-columns: 1fr;
+    }
+    .ionic-benefit-cards__heading {
+      font-size: {{ section.settings.heading_size | times: 0.65 | round }}px;
+    }
+  }
+</style>
+
+<div class="ionic-benefit-cards">
+  <div class="ionic-benefit-cards__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ionic-benefit-cards__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <p class="ionic-benefit-cards__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="ionic-benefit-cards__grid">
+      {%- for block in section.blocks -%}
+        <div class="ionic-benefit-cards__card" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank or block.settings.icon_svg != blank -%}
+            <div class="ionic-benefit-cards__card-icon">
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 112 }}"
+                  alt="{{ block.settings.title }}" width="56" height="56" loading="lazy">
+              {%- elsif block.settings.icon_svg != blank -%}
+                {{ block.settings.icon_svg }}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <p class="ionic-benefit-cards__card-title">{{ block.settings.title }}</p>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <p class="ionic-benefit-cards__card-body">{{ block.settings.body }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ionic – Benefit Cards",
+  "class": "index-section", 
+  "settings": [ 
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿POR QUÉ ELEGIR EL IÓNICO?"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subtítulo",
+      "default": "Tecnología probada para un aire más limpio cada día."
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo de la sección",
+      "default": "#f2f2f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Color de fondo de las tarjetas",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_border",
+      "label": "Mostrar borde en tarjetas",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columnas (escritorio)",
+      "min": 2, "max": 5, "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Espacio entre tarjetas",
+      "min": 8, "max": 40, "step": 4,
+      "default": 20, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "label": "Relleno interno de tarjeta",
+      "min": 12, "max": 60, "step": 4,
+      "default": 28, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Radio de tarjeta",
+      "min": 0, "max": 30, "step": 2,
+      "default": 12, "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "card_align",
+      "label": "Alineación dentro de la tarjeta",
+      "default": "center",
+      "options": [
+        { "value": "flex-start", "label": "Izquierda" },
+        { "value": "center",     "label": "Centro" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 18, "max": 72, "step": 2,
+      "default": 40, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Tamaño del subtítulo",
+      "min": 12, "max": 22, "step": 1,
+      "default": 16, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Relleno superior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Relleno inferior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Tarjeta",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Ícono / imagen"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "SVG del ícono (alternativo a imagen)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Beneficio"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Descripción",
+          "default": "Describe este beneficio aquí."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Benefit Cards",
+      "blocks": [
+        { "type": "card", "settings": { "title": "Sin filtros que cambiar", "body": "A diferencia de los purificadores HEPA, el Iónico no necesita filtros de reemplazo costosos." } },
+        { "type": "card", "settings": { "title": "Ultra silencioso", "body": "Funciona en silencio absoluto para que puedas dormir, trabajar y relajarte sin interrupciones." } },
+        { "type": "card", "settings": { "title": "Diseño compacto", "body": "Su tamaño reducido le permite encajar perfectamente en cualquier habitación, oficina o auto." } },
+        { "type": "card", "settings": { "title": "Bajo consumo", "body": "Consume menos de 5 vatios de energía, siendo amigable con el medioambiente y tu factura." } },
+        { "type": "card", "settings": { "title": "Cobertura amplia", "body": "Purifica el aire en espacios de hasta 500 pies cuadrados de manera efectiva." } },
+        { "type": "card", "settings": { "title": "Fácil de mantener", "body": "Solo limpia el colector de polvo con un paño seco cada pocas semanas." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

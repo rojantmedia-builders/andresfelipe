@@ -1,0 +1,260 @@
+{% comment %} ba-16458928 – zpa-hero-image-with-image-carousel-227 {% endcomment %}
+
+<style>
+  .ionic-hero-carousel {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-hero-carousel__inner {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  } 
+  .ionic-hero-carousel__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 32px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.15;
+  }
+
+  /* Hero image */
+  .ionic-hero-carousel__hero {
+    position: relative;
+    border-radius: {{ section.settings.img_radius }}px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .ionic-hero-carousel__hero img {
+    width: 100%;
+    height: {{ section.settings.hero_height }}px;
+    object-fit: cover;
+    display: block;
+  }
+  .ionic-hero-carousel__hero-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0,0,0,0.65);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 6px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Thumbnails carousel */
+  .ionic-hero-carousel__thumbs {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .ionic-hero-carousel__thumbs::-webkit-scrollbar { display: none; }
+  .ionic-hero-carousel__thumb {
+    flex-shrink: 0;
+    width: 110px;
+    scroll-snap-align: start;
+    border-radius: {{ section.settings.img_radius | divided_by: 2 }}px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .ionic-hero-carousel__thumb.is-active {
+    border-color: {{ section.settings.text_color }};
+  }
+  .ionic-hero-carousel__thumb img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .ionic-hero-carousel__hero img {
+      height: {{ section.settings.hero_height | times: 0.6 | round }}px;
+    }
+    .ionic-hero-carousel__heading {
+      font-size: {{ section.settings.heading_size | times: 0.65 | round }}px;
+    }
+  }
+</style>
+
+<div class="ionic-hero-carousel" id="ionic-hero-{{ section.id }}">
+  <div class="ionic-hero-carousel__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ionic-hero-carousel__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- assign first_block = section.blocks.first -%}
+    <div class="ionic-hero-carousel__hero">
+      {%- if first_block.settings.image != blank -%}
+        <img
+          id="ionic-hero-img-{{ section.id }}"
+          src="{{ first_block.settings.image | image_url: width: 1400 }}"
+          alt="{{ first_block.settings.label | default: section.settings.heading }}"
+          width="{{ first_block.settings.image.width }}"
+          height="{{ first_block.settings.image.height }}"
+          loading="lazy">
+      {%- else -%}
+        <img
+          id="ionic-hero-img-{{ section.id }}"
+          src="{{ section.settings.fallback_image | image_url: width: 1400 }}"
+          alt="{{ section.settings.heading }}"
+          width="{{ section.settings.fallback_image.width }}"
+          height="{{ section.settings.fallback_image.height }}"
+          loading="lazy">
+      {%- endif -%}
+      <span class="ionic-hero-carousel__hero-label" id="ionic-hero-label-{{ section.id }}">
+        {{ first_block.settings.label }}
+      </span>
+    </div>
+
+    {%- if section.blocks.size > 1 -%}
+      <div class="ionic-hero-carousel__thumbs">
+        {%- for block in section.blocks -%}
+          <div
+            class="ionic-hero-carousel__thumb{% if forloop.first %} is-active{% endif %}"
+            data-img="{{ block.settings.image | image_url: width: 1400 }}"
+            data-label="{{ block.settings.label }}"
+            {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 220 }}"
+                alt="{{ block.settings.label }}"
+                width="110" height="80" loading="lazy">
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+(function(){
+  var section = document.getElementById('ionic-hero-{{ section.id }}');
+  if (!section) return;
+  var heroImg   = document.getElementById('ionic-hero-img-{{ section.id }}');
+  var heroLabel = document.getElementById('ionic-hero-label-{{ section.id }}');
+  var thumbs    = section.querySelectorAll('.ionic-hero-carousel__thumb');
+  thumbs.forEach(function(thumb){
+    thumb.addEventListener('click', function(){
+      thumbs.forEach(function(t){ t.classList.remove('is-active'); });
+      thumb.classList.add('is-active');
+      if (heroImg && thumb.dataset.img)   heroImg.src = thumb.dataset.img;
+      if (heroLabel && thumb.dataset.label) heroLabel.textContent = thumb.dataset.label;
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Ionic – Hero + Carrusel",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "MÍRALO EN ACCIÓN"
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "Imagen de respaldo (si los bloques no tienen imagen)"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 18, "max": 72, "step": 2,
+      "default": 44, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "hero_height",
+      "label": "Altura de la imagen principal",
+      "min": 300, "max": 800, "step": 20,
+      "default": 520, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "img_radius",
+      "label": "Radio de imagen",
+      "min": 0, "max": 30, "step": 2,
+      "default": 12, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Ancho máximo",
+      "min": 600, "max": 1400, "step": 40,
+      "default": 1080, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Relleno superior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Relleno inferior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Imagen",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etiqueta de la imagen",
+          "default": "Purificador iónico"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Hero + Carrusel",
+      "blocks": [
+        { "type": "slide", "settings": { "label": "Vista frontal" } },
+        { "type": "slide", "settings": { "label": "En uso" } },
+        { "type": "slide", "settings": { "label": "Cobertura 360°" } },
+        { "type": "slide", "settings": { "label": "Tamaño compacto" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

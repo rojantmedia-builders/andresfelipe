@@ -1,0 +1,401 @@
+{% comment %} ba-16458930 – zpa-accordion-131 {% endcomment %}
+
+<style>
+  .ionic-accordion {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-accordion__inner {
+    max-width: {{ section.settings.content_max_width }}px;
+    margin: 0 auto;
+  }
+  .ionic-accordion__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 40px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.15;
+  }
+  /* Feature cards row */
+  .ionic-accordion__features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .ionic-accordion__feature-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .ionic-accordion__feature-icon {
+    width: 48px;
+    height: 48px;
+    color: {{ section.settings.icon_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ionic-accordion__feature-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .ionic-accordion__feature-label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+  /* Accordion list */
+  .ionic-accordion__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .ionic-accordion__item {
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+  .ionic-accordion__item:first-child {
+    border-top: 1px solid rgba(0,0,0,0.12);
+  }
+  .ionic-accordion__trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+  }
+  .ionic-accordion__question {
+    font-size: {{ section.settings.question_size }}px;
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    line-height: 1.35;
+    margin: 0;
+    flex: 1;
+  }
+  .ionic-accordion__icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.icon_color }};
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1;
+    transition: transform 0.25s;
+  }
+  .ionic-accordion__item.is-open .ionic-accordion__icon {
+    transform: rotate(45deg);
+  }
+  .ionic-accordion__panel {
+    display: none;
+    padding: 0 4px 16px;
+  }
+  .ionic-accordion__item.is-open .ionic-accordion__panel {
+    display: block;
+  }
+  .ionic-accordion__answer {
+    font-size: {{ section.settings.answer_size }}px;
+    color: {{ section.settings.text_color }};
+    opacity: 0.75;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ionic-accordion__answer p { margin: 0 0 10px; }
+  .ionic-accordion__answer p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) {
+    .ionic-accordion__features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ionic-accordion__heading {
+      font-size: {{ section.settings.heading_size | times: 0.65 | round }}px;
+    }
+  }
+</style>
+
+<div class="ionic-accordion">
+  <div class="ionic-accordion__inner">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="ionic-accordion__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- assign has_features = false -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'feature' -%}{%- assign has_features = true -%}{%- endif -%}
+    {%- endfor -%}
+
+    {%- if has_features -%}
+      <div class="ionic-accordion__features">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'feature' -%}
+            <div class="ionic-accordion__feature-card" {{ block.shopify_attributes }}>
+              {%- if block.settings.icon_svg != blank -%}
+                <div class="ionic-accordion__feature-icon">{{ block.settings.icon_svg }}</div>
+              {%- endif -%}
+              <p class="ionic-accordion__feature-label">{{ block.settings.label }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <ul class="ionic-accordion__list" id="ionic-accordion-{{ section.id }}">
+      {%- assign q_index = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'question' -%}
+          {%- assign q_index = q_index | plus: 1 -%}
+          <li class="ionic-accordion__item{% if q_index == 1 and section.settings.first_open %} is-open{% endif %}"
+              id="ionic-accordion-item-{{ section.id }}-{{ q_index }}"
+              {{ block.shopify_attributes }}>
+            <button
+              class="ionic-accordion__trigger"
+              aria-expanded="{% if q_index == 1 and section.settings.first_open %}true{% else %}false{% endif %}"
+              aria-controls="ionic-acc-panel-{{ section.id }}-{{ q_index }}"
+            >
+              <span class="ionic-accordion__question">{{ block.settings.question }}</span>
+              <span class="ionic-accordion__icon" aria-hidden="true">+</span>
+            </button>
+            <div
+              class="ionic-accordion__panel"
+              id="ionic-acc-panel-{{ section.id }}-{{ q_index }}"
+              role="region"
+            >
+              <div class="ionic-accordion__answer">{{ block.settings.answer }}</div>
+            </div>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+<script>
+(function(){
+  var list = document.getElementById('ionic-accordion-{{ section.id }}');
+  if (!list) return;
+  list.addEventListener('click', function(e){
+    var btn = e.target.closest('.ionic-accordion__trigger');
+    if (!btn) return;
+    var item = btn.closest('.ionic-accordion__item');
+    var isOpen = item.classList.contains('is-open');
+    {% if section.settings.close_others %}
+    list.querySelectorAll('.ionic-accordion__item').forEach(function(i){
+      i.classList.remove('is-open');
+      i.querySelector('.ionic-accordion__trigger').setAttribute('aria-expanded','false');
+    });
+    {% endif %}
+    if (!isOpen) {
+      item.classList.add('is-open');
+      btn.setAttribute('aria-expanded','true');
+    } else {
+      item.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Ionic – FAQ",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "Preguntas Frecuentes"
+    },
+    {
+      "type": "checkbox",
+      "id": "first_open",
+      "label": "Abrir la primera pregunta por defecto",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "close_others",
+      "label": "Cerrar otras al abrir una",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo",
+      "default": "#e8f4ff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color de texto",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Color de iconos y +/-",
+      "default": "#3b82f6"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 18, "max": 72, "step": 2,
+      "default": 40, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "question_size",
+      "label": "Tamaño de la pregunta",
+      "min": 12, "max": 24, "step": 1,
+      "default": 16, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "answer_size",
+      "label": "Tamaño de la respuesta",
+      "min": 12, "max": 22, "step": 1,
+      "default": 15, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Ancho máximo",
+      "min": 100, "max": 1100, "step": 10,
+      "default": 800,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Relleno superior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Relleno inferior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 72, "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Tarjeta de característica",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etiqueta",
+          "default": "Característica"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "SVG del icono"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta",
+          "default": "¿Cómo funciona el purificador iónico?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Respuesta",
+          "default": "<p>El purificador iónico libera iones cargados negativamente que se adhieren a las partículas contaminantes del aire, eliminándolas de forma efectiva.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – FAQ",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Ahorra en paquete"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Protección todo el año"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Envío gratis"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "label": "Soporte 7 días"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Funciona con baterías?",
+            "answer": "<p>No. Debe permanecer conectado a una toma de corriente mediante el cable USB y el adaptador incluidos.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Necesita filtros de reemplazo?",
+            "answer": "<p>No. A diferencia de los purificadores HEPA tradicionales, el Iónico no requiere filtros costosos. Solo necesitas limpiar el colector de polvo con un paño seco cada pocas semanas.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Cuánto espacio cubre una unidad?",
+            "answer": "<p>El Iónico cubre eficazmente espacios de hasta 500 pies cuadrados (aproximadamente 46 metros cuadrados).</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Funciona fuera de EE.UU.?",
+            "answer": "<p>Sí. El Iónico es compatible con la mayoría de sistemas eléctricos del mundo (100-240V).</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "¿Es seguro para niños y mascotas?",
+            "answer": "<p>Sí. El Iónico es completamente seguro para toda la familia. No emite ozono dañino ni produce ruido.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

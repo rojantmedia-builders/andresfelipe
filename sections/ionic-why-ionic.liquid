@@ -1,0 +1,238 @@
+{% comment %} ba-16458916b – Why Ionic Technology section {% endcomment %}
+
+<style>
+  .ionic-why {
+    background-color: {{ section.settings.bg_color }};
+    padding: {{ section.settings.padding_top }}px 20px {{ section.settings.padding_bottom }}px;
+  }
+  .ionic-why__card {
+    max-width: 1060px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+  }
+  /* Left: icon grid */
+  .ionic-why__icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 12px;
+    text-align: center;
+  }
+  .ionic-why__icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .ionic-why__icon-img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    display: block;
+  }
+  .ionic-why__icon-svg {
+    width: 52px;
+    height: 52px;
+    color: {{ section.settings.icon_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ionic-why__icon-svg svg { width: 100%; height: 100%; }
+  .ionic-why__icon-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: {{ section.settings.icon_color }};
+    margin: 0;
+    line-height: 1.2;
+  }
+  /* Right: heading + bullets */
+  .ionic-why__heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 900;
+    color: {{ section.settings.heading_color }};
+    margin: 0 0 20px;
+    line-height: 1.15;
+  }
+  .ionic-why__body {
+    font-size: {{ section.settings.body_size }}px;
+    color: {{ section.settings.text_color }};
+    line-height: 1.7;
+    margin: 0;
+  }
+  .ionic-why__body ul { padding-left: 20px; margin: 0; }
+  .ionic-why__body li { margin-bottom: 10px; }
+  .ionic-why__body p { margin: 0 0 10px; }
+  @media (max-width: 768px) {
+    .ionic-why__card {
+      grid-template-columns: 1fr;
+      gap: 32px;
+      padding: 32px 20px;
+    }
+    .ionic-why__icons {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px 8px;
+    }
+    .ionic-why__heading {
+      font-size: {{ section.settings.heading_size | times: 0.7 | round }}px;
+    }
+  }
+  @media (max-width: 480px) {
+    .ionic-why__icons { grid-template-columns: repeat(4, 1fr); }
+    .ionic-why__icon-img, .ionic-why__icon-svg { width: 36px; height: 36px; }
+    .ionic-why__icon-label { font-size: 0.65rem; }
+  }
+</style>
+
+<div class="ionic-why">
+  <div class="ionic-why__card">
+
+    <!-- Left: icons grid -->
+    {%- if section.blocks.size > 0 -%}
+      <div class="ionic-why__icons">
+        {%- for block in section.blocks -%}
+          <div class="ionic-why__icon-item" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <img class="ionic-why__icon-img"
+                src="{{ block.settings.image | image_url: width: 104 }}"
+                alt="{{ block.settings.label }}"
+                width="52" height="52" loading="lazy">
+            {%- elsif block.settings.icon_svg != blank -%}
+              <div class="ionic-why__icon-svg">{{ block.settings.icon_svg }}</div>
+            {%- endif -%}
+            <p class="ionic-why__icon-label">{{ block.settings.label }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <!-- Right: heading + body -->
+    <div class="ionic-why__text">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="ionic-why__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+      {%- if section.settings.body != blank -%}
+        <div class="ionic-why__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Ionic – Why Ionic",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Título",
+      "default": "¿Por qué la Tecnología Iónica?"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Texto de beneficios",
+      "default": "<ul><li>El mejor purificador de aire para alergias y mascotas.</li><li>Captura el 99,97% del polvo y alérgenos tan pequeños como 0,3 micrones.</li><li>Elimina partículas como contaminantes, caspa de mascotas, pollen, ácaros del polvo, esporas de moho, olores y polvo del hogar.</li><li>El aire más fresco gracias a la mejor tecnología de purificación del mundo.</li></ul>"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Color de fondo exterior",
+      "default": "#1eb5ff"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Color del título",
+      "default": "#0d1b4b"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color del texto",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Color de los iconos y etiquetas",
+      "default": "#0d1b4b"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Tamaño del título",
+      "min": 20, "max": 72, "step": 2,
+      "default": 40, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "body_size",
+      "label": "Tamaño del texto",
+      "min": 12, "max": 24, "step": 1,
+      "default": 15, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Relleno superior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 64, "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Relleno inferior",
+      "min": 0, "max": 120, "step": 4,
+      "default": 64, "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icono de categoría",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Etiqueta",
+          "default": "Alergias"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen del icono"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "SVG del icono (alternativo)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ionic – Why Ionic",
+      "blocks": [
+        { "type": "icon", "settings": { "label": "Alergias" } },
+        { "type": "icon", "settings": { "label": "Polvo" } },
+        { "type": "icon", "settings": { "label": "Asma" } },
+        { "type": "icon", "settings": { "label": "Mascotas" } },
+        { "type": "icon", "settings": { "label": "Humo" } },
+        { "type": "icon", "settings": { "label": "Bebés" } },
+        { "type": "icon", "settings": { "label": "Moho" } },
+        { "type": "icon", "settings": { "label": "Olores" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
