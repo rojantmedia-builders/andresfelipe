@@ -528,6 +528,7 @@
     },
     "ionic_html_block_926_BnVpLk": {
       "type": "ionic-html-block",
+      "disabled": true,
       "settings": {
         "html_content": "<h2 style=\"text-align:center;font-weight:900;font-size:2rem;text-transform:uppercase;margin:0 0 32px;\">COMPARACIÓN DE PURIFICADORES</h2><table>\n<thead><tr>\n<th>Característica</th>\n<th>Purificador Iónico</th>\n<th>Purificador HEPA</th>\n</tr></thead>\n<tbody>\n<tr>\n<td>Filtros de reemplazo</td>\n<td>No necesita</td>\n<td>Cada 6-12 meses</td>\n</tr>\n<tr>\n<td>Nivel de ruido</td>\n<td>Completamente silencioso</td>\n<td>Ruidoso (ventilador)</td>\n</tr>\n<tr>\n<td>Consumo de energía</td>\n<td>Menos de 5W</td>\n<td>30-200W</td>\n</tr>\n<tr>\n<td>Mantenimiento</td>\n<td>Limpieza con paño seco</td>\n<td>Cambio de filtros costosos</td>\n</tr>\n<tr>\n<td>Garantía</td>\n<td>2 años</td>\n<td>1 año</td>\n</tr>\n</tbody>\n</table>",
         "bg_color": "#ffffff",
@@ -570,6 +571,7 @@
         "slide_d3",
         "slide_d4"
       ],
+      "disabled": true,
       "settings": {
         "heading": "MÍRALO EN ACCIÓN",
         "bg_color": "#ffffff",
@@ -642,6 +644,7 @@
         "card_e5",
         "card_e6"
       ],
+      "disabled": true,
       "settings": {
         "heading": "¿POR QUÉ ELEGIR EL IÓNICO?",
         "subheading": "Tecnología probada para un aire más limpio cada día.",
