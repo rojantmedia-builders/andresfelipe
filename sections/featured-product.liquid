@@ -1,5 +1,16 @@
 {%- if section.settings.divider -%}<div class="section--divider">{%- endif -%}
 
+{%- if section.settings.section_title != blank or section.settings.section_subtitle != blank -%}
+  <div class="page-width" style="padding-bottom: 20px;">
+    {%- if section.settings.section_title != blank -%}
+      <h2 style="font-size: 2rem; font-weight: 700; margin: 0 0 10px;">{{ section.settings.section_title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.section_subtitle != blank -%}
+      <p style="font-size: 1rem; font-weight: 600; margin: 0;">{{ section.settings.section_subtitle }}</p>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
 {%- assign product = all_products[section.settings.featured_product] -%}
 {%- render 'product-template',
   product: product,
@@ -22,6 +33,22 @@
     "name": "Featured product",
     "class": "index-section",
     "settings": [
+      {
+        "type": "header",
+        "content": "Section header"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title",
+        "default": "Respira un Aire más Limpio y Saludable – Cada Día"
+      },
+      {
+        "type": "text",
+        "id": "section_subtitle",
+        "label": "Subtitle",
+        "default": "Nuestro purificador iónico #1 ayuda a reducir alérgenos, olores y partículas en el aire para un hogar más fresco."
+      },
       {
         "type": "product",
         "id": "featured_product",
