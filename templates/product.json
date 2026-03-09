@@ -447,6 +447,7 @@
           "type": "icon",
           "settings": {
             "label": "Moho",
+            "image": "shopify://shop_images/Mold-min.avif",
             "icon_svg": ""
           }
         },
