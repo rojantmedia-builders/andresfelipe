@@ -439,6 +439,7 @@
           "type": "icon",
           "settings": {
             "label": "Bebés",
+            "image": "shopify://shop_images/Children-min.avif",
             "icon_svg": ""
           }
         },
