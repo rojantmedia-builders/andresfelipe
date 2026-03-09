@@ -76,28 +76,6 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-
-              {%- if isModal -%}
-                <p class="h2 product-single__title">
-                  {{ product.title }}
-                </p>
-              {%- else -%}
-                <h1 class="h2 product-single__title">
-                  {%- unless product.empty? -%}
-                    {{ product.title }}
-                  {%- else -%}
-                    {{ 'home_page.onboarding.product_title' | t }}
-                  {%- endunless -%}
-                </h1>
-              {%- endif -%}
-
-              {%- if sku_enable -%}
-                <p data-sku class="product-single__sku">
-                  {%- if current_variant.sku -%}
-                    {{ current_variant.sku }}
-                  {%- endif -%}
-                </p>
-              {%- endif -%}
             </div>
 
             <div data-product-blocks>
@@ -106,6 +84,31 @@
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
+                  {%- when 'title' -%}
+                    <div class="product-block product-block--header" {{ block.shopify_attributes }}>
+                      {%- if isModal -%}
+                        <p class="h2 product-single__title">{{ product.title }}</p>
+                      {%- else -%}
+                        <h1 class="h2 product-single__title">
+                          {%- unless product.empty? -%}
+                            {{ product.title }}
+                          {%- else -%}
+                            {{ 'home_page.onboarding.product_title' | t }}
+                          {%- endunless -%}
+                        </h1>
+                      {%- endif -%}
+                      {%- if sku_enable -%}
+                        <p data-sku class="product-single__sku">
+                          {%- if current_variant.sku -%}{{ current_variant.sku }}{%- endif -%}
+                        </p>
+                      {%- endif -%}
+                    </div>
+                  {%- when 'urgency_text' -%}
+                    <div class="product-block" {{ block.shopify_attributes }}>
+                      <p style="font-size: {{ block.settings.font_size }}px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin: 0; color: {{ block.settings.text_color }};">
+                        {{ block.settings.text }}
+                      </p>
+                    </div>
                   {%- when 'reviews' -%}
                     <div class="product-block product-block--small">
                       <a href="#shopify-product-reviews-{{ product.id }}">

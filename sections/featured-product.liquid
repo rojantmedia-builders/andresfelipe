@@ -149,6 +149,39 @@
         "type": "@app"
       },
       {
+        "type": "title",
+        "name": "Title",
+        "limit": 1
+      },
+      {
+        "type": "urgency_text",
+        "name": "Urgency text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text",
+            "default": "EXCLUSIVE ONLY 130 UNITS"
+          },
+          {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text color",
+            "default": "#1a1a1a"
+          },
+          {
+            "type": "range",
+            "id": "font_size",
+            "label": "Font size",
+            "min": 12,
+            "max": 28,
+            "step": 1,
+            "default": 16,
+            "unit": "px"
+          }
+        ]
+      },
+      {
         "type": "price",
         "name": "Price",
         "limit": 1
