@@ -93,6 +93,12 @@
             "icon_height": 24
           }
         },
+        "custom_f9mijW": {
+          "type": "custom",
+          "settings": {
+            "code": "<img src=\"https://cdn.shopify.com/s/files/1/0975/8251/4520/files/cleanshot-2025-08-15-at-08-46-17-2x.webp?v=1773029324\">"
+          }
+        },
         "tab": {
           "type": "tab",
           "disabled": true,
@@ -129,6 +135,7 @@
         "variant_cards_ji3pGW",
         "buy_buttons",
         "safe_checkout_7PPGxQ",
+        "custom_f9mijW",
         "tab",
         "contact",
         "share"
