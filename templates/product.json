@@ -130,6 +130,18 @@
         "product_video_style": "muted"
       }
     },
+    "ionic_title_banner_PTN8HA": {
+      "type": "ionic-title-banner",
+      "name": "Ionic – Title Banner",
+      "settings": {
+        "title": "YOUR NEW IONIC AIR PURIFIER WILL:",
+        "bg_color": "#fafafa",
+        "text_color": "#1a1a1a",
+        "font_size": 44,
+        "padding_top": 64,
+        "padding_bottom": 20
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -290,6 +302,7 @@
   },
   "order": [
     "main",
+    "ionic_title_banner_PTN8HA",
     "sub",
     "background-image-text",
     "text-and-image",
