@@ -455,6 +455,7 @@
           "type": "icon",
           "settings": {
             "label": "Olores",
+            "image": "shopify://shop_images/Odors-min.avif",
             "icon_svg": ""
           }
         }
