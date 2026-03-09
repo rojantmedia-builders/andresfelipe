@@ -221,6 +221,21 @@
         "padding_bottom": 72
       }
     },
+    "ionic_community_bMdBQH": {
+      "type": "ionic-community",
+      "name": "Ionic – Community Text",
+      "settings": {
+        "heading": "ÚNETE A MÁS DE 200.000 PERSONAS Y EMPIEZA A RESPIRAR MEJOR DESDE YA",
+        "body": "<p>El Iónico neutraliza los contaminantes dañinos liberando iones cargados negativamente al aire. Estos se adhieren a agentes contaminantes como virus, bacterias, polvo y humo, eliminándolos del ambiente y brindándote un entorno de respiración más saludable.</p>",
+        "bg_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "content_max_width": 880,
+        "heading_size": 52,
+        "body_size": 16,
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -384,6 +399,7 @@
     "ionic_title_banner_nFjDcK",
     "ionic_four_features_Acm798",
     "ionic_breathe_stats_tDHFDK",
+    "ionic_community_bMdBQH",
     "sub",
     "background-image-text",
     "text-and-image",
