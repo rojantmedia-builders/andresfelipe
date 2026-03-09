@@ -308,6 +308,10 @@
           "type": "price",
           "settings": {}
         },
+        "quantity_selector_WK3MBR": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
         "separator_BmJwD3": {
           "type": "separator",
           "settings": {}
@@ -336,6 +340,7 @@
       },
       "block_order": [
         "price_fJ7RyF",
+        "quantity_selector_WK3MBR",
         "separator_BmJwD3",
         "variant_picker_JR99UF",
         "buy_buttons_eL3XDQ",
