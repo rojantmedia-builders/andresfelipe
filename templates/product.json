@@ -143,6 +143,68 @@
         "product_video_style": "muted"
       }
     },
+    "ionic_title_banner_nFjDcK": {
+      "type": "ionic-title-banner",
+      "name": "Ionic – Title Banner",
+      "settings": {
+        "title": "YOUR NEW IONIC AIR PURIFIER WILL:",
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "font_size": 44,
+        "padding_top": 64,
+        "padding_bottom": 20
+      }
+    },
+    "ionic_four_features_gmNBBH": {
+      "type": "ionic-four-features",
+      "blocks": {
+        "feature_xyi8Pf": {
+          "type": "feature",
+          "settings": {
+            "icon": "allergies",
+            "title": "Relieve Allergies",
+            "description": "Say goodbye to the itchy eyes, runny nose, and non-stop sneezing you suffer through every hayfever season."
+          }
+        },
+        "feature_3nMBnq": {
+          "type": "feature",
+          "settings": {
+            "icon": "smoke",
+            "title": "Protect Against Smoke",
+            "description": "Prevent breathing in tobacco and cigarette smoke that can result in the development of chronic diseases."
+          }
+        },
+        "feature_RM4jkC": {
+          "type": "feature",
+          "settings": {
+            "icon": "virus",
+            "title": "Remove Viruses & Bacteria",
+            "description": "Eliminate viruses and bacteria in the air, preventing airborne infections and safeguarding your health."
+          }
+        },
+        "feature_tUPLhq": {
+          "type": "feature",
+          "settings": {
+            "icon": "lungs",
+            "title": "Destroy Pollutants",
+            "description": "Dust, cooking smoke, and plastic fumes, among other pollutants, can all trigger negative reactions in the human body. The Ionic will take care of that."
+          }
+        }
+      },
+      "block_order": [
+        "feature_xyi8Pf",
+        "feature_3nMBnq",
+        "feature_RM4jkC",
+        "feature_tUPLhq"
+      ],
+      "name": "Ionic – Four Features",
+      "settings": {
+        "bg_color": "#f2f2f2",
+        "text_color": "#1a1a1a",
+        "padding_top": 20,
+        "padding_bottom": 64
+      }
+    },
     "sub": {
       "type": "product-full-width",
       "disabled": true,
@@ -303,6 +365,8 @@
   },
   "order": [
     "main",
+    "ionic_title_banner_nFjDcK",
+    "ionic_four_features_gmNBBH",
     "sub",
     "background-image-text",
     "text-and-image",
