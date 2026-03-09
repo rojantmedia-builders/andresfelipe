@@ -399,6 +399,7 @@
           "type": "icon",
           "settings": {
             "label": "Alergias",
+            "image": "shopify://shop_images/Allergies-min.avif",
             "icon_svg": ""
           }
         },
