@@ -431,6 +431,7 @@
           "type": "icon",
           "settings": {
             "label": "Humo",
+            "image": "shopify://shop_images/Smoke-min.avif",
             "icon_svg": ""
           }
         },
